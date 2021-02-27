@@ -82,3 +82,6 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Views.pdb
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Views.pdb
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.pdb
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.pdb
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll.config

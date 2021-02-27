@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoffeeApp.BusinessLayer\CoffeeApp.BusinessLayer.csproj" />
     <ProjectReference Include="..\CoffeeApp.DataLayer\CoffeeApp.DataLayer.csproj" />
   </ItemGroup>
 

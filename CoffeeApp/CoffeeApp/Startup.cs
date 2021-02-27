@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoffeeApp.BusinessLayer;
+using CoffeeApp.BusinessLayer.Implementations;
+using CoffeeApp.BusinessLayer.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,10 +30,10 @@ namespace CoffeeApp
 
             services.AddDbContext<DataLayer.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.DataLayer")));
 
-            //services.AddTransient<IDirectorysRepository, EFDirectorysRepository>();
-            //services.AddTransient<IMaterialsRepository, EFMaterialsRepository>();
+            services.AddTransient<ICoffeeMachinesRepository, CoffeeMachinesRepository>();
+            services.AddTransient<IIngredientsRepository, IngredientsRepository>();
 
-            //services.AddScoped<DataManager>();
+            services.AddScoped<DataManager>();
 
             services.AddMvc();
             services.AddControllersWithViews();

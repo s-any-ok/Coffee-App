@@ -4,6 +4,25 @@
     "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.csproj": {}
   },
   "projects": {
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj",
+        "projectName": "CoffeeApp.BusinessLayer",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj": {
       "restore": {
         "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj",
@@ -37,6 +56,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj"
+              },
               "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj": {
                 "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj"
               }
