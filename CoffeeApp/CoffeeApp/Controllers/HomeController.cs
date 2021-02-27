@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using CoffeeApp.Models;
 
 namespace CoffeeApp.Controllers
 {
@@ -20,8 +19,8 @@ namespace CoffeeApp.Controllers
 
         public IActionResult Index()
         {
-            CoffeeMachine _coff = new CoffeeMachine() { Id = 1, CoffeeMachineName = "Ok", Producer = "Nano" };
-            return View(_coff);
+            // CoffeeMachine _coff = new CoffeeMachine() { Id = 1, CoffeeMachineName = "Ok", Producer = "Nano" };
+            return View('g');
         }
 
         public IActionResult Privacy()

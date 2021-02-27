@@ -1,5 +1,4 @@
 ﻿using CoffeeApp.DataLayer.Entityes;
-using CoffeeApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 

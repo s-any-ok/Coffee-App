@@ -81,6 +81,7 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\bin\Debug\pt-BR\Microsoft.Data.SqlCli
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\obj\Debug\CoffeeApp.DataLayer.csprojAssemblyReference.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\obj\Debug\CoffeeApp.DataLayer.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\obj\Debug\CoffeeApp.DataLayer.csproj.CopyComplete
 E:\CoffeeApp\CoffeeApp\CoffeeApp.DataLayer\obj\Debug\CoffeeApp.DataLayer.dll
