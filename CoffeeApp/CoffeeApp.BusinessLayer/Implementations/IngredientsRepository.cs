@@ -19,7 +19,7 @@ namespace CoffeeApp.BusinessLayer.Implementations
         }
         public IEnumerable<Ingredient> GetAll()
         {
-            //if (includeDirectory)
+            //if (includeCoffeeMachine)
             //    return context.Set<Ingredient>().Include(x => x.CoffeeMachine).AsNoTracking().ToList();
             //else
                 return context.Ingredient.ToList();
@@ -27,7 +27,7 @@ namespace CoffeeApp.BusinessLayer.Implementations
 
         public Ingredient GetById(int ingredientId)
         {
-            //if (includeDirectory)
+            //if (includeCoffeeMachine)
             //    return context.Set<Ingredient>().Include(x => x.CoffeeMachine).AsNoTracking().FirstOrDefault(x => x.Id == ingredientId);
             //else
                 return context.Ingredient.FirstOrDefault(x => x.Id == ingredientId);

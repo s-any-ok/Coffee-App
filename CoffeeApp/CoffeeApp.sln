@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.DataLayer", "Coff
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.BusinessLayer", "CoffeeApp.BusinessLayer\CoffeeApp.BusinessLayer.csproj", "{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.PresentationLayer", "CoffeeApp.PresentationLayer\CoffeeApp.PresentationLayer.csproj", "{B24BBF60-C212-43F5-BEB6-A26A9E42426C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24BBF60-C212-43F5-BEB6-A26A9E42426C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24BBF60-C212-43F5-BEB6-A26A9E42426C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24BBF60-C212-43F5-BEB6-A26A9E42426C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24BBF60-C212-43F5-BEB6-A26A9E42426C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

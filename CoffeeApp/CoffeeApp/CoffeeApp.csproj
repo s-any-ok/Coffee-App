@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.10" />
@@ -17,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CoffeeApp.BusinessLayer\CoffeeApp.BusinessLayer.csproj" />
     <ProjectReference Include="..\CoffeeApp.DataLayer\CoffeeApp.DataLayer.csproj" />
+    <ProjectReference Include="..\CoffeeApp.PresentationLayer\CoffeeApp.PresentationLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

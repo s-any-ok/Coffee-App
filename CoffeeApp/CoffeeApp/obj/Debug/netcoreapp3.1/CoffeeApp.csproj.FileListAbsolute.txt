@@ -1,8 +1,6 @@
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.csprojAssemblyReference.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.AssemblyInfoInputs.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.AssemblyInfo.cs
-E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.csproj.CoreCompileInputs.cache
-E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.MvcApplicationPartsAssemblyInfo.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.RazorAssemblyInfo.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.RazorAssemblyInfo.cs
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -85,3 +83,10 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.pdb
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.pdb
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll.config
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.pdb
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.csproj.CoreCompileInputs.cache
+E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.MvcApplicationPartsAssemblyInfo.cache

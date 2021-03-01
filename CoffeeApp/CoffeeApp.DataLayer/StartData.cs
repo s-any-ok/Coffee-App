@@ -20,6 +20,13 @@ namespace CoffeeApp.DataLayer
                     Volume = 1.2f,
                     CoffeeMachineId = context.CoffeeMachine.First().Id }
                 );
+                context.Ingredient.Add(new Ingredient()
+                {
+                    IngredientName = "Milk",
+                    Volume = 1.2f,
+                    CoffeeMachineId = 2
+                }
+                );
                 context.SaveChanges();
             }
         }

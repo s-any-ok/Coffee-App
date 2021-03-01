@@ -162,6 +162,7 @@
     <Compile Include="EFDBContext.cs" />
     <Compile Include="Entityes\CoffeeMachine.cs" />
     <Compile Include="Entityes\Ingredient.cs" />
+    <Compile Include="Enums\MainEnums.cs" />
     <Compile Include="Migrations\20210227160803_Init1.cs" />
     <Compile Include="Migrations\20210227160803_Init1.designer.cs">
       <DependentUpon>20210227160803_Init1.cs</DependentUpon>

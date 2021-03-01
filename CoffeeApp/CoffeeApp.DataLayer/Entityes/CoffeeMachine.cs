@@ -15,7 +15,7 @@ namespace CoffeeApp.DataLayer.Entityes
 
         //public IEnumerable<Ingredient> DefaultIngredients { get; set; }
 
-        //public List<Ingredient> Ingredients { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
 
         //public bool isAvailableCoffee(IEnumerable<Ingredient> ingredients)
         //{

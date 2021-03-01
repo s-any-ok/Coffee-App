@@ -1,6 +1,7 @@
 ﻿using CoffeeApp.BusinessLayer.Interfaces;
 using CoffeeApp.DataLayer;
 using CoffeeApp.DataLayer.Entityes;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,17 +21,17 @@ namespace CoffeeApp.BusinessLayer.Implementations
 
         public IEnumerable<CoffeeMachine> GetAll()
         {
-            //if (includeMaterials)
-            //    return context.Set<CoffeeMachine>().Include(x => x.Materials).AsNoTracking().ToList();
+            //if (true)
+            //    return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().ToList();
             //else
                 return context.CoffeeMachine.ToList();
         }
 
         public CoffeeMachine GetById(int coffeeMachineId)
         {
-            //if (includeMaterials)
-            //    return context.Set<CoffeeMachine>().Include(x => x.Materials).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
-            //else
+            if (true)
+                return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
+            else
                 return context.CoffeeMachine.FirstOrDefault(x => x.Id == coffeeMachineId);
         }
 
