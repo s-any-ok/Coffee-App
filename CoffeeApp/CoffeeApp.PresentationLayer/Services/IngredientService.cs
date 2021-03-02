@@ -11,30 +11,42 @@ namespace CoffeeApp.PresentationLayer.Services
 {
     public class IngredientService
     {
-        private DataManager dataManager;
+        private DataManager _dataManager;
         public IngredientService(DataManager dataManager)
         {
-            this.dataManager = dataManager;
+            this._dataManager = dataManager;
         }
 
-        public IngredientViewModel IngredientDBModelToView(int IngredientId)
+        public List<IngredientViewModel> GetIngredientsList()
+        {
+            var _ing = _dataManager.Ingredients.GetAll();
+            List<IngredientViewModel> _modelsList = new List<IngredientViewModel>();
+            foreach (var item in _ing)
+            {
+                _modelsList.Add(IngredientDBToViewModelById(item.Id));
+            }
+            return _modelsList;
+        }
+
+        public IngredientViewModel IngredientDBToViewModelById(int IngredientId)
         {
             var _model = new IngredientViewModel()
             {
-                Ingredient = dataManager.Ingredients.GetById(IngredientId),
+                Ingredient = _dataManager.Ingredients.GetById(IngredientId),
             };
-            var _ing = dataManager.CoffeeMachines.GetById(_model.Ingredient.CoffeeMachineId);
+            var _cfm = _dataManager.CoffeeMachines.GetById(_model.Ingredient.CoffeeMachineId);
+            _model.Ingredient.CoffeeMachine = _cfm;
 
-            //if (_dir.Ingredients.IndexOf(_dir.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _dir.Ingredients.Count() - 1)
+            //if (_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _ing.Ingredients.Count() - 1)
             //{
-            //    _model.NextIngredient = _dir.Ingredients.ElementAt(_dir.Ingredients.IndexOf(_dir.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) + 1);
+            //    _model.NextIngredient = _ing.Ingredients.ElementAt(_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) + 1);
             //}
             return _model;
         }
 
         public IngredientEditModel GetIngredientEditModel(int IngredientId)
         {
-            var _dbModel = dataManager.Ingredients.GetById(IngredientId);
+            var _dbModel = _dataManager.Ingredients.GetById(IngredientId);
             var _editModel = new IngredientEditModel()
             {
                 Id = _dbModel.Id = _dbModel.Id,
@@ -50,7 +62,7 @@ namespace CoffeeApp.PresentationLayer.Services
             Ingredient Ingredient;
             if (editModel.Id != 0)
             {
-                Ingredient = dataManager.Ingredients.GetById(editModel.Id);
+                Ingredient = _dataManager.Ingredients.GetById(editModel.Id);
             }
             else
             {
@@ -59,8 +71,19 @@ namespace CoffeeApp.PresentationLayer.Services
             Ingredient.IngredientName = editModel.IngredientName;
             Ingredient.Volume = editModel.Volume;
             Ingredient.CoffeeMachineId = editModel.CoffeeMachineId;
-            dataManager.Ingredients.Save(Ingredient);
-            return IngredientDBModelToView(Ingredient.Id);
+            _dataManager.Ingredients.Save(Ingredient);
+            return IngredientDBToViewModelById(Ingredient.Id);
+        }
+        public List<IngredientViewModel> DeleteCoffeeMachineEditModelToDb(int ingredientId)
+        {
+            var _ingredient = _dataManager.CoffeeMachines.GetById(ingredientId);
+
+            if (_ingredient.Id != 0)
+            {
+                _dataManager.CoffeeMachines.Delete(_ingredient);
+            }
+
+            return GetIngredientsList();
         }
         public IngredientEditModel CreateNewIngredientEditModel(int CoffeeMachineId)
         {

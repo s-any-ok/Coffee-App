@@ -37,7 +37,7 @@ namespace CoffeeApp.PresentationLayer.Services
             {
                 foreach (var item in _coffeeMachine.Ingredients)
                 {
-                    _ingredientViewModelList.Add(_ingredientsService.IngredientDBModelToView(item.Id));
+                    _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
                 }
             }
 

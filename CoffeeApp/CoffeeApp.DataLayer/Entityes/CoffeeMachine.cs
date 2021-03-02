@@ -13,13 +13,10 @@ namespace CoffeeApp.DataLayer.Entityes
 
         public string Producer { get; set; }
 
-        //public IEnumerable<Ingredient> DefaultIngredients { get; set; }
+        public List<DefaultIngredient> DefaultIngredients { get; set; }
 
         public List<Ingredient> Ingredients { get; set; }
 
-        //public bool isAvailableCoffee(IEnumerable<Ingredient> ingredients)
-        //{
-        //    return true;
-        //}
+        public List<Drink> Drinks { get; set; }
     }
 }

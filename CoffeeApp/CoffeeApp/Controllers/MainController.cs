@@ -31,7 +31,7 @@ namespace CoffeeApp.Controllers
                     return View(CoffeeMachines);
                     //break;
                 case PageType.Ingredient:
-                    var Ingredients = _servicesmanager.Ingredients.IngredientDBModelToView(pageId);
+                    var Ingredients = _servicesmanager.Ingredients.IngredientDBToViewModelById(pageId);
                     return View(Ingredients);
                 //break;
                 default: return View(null);/* break;*/
