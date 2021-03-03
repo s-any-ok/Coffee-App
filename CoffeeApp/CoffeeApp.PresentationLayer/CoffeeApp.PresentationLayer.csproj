@@ -43,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CoffeeMachineModel.cs" />
+    <Compile Include="Models\DrinkModel.cs" />
     <Compile Include="Models\IngredientModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesManager.cs" />
     <Compile Include="Services\CoffeeMachineService.cs" />
+    <Compile Include="Services\DrinkService.cs" />
     <Compile Include="Services\IngredientService.cs" />
   </ItemGroup>
   <ItemGroup />

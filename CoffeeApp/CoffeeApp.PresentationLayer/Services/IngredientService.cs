@@ -34,8 +34,8 @@ namespace CoffeeApp.PresentationLayer.Services
             {
                 Ingredient = _dataManager.Ingredients.GetById(IngredientId),
             };
-            var _cfm = _dataManager.CoffeeMachines.GetById(_model.Ingredient.CoffeeMachineId);
-            _model.Ingredient.CoffeeMachine = _cfm;
+            //var _cfm = _dataManager.CoffeeMachines.GetById(_model.Ingredient.CoffeeMachineId);
+            //_model.Ingredient.CoffeeMachine = _cfm;
 
             //if (_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _ing.Ingredients.Count() - 1)
             //{
@@ -74,13 +74,13 @@ namespace CoffeeApp.PresentationLayer.Services
             _dataManager.Ingredients.Save(Ingredient);
             return IngredientDBToViewModelById(Ingredient.Id);
         }
-        public List<IngredientViewModel> DeleteCoffeeMachineEditModelToDb(int ingredientId)
+        public List<IngredientViewModel> DeleteIngredientsEditModelToDb(int ingredientId)
         {
-            var _ingredient = _dataManager.CoffeeMachines.GetById(ingredientId);
+            var _ingredient = _dataManager.Ingredients.GetById(ingredientId);
 
             if (_ingredient.Id != 0)
             {
-                _dataManager.CoffeeMachines.Delete(_ingredient);
+                _dataManager.Ingredients.Delete(_ingredient);
             }
 
             return GetIngredientsList();

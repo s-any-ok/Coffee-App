@@ -80,7 +80,7 @@ namespace CoffeeApp.Controllers
                 return NotFound();
             }
 
-            var ingList = _servicesmanager.Ingredients.DeleteCoffeeMachineEditModelToDb(id);
+            var ingList = _servicesmanager.Ingredients.DeleteIngredientsEditModelToDb(id);
             return Ok(ingList);
         }
     }

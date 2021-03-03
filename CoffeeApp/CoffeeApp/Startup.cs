@@ -32,6 +32,7 @@ namespace CoffeeApp
 
             services.AddTransient<ICoffeeMachinesRepository, CoffeeMachinesRepository>();
             services.AddTransient<IIngredientsRepository, IngredientsRepository>();
+            services.AddTransient<IDrinksRepository, DrinksRepository>();
 
             services.AddScoped<DataManager>();
 

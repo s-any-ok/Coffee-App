@@ -29,9 +29,9 @@ namespace CoffeeApp.BusinessLayer.Implementations
 
         public CoffeeMachine GetById(int coffeeMachineId)
         {
-            if (true)
-                return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
-            else
+            //if (true)
+            //    return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
+            //else
                 return context.CoffeeMachine.FirstOrDefault(x => x.Id == coffeeMachineId);
         }
 

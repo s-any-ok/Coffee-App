@@ -114,8 +114,10 @@
   <ItemGroup>
     <Compile Include="DataManager.cs" />
     <Compile Include="Implementations\CoffeeMachinesRepository.cs" />
+    <Compile Include="Implementations\DrinksRepository.cs" />
     <Compile Include="Implementations\IngredientsRepository.cs" />
     <Compile Include="Interfaces\ICoffeeMachinesRepository.cs" />
+    <Compile Include="Interfaces\IDrinksRepository.cs" />
     <Compile Include="Interfaces\IIngredientsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

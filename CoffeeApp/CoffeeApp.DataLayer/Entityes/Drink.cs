@@ -12,14 +12,8 @@ namespace CoffeeApp.DataLayer.Entityes
 
         public string DrinkName { get; set; }
 
-        public string Producer { get; set; }
-
         public Int32 CoffeeMachineId { get; set; }
 
-        public CoffeeMachine CoffeeMachine { get; set; }
-
         public List<Ingredient> Ingredients { get; set; }
-
-        public List<Order> Orders { get; set; }
     }
 }

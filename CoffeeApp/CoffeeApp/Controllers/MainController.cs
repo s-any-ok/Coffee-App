@@ -7,7 +7,6 @@ using CoffeeApp.BusinessLayer;
 using CoffeeApp.PresentationLayer;
 using CoffeeApp.PresentationLayer.Models;
 using Microsoft.AspNetCore.Mvc;
-using static CoffeeApp.DataLayer.Enums.MainEnums;
 
 namespace CoffeeApp.Controllers
 {
@@ -21,24 +20,24 @@ namespace CoffeeApp.Controllers
             _datamanager = dataManager;
             _servicesmanager = new ServicesManager(dataManager);
         }
-        public IActionResult Index(int pageId, PageType pageType)
-        {
+        //public IActionResult Index(int pageId, PageType pageType)
+        //{
          
-            switch (pageType)
-            {
-                case PageType.CoffeeMachine:
-                    var CoffeeMachines = _servicesmanager.CoffeeMachines.CoffeeMachineDBToViewModelById(pageId);
-                    return View(CoffeeMachines);
-                    //break;
-                case PageType.Ingredient:
-                    var Ingredients = _servicesmanager.Ingredients.IngredientDBToViewModelById(pageId);
-                    return View(Ingredients);
-                //break;
-                default: return View(null);/* break;*/
-            }
-            //ViewBag.PageType = pageType;
-            //return View(_viewModel);
-        }
+        //    switch (pageType)
+        //    {
+        //        case PageType.CoffeeMachine:
+        //            var CoffeeMachines = _servicesmanager.CoffeeMachines.CoffeeMachineDBToViewModelById(pageId);
+        //            return View(CoffeeMachines);
+        //            //break;
+        //        case PageType.Ingredient:
+        //            var Ingredients = _servicesmanager.Ingredients.IngredientDBToViewModelById(pageId);
+        //            return View(Ingredients);
+        //        //break;
+        //        default: return View(null);/* break;*/
+        //    }
+        //    //ViewBag.PageType = pageType;
+        //    //return View(_viewModel);
+        //}
 
         //[HttpGet]
         //public IActionResult PageEditor(int pageId, PageType pageType, int directoryId = 0)

@@ -16,7 +16,5 @@ namespace CoffeeApp.DataLayer.Entityes
         public List<DefaultIngredient> DefaultIngredients { get; set; }
 
         public List<Ingredient> Ingredients { get; set; }
-
-        public List<Drink> Drinks { get; set; }
     }
 }

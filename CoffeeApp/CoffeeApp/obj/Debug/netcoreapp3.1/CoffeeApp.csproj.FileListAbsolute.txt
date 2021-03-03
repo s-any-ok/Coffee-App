@@ -90,3 +90,4 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mv
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.MvcApplicationPartsAssemblyInfo.cache
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.dll.config

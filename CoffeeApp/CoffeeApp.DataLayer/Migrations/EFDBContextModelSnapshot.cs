@@ -73,12 +73,7 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.Property<string>("DrinkName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Producer")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CoffeeMachineId");
 
                     b.ToTable("Drink");
                 });
@@ -93,7 +88,7 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.Property<int>("CoffeeMachineId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DrinkId")
+                    b.Property<int>("DrinkId")
                         .HasColumnType("int");
 
                     b.Property<string>("IngredientName")
@@ -101,6 +96,9 @@ namespace CoffeeApp.DataLayer.Migrations
 
                     b.Property<float>("Volume")
                         .HasColumnType("real");
+
+                    b.Property<bool>("isDrink")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -140,15 +138,6 @@ namespace CoffeeApp.DataLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Drink", b =>
-                {
-                    b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
-                        .WithMany("Drinks")
-                        .HasForeignKey("CoffeeMachineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Ingredient", b =>
                 {
                     b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
@@ -159,13 +148,15 @@ namespace CoffeeApp.DataLayer.Migrations
 
                     b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", null)
                         .WithMany("Ingredients")
-                        .HasForeignKey("DrinkId");
+                        .HasForeignKey("DrinkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Order", b =>
                 {
                     b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", "Drink")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("DrinkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

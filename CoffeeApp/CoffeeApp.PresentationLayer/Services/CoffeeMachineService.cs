@@ -33,13 +33,13 @@ namespace CoffeeApp.PresentationLayer.Services
             var _coffeeMachine = _dataManager.CoffeeMachines.GetById(CoffeeMachineId);
 
             List<IngredientViewModel> _ingredientViewModelList = new List<IngredientViewModel>();
-            if (_coffeeMachine != null)
-            {
-                foreach (var item in _coffeeMachine.Ingredients)
-                {
-                    _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
-                }
-            }
+            //if (_coffeeMachine != null)
+            //{
+            //    foreach (var item in _coffeeMachine.Ingredients)
+            //    {
+            //        _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
+            //    }
+            //}
 
             return new CoffeeMachineViewModel() { CoffeeMachine = _coffeeMachine, Ingredients = _ingredientViewModelList };
         }
