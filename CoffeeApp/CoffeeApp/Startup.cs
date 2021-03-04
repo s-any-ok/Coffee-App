@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CoffeeApp.BusinessLayer;
 using CoffeeApp.BusinessLayer.Implementations;
 using CoffeeApp.BusinessLayer.Interfaces;
+using CoffeeApp.DataLayer.Entityes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,11 +29,11 @@ namespace CoffeeApp
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<DataLayer.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.DataLayer")));
+            services.AddDbContext<DataLayer.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.Data")));
 
-            services.AddTransient<ICoffeeMachinesRepository, CoffeeMachinesRepository>();
-            services.AddTransient<ICoffeeMachineIngredientsRepository, CoffeeMachineIngredientsRepository>();
-            services.AddTransient<IDrinksRepository, DrinksRepository>();
+            services.AddTransient<IRepository<CoffeeMachine>, CoffeeMachinesRepository>();
+            services.AddTransient<IRepository<CoffeeMachineIngredient>, CoffeeMachineIngredientsRepository>();
+            services.AddTransient<IRepository<Drink>, DrinksRepository>();
 
             services.AddScoped<DataManager>();
 

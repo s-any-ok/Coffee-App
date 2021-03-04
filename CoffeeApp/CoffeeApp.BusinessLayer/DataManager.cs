@@ -1,4 +1,5 @@
 ﻿using CoffeeApp.BusinessLayer.Interfaces;
+using CoffeeApp.DataLayer.Entityes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,21 @@ namespace CoffeeApp.BusinessLayer
 {
     public class DataManager
     {
-        private ICoffeeMachinesRepository _coffeeMachinesRepository;
-        private ICoffeeMachineIngredientsRepository _coffeeMachineIngredientsRepository;
-        private IDrinksRepository _drinksRepository;
+        private IRepository<CoffeeMachine> _coffeeMachinesRepository;
+        private IRepository<CoffeeMachineIngredient> _coffeeMachineIngredientsRepository;
+        private IRepository<Drink> _drinksRepository;
 
-        public DataManager(ICoffeeMachinesRepository coffeeMachinesRepository, ICoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository,
-                            IDrinksRepository drinksRepository)
+        public DataManager(IRepository<CoffeeMachine> coffeeMachinesRepository, IRepository<CoffeeMachineIngredient> coffeeMachineIngredientsRepository,
+                            IRepository<Drink> drinksRepository)
         {
             _coffeeMachinesRepository = coffeeMachinesRepository;
             _coffeeMachineIngredientsRepository = coffeeMachineIngredientsRepository;
             _drinksRepository = drinksRepository;
         }
 
-        public ICoffeeMachinesRepository CoffeeMachines { get { return _coffeeMachinesRepository; } }
-        public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get { return _coffeeMachineIngredientsRepository; } }
-        public IDrinksRepository Drinks { get { return _drinksRepository; } }
+        public IRepository<CoffeeMachine> CoffeeMachines { get { return _coffeeMachinesRepository; } }
+        public IRepository<CoffeeMachineIngredient> CoffeeMachineIngredients { get { return _coffeeMachineIngredientsRepository; } }
+        public IRepository<Drink> Drinks { get { return _drinksRepository; } }
 
     }
 }

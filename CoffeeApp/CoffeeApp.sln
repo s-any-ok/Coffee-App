@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp", "CoffeeApp\CoffeeApp.csproj", "{FBB8EC3D-7056-4C2E-97B8-4D82F9E85E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeApp.Web", "CoffeeApp\CoffeeApp.Web.csproj", "{FBB8EC3D-7056-4C2E-97B8-4D82F9E85E0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.DataLayer", "CoffeeApp.DataLayer\CoffeeApp.DataLayer.csproj", "{AAE938AF-1B07-43AA-A831-A2264956ABF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.Data", "CoffeeApp.DataLayer\CoffeeApp.Data.csproj", "{AAE938AF-1B07-43AA-A831-A2264956ABF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.BusinessLayer", "CoffeeApp.BusinessLayer\CoffeeApp.BusinessLayer.csproj", "{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.Repo", "CoffeeApp.BusinessLayer\CoffeeApp.Repo.csproj", "{3EF9D035-8BED-4DB9-ABDB-FD67EFA8BF5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.PresentationLayer", "CoffeeApp.PresentationLayer\CoffeeApp.PresentationLayer.csproj", "{B24BBF60-C212-43F5-BEB6-A26A9E42426C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeApp.Service", "CoffeeApp.PresentationLayer\CoffeeApp.Service.csproj", "{B24BBF60-C212-43F5-BEB6-A26A9E42426C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

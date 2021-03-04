@@ -1517,38 +1517,38 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "CoffeeApp.BusinessLayer/1.0.0": {
+      "CoffeeApp.Data/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "CoffeeApp.DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/CoffeeApp.BusinessLayer.dll": {}
+          "bin/placeholder/CoffeeApp.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CoffeeApp.BusinessLayer.dll": {}
+          "bin/placeholder/CoffeeApp.Data.dll": {}
         }
       },
-      "CoffeeApp.DataLayer/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/CoffeeApp.DataLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CoffeeApp.DataLayer.dll": {}
-        }
-      },
-      "CoffeeApp.PresentationLayer/1.0.0": {
+      "CoffeeApp.Repo/1.0.0": {
         "type": "project",
         "dependencies": {
-          "CoffeeApp.BusinessLayer": "1.0.0",
-          "CoffeeApp.DataLayer": "1.0.0"
+          "CoffeeApp.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/CoffeeApp.PresentationLayer.dll": {}
+          "bin/placeholder/CoffeeApp.Repo.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CoffeeApp.PresentationLayer.dll": {}
+          "bin/placeholder/CoffeeApp.Repo.dll": {}
+        }
+      },
+      "CoffeeApp.Service/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CoffeeApp.Data": "1.0.0",
+          "CoffeeApp.Repo": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CoffeeApp.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoffeeApp.Service.dll": {}
         }
       }
     }
@@ -5850,27 +5850,26 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "CoffeeApp.BusinessLayer/1.0.0": {
+    "CoffeeApp.Data/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.BusinessLayer/CoffeeApp.BusinessLayer.csproj",
-      "msbuildProject": "../CoffeeApp.BusinessLayer/CoffeeApp.BusinessLayer.csproj"
+      "path": "../CoffeeApp.DataLayer/CoffeeApp.Data.csproj",
+      "msbuildProject": "../CoffeeApp.DataLayer/CoffeeApp.Data.csproj"
     },
-    "CoffeeApp.DataLayer/1.0.0": {
+    "CoffeeApp.Repo/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.DataLayer/CoffeeApp.DataLayer.csproj",
-      "msbuildProject": "../CoffeeApp.DataLayer/CoffeeApp.DataLayer.csproj"
+      "path": "../CoffeeApp.BusinessLayer/CoffeeApp.Repo.csproj",
+      "msbuildProject": "../CoffeeApp.BusinessLayer/CoffeeApp.Repo.csproj"
     },
-    "CoffeeApp.PresentationLayer/1.0.0": {
+    "CoffeeApp.Service/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.PresentationLayer/CoffeeApp.PresentationLayer.csproj",
-      "msbuildProject": "../CoffeeApp.PresentationLayer/CoffeeApp.PresentationLayer.csproj"
+      "path": "../CoffeeApp.PresentationLayer/CoffeeApp.Service.csproj",
+      "msbuildProject": "../CoffeeApp.PresentationLayer/CoffeeApp.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CoffeeApp.BusinessLayer >= 1.0.0",
-      "CoffeeApp.DataLayer >= 1.0.0",
-      "CoffeeApp.PresentationLayer >= 1.0.0",
+      "CoffeeApp.Repo >= 1.0.0",
+      "CoffeeApp.Service >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.0",
       "Microsoft.EntityFrameworkCore >= 3.1.10",
@@ -5885,9 +5884,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.csproj",
-      "projectName": "CoffeeApp",
-      "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.csproj",
+      "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj",
+      "projectName": "CoffeeApp.Web",
+      "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\obj\\",
       "projectStyle": "PackageReference",
@@ -5905,14 +5904,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj": {
-              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.BusinessLayer.csproj"
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
             },
-            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj": {
-              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.DataLayer.csproj"
-            },
-            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.PresentationLayer.csproj": {
-              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.PresentationLayer.csproj"
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj"
             }
           }
         }

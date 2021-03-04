@@ -1,0 +1,147 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj": {}
+  },
+  "projects": {
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj",
+        "projectName": "CoffeeApp.Repo",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj",
+        "projectName": "CoffeeApp.Data",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj",
+        "projectName": "CoffeeApp.Service",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
+              },
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj",
+        "projectName": "CoffeeApp.Web",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
+              },
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

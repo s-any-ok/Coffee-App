@@ -1,22 +1,25 @@
 ﻿using CoffeeApp.BusinessLayer;
 using CoffeeApp.DataLayer.Entityes;
 using CoffeeApp.PresentationLayer.Models;
+using CoffeeApp.PresentationLayer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeApp.PresentationLayer.Services
+namespace CoffeeApp.Service.Services
 {
     public class CoffeeMachineService
     {
         private DataManager _dataManager;
         private CoffeeMachineIngredientService _ingredientsService;
+        private DrinkService _drinksService;
         public CoffeeMachineService(DataManager dataManager)
         {
             this._dataManager = dataManager;
             _ingredientsService = new CoffeeMachineIngredientService(dataManager);
+            _drinksService = new DrinkService(dataManager);
         }
         public List<CoffeeMachineViewModel> GetCoffeeMachinesList()
         {
@@ -33,15 +36,23 @@ namespace CoffeeApp.PresentationLayer.Services
             var _coffeeMachine = _dataManager.CoffeeMachines.GetById(CoffeeMachineId);
 
             List<CoffeeMachineIngredientViewModel> _ingredientViewModelList = new List<CoffeeMachineIngredientViewModel>();
+            List<DrinkViewModel> _drinkViewModelList = new List<DrinkViewModel>();
             if (_coffeeMachine != null)
             {
                 foreach (var item in _coffeeMachine.CoffeeMachineIngredient)
                 {
                     _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
                 }
+                if (_coffeeMachine.Drinks != null)
+                {
+                    foreach (var item in _coffeeMachine.Drinks)
+                    {
+                        _drinkViewModelList.Add(_drinksService.DrinkDBToViewModelById(item.Id));
+                    }
+                }
             }
 
-            return new CoffeeMachineViewModel() { CoffeeMachine = _coffeeMachine, Ingredients = _ingredientViewModelList };
+            return new CoffeeMachineViewModel() { CoffeeMachine = _coffeeMachine, Ingredients = _ingredientViewModelList, Drinks = _drinkViewModelList };
         }
         public CoffeeMachineEditModel GetCoffeeMachineEditModel(int CoffeeMachineid = 0)
         {
