@@ -2,7 +2,7 @@
 
 namespace CoffeeApp.DataLayer.Migrations
 {
-    public partial class init9 : Migration
+    public partial class init3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

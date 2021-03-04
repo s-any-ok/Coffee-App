@@ -37,7 +37,7 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.ToTable("CoffeeMachine");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DefaultIngredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.CoffeeMachineIngredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,11 +53,14 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.Property<float>("Volume")
                         .HasColumnType("real");
 
+                    b.Property<bool>("isDefault")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CoffeeMachineId");
 
-                    b.ToTable("DefaultIngredient");
+                    b.ToTable("CoffeeMachineIngredient");
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Drink", b =>
@@ -75,18 +78,17 @@ namespace CoffeeApp.DataLayer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CoffeeMachineId");
+
                     b.ToTable("Drink");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Ingredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DrinkIngredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CoffeeMachineId")
-                        .HasColumnType("int");
 
                     b.Property<int>("DrinkId")
                         .HasColumnType("int");
@@ -97,16 +99,11 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.Property<float>("Volume")
                         .HasColumnType("real");
 
-                    b.Property<bool>("isDrink")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CoffeeMachineId");
 
                     b.HasIndex("DrinkId");
 
-                    b.ToTable("Ingredient");
+                    b.ToTable("DrinkIngredient");
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Order", b =>
@@ -129,24 +126,27 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DefaultIngredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.CoffeeMachineIngredient", b =>
                 {
                     b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
-                        .WithMany("DefaultIngredients")
+                        .WithMany("CoffeeMachineIngredient")
                         .HasForeignKey("CoffeeMachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Ingredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Drink", b =>
                 {
                     b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
-                        .WithMany("Ingredients")
+                        .WithMany("Drinks")
                         .HasForeignKey("CoffeeMachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
-                    b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", null)
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DrinkIngredient", b =>
+                {
+                    b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", "Drink")
                         .WithMany("Ingredients")
                         .HasForeignKey("DrinkId")
                         .OnDelete(DeleteBehavior.Cascade)

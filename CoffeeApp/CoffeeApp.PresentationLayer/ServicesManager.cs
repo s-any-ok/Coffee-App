@@ -12,18 +12,18 @@ namespace CoffeeApp.PresentationLayer
     {
         DataManager _dataManager;
         private CoffeeMachineService _coffeeMachineService;
-        private IngredientService _ingredientService;
+        private CoffeeMachineIngredientService _coffeeMachineIngredientService;
         private DrinkService _drinkService;
 
         public ServicesManager(DataManager dataManager)
         {
             _dataManager = dataManager;
             _coffeeMachineService = new CoffeeMachineService(_dataManager);
-            _ingredientService = new IngredientService(_dataManager);
+            _coffeeMachineIngredientService = new CoffeeMachineIngredientService(_dataManager);
             _drinkService = new DrinkService(_dataManager);
         }
         public CoffeeMachineService CoffeeMachines { get { return _coffeeMachineService; } }
-        public IngredientService Ingredients { get { return _ingredientService; } }
+        public CoffeeMachineIngredientService CoffeeMachineIngredients { get { return _coffeeMachineIngredientService; } }
         public DrinkService Drinks { get { return _drinkService; } }
     }
 }

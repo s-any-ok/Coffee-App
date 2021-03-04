@@ -31,7 +31,7 @@ namespace CoffeeApp
             services.AddDbContext<DataLayer.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.DataLayer")));
 
             services.AddTransient<ICoffeeMachinesRepository, CoffeeMachinesRepository>();
-            services.AddTransient<IIngredientsRepository, IngredientsRepository>();
+            services.AddTransient<ICoffeeMachineIngredientsRepository, CoffeeMachineIngredientsRepository>();
             services.AddTransient<IDrinksRepository, DrinksRepository>();
 
             services.AddScoped<DataManager>();

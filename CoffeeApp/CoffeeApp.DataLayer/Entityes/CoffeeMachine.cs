@@ -13,8 +13,8 @@ namespace CoffeeApp.DataLayer.Entityes
 
         public string Producer { get; set; }
 
-        public List<DefaultIngredient> DefaultIngredients { get; set; }
+        public List<CoffeeMachineIngredient> CoffeeMachineIngredient { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; }
+        public List<Drink> Drinks { get; set; }
     }
 }

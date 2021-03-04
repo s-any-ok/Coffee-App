@@ -26,17 +26,17 @@ namespace CoffeeApp.Controllers
 
 
         [HttpGet]
-        public IEnumerable<IngredientViewModel> Get()
+        public IEnumerable<CoffeeMachineIngredientViewModel> Get()
         {
-            var Ingredients = _servicesmanager.Ingredients.GetIngredientsList();
+            var Ingredients = _servicesmanager.CoffeeMachineIngredients.GetIngredientsList();
 
             return Ingredients;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<IngredientViewModel> Get(int id)
+        public ActionResult<CoffeeMachineIngredientViewModel> Get(int id)
         {
-            var Ingredient = _servicesmanager.Ingredients.IngredientDBToViewModelById(id);
+            var Ingredient = _servicesmanager.CoffeeMachineIngredients.IngredientDBToViewModelById(id);
 
             if (Ingredient == null)
             {
@@ -46,9 +46,9 @@ namespace CoffeeApp.Controllers
             return Ingredient;
         }
         [HttpPost]
-        public ActionResult<IngredientEditModel> Post(IngredientEditModel ingredient)
+        public ActionResult<CoffeeMachineIngredientEditModel> Post(CoffeeMachineIngredientEditModel ingredient)
         {
-            var ing = _servicesmanager.Ingredients.SaveIngredientEditModelToDb(ingredient);
+            var ing = _servicesmanager.CoffeeMachineIngredients.SaveIngredientEditModelToDb(ingredient);
 
             if (ing == null)
             {
@@ -60,9 +60,9 @@ namespace CoffeeApp.Controllers
         }
 
         [HttpPut]
-        public ActionResult<IngredientViewModel> Put(IngredientEditModel ingredient)
+        public ActionResult<CoffeeMachineIngredientViewModel> Put(CoffeeMachineIngredientEditModel ingredient)
         {
-            var ing = _servicesmanager.Ingredients.SaveIngredientEditModelToDb(ingredient);
+            var ing = _servicesmanager.CoffeeMachineIngredients.SaveIngredientEditModelToDb(ingredient);
             if (ing == null)
             {
                 return BadRequest();
@@ -71,16 +71,16 @@ namespace CoffeeApp.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<IngredientViewModel> Delete(int id)
+        public ActionResult<CoffeeMachineIngredientViewModel> Delete(int id)
         {
-            var ing = _servicesmanager.Ingredients.IngredientDBToViewModelById(id);
+            var ing = _servicesmanager.CoffeeMachineIngredients.IngredientDBToViewModelById(id);
 
             if (ing == null)
             {
                 return NotFound();
             }
 
-            var ingList = _servicesmanager.Ingredients.DeleteIngredientsEditModelToDb(id);
+            var ingList = _servicesmanager.CoffeeMachineIngredients.DeleteIngredientsEditModelToDb(id);
             return Ok(ingList);
         }
     }

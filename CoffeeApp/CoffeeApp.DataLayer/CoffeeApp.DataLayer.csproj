@@ -161,61 +161,21 @@
   <ItemGroup>
     <Compile Include="EFDBContext.cs" />
     <Compile Include="Entityes\CoffeeMachine.cs" />
-    <Compile Include="Entityes\DefaultIngredient.cs" />
+    <Compile Include="Entityes\DrinkIngredient.cs" />
     <Compile Include="Entityes\Drink.cs" />
-    <Compile Include="Entityes\Ingredient.cs" />
+    <Compile Include="Entityes\CoffeeMachineIngredient.cs" />
     <Compile Include="Entityes\Order.cs" />
     <Compile Include="Migrations\20210227160803_Init1.cs" />
     <Compile Include="Migrations\20210227160803_Init1.designer.cs">
       <DependentUpon>20210227160803_Init1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210302095723_init2.cs" />
-    <Compile Include="Migrations\20210302095723_init2.designer.cs">
-      <DependentUpon>20210302095723_init2.cs</DependentUpon>
+    <Compile Include="Migrations\20210304095548_init2.cs" />
+    <Compile Include="Migrations\20210304095548_init2.designer.cs">
+      <DependentUpon>20210304095548_init2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210302101021_init3.cs" />
-    <Compile Include="Migrations\20210302101021_init3.designer.cs">
-      <DependentUpon>20210302101021_init3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210302101318_init4.cs" />
-    <Compile Include="Migrations\20210302101318_init4.designer.cs">
-      <DependentUpon>20210302101318_init4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210302101446_init5.cs" />
-    <Compile Include="Migrations\20210302101446_init5.designer.cs">
-      <DependentUpon>20210302101446_init5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210302101655_init6.cs" />
-    <Compile Include="Migrations\20210302101655_init6.designer.cs">
-      <DependentUpon>20210302101655_init6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303102955_init7.cs" />
-    <Compile Include="Migrations\20210303102955_init7.designer.cs">
-      <DependentUpon>20210303102955_init7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303103101_init8.cs" />
-    <Compile Include="Migrations\20210303103101_init8.designer.cs">
-      <DependentUpon>20210303103101_init8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303104053_init9.cs" />
-    <Compile Include="Migrations\20210303104053_init9.designer.cs">
-      <DependentUpon>20210303104053_init9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303213317_init10.cs" />
-    <Compile Include="Migrations\20210303213317_init10.designer.cs">
-      <DependentUpon>20210303213317_init10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303220454_init11.cs" />
-    <Compile Include="Migrations\20210303220454_init11.designer.cs">
-      <DependentUpon>20210303220454_init11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303220722_init12.cs" />
-    <Compile Include="Migrations\20210303220722_init12.designer.cs">
-      <DependentUpon>20210303220722_init12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20210303221328_init13.cs" />
-    <Compile Include="Migrations\20210303221328_init13.designer.cs">
-      <DependentUpon>20210303221328_init13.cs</DependentUpon>
+    <Compile Include="Migrations\20210304100124_init3.cs" />
+    <Compile Include="Migrations\20210304100124_init3.designer.cs">
+      <DependentUpon>20210304100124_init3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EFDBContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

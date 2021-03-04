@@ -21,17 +21,17 @@ namespace CoffeeApp.BusinessLayer.Implementations
 
         public IEnumerable<CoffeeMachine> GetAll()
         {
-            //if (true)
-            //    return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().ToList();
-            //else
+            if (true)
+                return context.Set<CoffeeMachine>().Include(x => x.CoffeeMachineIngredient).AsNoTracking().ToList();
+            else
                 return context.CoffeeMachine.ToList();
         }
 
         public CoffeeMachine GetById(int coffeeMachineId)
         {
-            //if (true)
-            //    return context.Set<CoffeeMachine>().Include(x => x.Ingredients).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
-            //else
+            if (true)
+                return context.Set<CoffeeMachine>().Include(x => x.CoffeeMachineIngredient).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
+            else
                 return context.CoffeeMachine.FirstOrDefault(x => x.Id == coffeeMachineId);
         }
 

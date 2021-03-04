@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace CoffeeApp.PresentationLayer.Models
 {
-    public class IngredientViewModel
+    public class CoffeeMachineIngredientViewModel
     {
-        public Ingredient Ingredient { get; set; }
+        public CoffeeMachineIngredient CoffeeMachineIngredient { get; set; }
     }
 
-    public class IngredientEditModel
+    public class CoffeeMachineIngredientEditModel
     {
         public Int32 Id { get; set; }
+
+        public bool isDefault { get; set; }
 
         public string IngredientName { get; set; }
 

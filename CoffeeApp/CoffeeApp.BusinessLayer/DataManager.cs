@@ -10,19 +10,19 @@ namespace CoffeeApp.BusinessLayer
     public class DataManager
     {
         private ICoffeeMachinesRepository _coffeeMachinesRepository;
-        private IIngredientsRepository _ingredientsRepository;
+        private ICoffeeMachineIngredientsRepository _coffeeMachineIngredientsRepository;
         private IDrinksRepository _drinksRepository;
 
-        public DataManager(ICoffeeMachinesRepository coffeeMachinesRepository, IIngredientsRepository ingredientsRepository,
+        public DataManager(ICoffeeMachinesRepository coffeeMachinesRepository, ICoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository,
                             IDrinksRepository drinksRepository)
         {
             _coffeeMachinesRepository = coffeeMachinesRepository;
-            _ingredientsRepository = ingredientsRepository;
+            _coffeeMachineIngredientsRepository = coffeeMachineIngredientsRepository;
             _drinksRepository = drinksRepository;
         }
 
         public ICoffeeMachinesRepository CoffeeMachines { get { return _coffeeMachinesRepository; } }
-        public IIngredientsRepository Ingredients { get { return _ingredientsRepository; } }
+        public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get { return _coffeeMachineIngredientsRepository; } }
         public IDrinksRepository Drinks { get { return _drinksRepository; } }
 
     }

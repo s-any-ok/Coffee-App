@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeApp.DataLayer.Entityes
 {
-    public class DefaultIngredient
+    public class DrinkIngredient
     {
         public Int32 Id { get; set; }
 
@@ -14,8 +14,8 @@ namespace CoffeeApp.DataLayer.Entityes
 
         public float Volume { get; set; }
 
-        public Int32 CoffeeMachineId { get; set; }
+        public Int32 DrinkId { get; set; }
 
-        public CoffeeMachine CoffeeMachine { get; set; }
+        public Drink Drink { get; set; }
     }
 }

@@ -12,11 +12,11 @@ namespace CoffeeApp.PresentationLayer.Services
     public class CoffeeMachineService
     {
         private DataManager _dataManager;
-        private IngredientService _ingredientsService;
+        private CoffeeMachineIngredientService _ingredientsService;
         public CoffeeMachineService(DataManager dataManager)
         {
             this._dataManager = dataManager;
-            _ingredientsService = new IngredientService(dataManager);
+            _ingredientsService = new CoffeeMachineIngredientService(dataManager);
         }
         public List<CoffeeMachineViewModel> GetCoffeeMachinesList()
         {
@@ -32,14 +32,14 @@ namespace CoffeeApp.PresentationLayer.Services
         {
             var _coffeeMachine = _dataManager.CoffeeMachines.GetById(CoffeeMachineId);
 
-            List<IngredientViewModel> _ingredientViewModelList = new List<IngredientViewModel>();
-            //if (_coffeeMachine != null)
-            //{
-            //    foreach (var item in _coffeeMachine.Ingredients)
-            //    {
-            //        _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
-            //    }
-            //}
+            List<CoffeeMachineIngredientViewModel> _ingredientViewModelList = new List<CoffeeMachineIngredientViewModel>();
+            if (_coffeeMachine != null)
+            {
+                foreach (var item in _coffeeMachine.CoffeeMachineIngredient)
+                {
+                    _ingredientViewModelList.Add(_ingredientsService.IngredientDBToViewModelById(item.Id));
+                }
+            }
 
             return new CoffeeMachineViewModel() { CoffeeMachine = _coffeeMachine, Ingredients = _ingredientViewModelList };
         }

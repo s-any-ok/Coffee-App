@@ -15,16 +15,19 @@ namespace CoffeeApp.DataLayer
                 context.CoffeeMachine.Add(new CoffeeMachine() { CoffeeMachineName = "LG", Producer = "Germany" });
                 context.SaveChanges();
 
-                context.Ingredient.Add(new Ingredient() {
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient() {
+                    isDefault = false,
                     IngredientName = "Milk",
                     Volume = 1.2f,
-                    CoffeeMachineId = context.CoffeeMachine.First().Id }
+                    CoffeeMachineId = context.CoffeeMachine.First().Id
+                }
                 );
-                context.Ingredient.Add(new Ingredient()
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
+                    isDefault = false,
                     IngredientName = "Milk",
                     Volume = 1.2f,
-                    CoffeeMachineId = 2
+                    CoffeeMachineId = context.CoffeeMachine.First().Id
                 }
                 );
                 context.SaveChanges();

@@ -7,8 +7,8 @@ namespace CoffeeApp.DataLayer
     public class EFDBContext : DbContext
     {
         public DbSet<CoffeeMachine> CoffeeMachine { get; set; }
-        public DbSet<Ingredient> Ingredient { get; set; }
-        public DbSet<DefaultIngredient> DefaultIngredient { get; set; }
+        public DbSet<DrinkIngredient> DrinkIngredient { get; set; }
+        public DbSet<CoffeeMachineIngredient> CoffeeMachineIngredient { get; set; }
         public DbSet<Drink> Drink { get; set; }
 
         public DbSet<Order> Order { get; set; }

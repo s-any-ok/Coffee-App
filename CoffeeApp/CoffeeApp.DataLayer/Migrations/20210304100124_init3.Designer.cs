@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoffeeApp.DataLayer.Migrations
 {
     [DbContext(typeof(EFDBContext))]
-    [Migration("20210303213317_init10")]
-    partial class init10
+    [Migration("20210304100124_init3")]
+    partial class init3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,7 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.ToTable("CoffeeMachine");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DefaultIngredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.CoffeeMachineIngredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,11 +55,14 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.Property<float>("Volume")
                         .HasColumnType("real");
 
+                    b.Property<bool>("isDefault")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CoffeeMachineId");
 
-                    b.ToTable("DefaultIngredient");
+                    b.ToTable("CoffeeMachineIngredient");
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Drink", b =>
@@ -82,17 +85,14 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.ToTable("Drink");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Ingredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DrinkIngredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CoffeeMachineId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DrinkId")
+                    b.Property<int>("DrinkId")
                         .HasColumnType("int");
 
                     b.Property<string>("IngredientName")
@@ -103,11 +103,9 @@ namespace CoffeeApp.DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoffeeMachineId");
-
                     b.HasIndex("DrinkId");
 
-                    b.ToTable("Ingredient");
+                    b.ToTable("DrinkIngredient");
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Order", b =>
@@ -130,10 +128,10 @@ namespace CoffeeApp.DataLayer.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DefaultIngredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.CoffeeMachineIngredient", b =>
                 {
                     b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
-                        .WithMany("DefaultIngredients")
+                        .WithMany("CoffeeMachineIngredient")
                         .HasForeignKey("CoffeeMachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -148,17 +146,13 @@ namespace CoffeeApp.DataLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Ingredient", b =>
+            modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.DrinkIngredient", b =>
                 {
-                    b.HasOne("CoffeeApp.DataLayer.Entityes.CoffeeMachine", "CoffeeMachine")
+                    b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", "Drink")
                         .WithMany("Ingredients")
-                        .HasForeignKey("CoffeeMachineId")
+                        .HasForeignKey("DrinkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("CoffeeApp.DataLayer.Entityes.Drink", null)
-                        .WithMany("Ingredients")
-                        .HasForeignKey("DrinkId");
                 });
 
             modelBuilder.Entity("CoffeeApp.DataLayer.Entityes.Order", b =>

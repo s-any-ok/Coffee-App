@@ -14,6 +14,8 @@ namespace CoffeeApp.DataLayer.Entityes
 
         public Int32 CoffeeMachineId { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; }
+        public CoffeeMachine CoffeeMachine { get; set; }
+
+        public List<DrinkIngredient> Ingredients { get; set; }
     }
 }

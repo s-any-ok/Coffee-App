@@ -12,7 +12,7 @@ namespace CoffeeApp.PresentationLayer.Models
     {
         public Drink Drink { get; set; }
 
-        public List<IngredientViewModel> Ingredients { get; set; }
+        //public List<IngredientViewModel> Ingredients { get; set; }
     }
 
     public class DrinkEditModel
