@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoffeeApp.BusinessLayer;
-using CoffeeApp.DataLayer.Entityes;
-using CoffeeApp.PresentationLayer;
-using CoffeeApp.PresentationLayer.Models;
+using CoffeeApp.Repo;
+using CoffeeApp.Data.Entityes;
+using CoffeeApp.Service;
+using CoffeeApp.Service.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

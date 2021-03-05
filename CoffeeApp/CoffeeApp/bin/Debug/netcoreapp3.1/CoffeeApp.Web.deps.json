@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "CoffeeApp.Web/1.0.0": {
         "dependencies": {
+          "CoffeeApp.Data": "1.0.0",
           "CoffeeApp.Repo": "1.0.0",
           "CoffeeApp.Service": "1.0.0",
           "EntityFramework": "6.4.4",
@@ -1432,10 +1433,10 @@
       },
       "CoffeeApp.Data/1.0.0": {
         "runtime": {
-          "CoffeeApp.DataLayer.dll": {}
+          "CoffeeApp.Data.dll": {}
         },
         "compile": {
-          "CoffeeApp.DataLayer.dll": {}
+          "CoffeeApp.Data.dll": {}
         }
       },
       "CoffeeApp.Repo/1.0.0": {
@@ -1443,10 +1444,10 @@
           "CoffeeApp.Data": "1.0.0"
         },
         "runtime": {
-          "CoffeeApp.BusinessLayer.dll": {}
+          "CoffeeApp.Repo.dll": {}
         },
         "compile": {
-          "CoffeeApp.BusinessLayer.dll": {}
+          "CoffeeApp.Repo.dll": {}
         }
       },
       "CoffeeApp.Service/1.0.0": {
@@ -1455,10 +1456,10 @@
           "CoffeeApp.Repo": "1.0.0"
         },
         "runtime": {
-          "CoffeeApp.PresentationLayer.dll": {}
+          "CoffeeApp.Service.dll": {}
         },
         "compile": {
-          "CoffeeApp.PresentationLayer.dll": {}
+          "CoffeeApp.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {

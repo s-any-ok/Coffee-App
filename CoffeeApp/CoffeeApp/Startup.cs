@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoffeeApp.BusinessLayer;
-using CoffeeApp.BusinessLayer.Implementations;
-using CoffeeApp.BusinessLayer.Interfaces;
-using CoffeeApp.DataLayer.Entityes;
+using CoffeeApp.Repo;
+using CoffeeApp.Repo.Implementations;
+using CoffeeApp.Repo.Interfaces;
+using CoffeeApp.Data.Entityes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +29,7 @@ namespace CoffeeApp
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<DataLayer.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.Data")));
+            services.AddDbContext<Data.EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Coffee.Data")));
 
             services.AddTransient<IRepository<CoffeeMachine>, CoffeeMachinesRepository>();
             services.AddTransient<IRepository<CoffeeMachineIngredient>, CoffeeMachineIngredientsRepository>();

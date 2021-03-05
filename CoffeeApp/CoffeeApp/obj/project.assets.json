@@ -5852,22 +5852,23 @@
     },
     "CoffeeApp.Data/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.DataLayer/CoffeeApp.Data.csproj",
-      "msbuildProject": "../CoffeeApp.DataLayer/CoffeeApp.Data.csproj"
+      "path": "../CoffeeApp.Data/CoffeeApp.Data.csproj",
+      "msbuildProject": "../CoffeeApp.Data/CoffeeApp.Data.csproj"
     },
     "CoffeeApp.Repo/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.BusinessLayer/CoffeeApp.Repo.csproj",
-      "msbuildProject": "../CoffeeApp.BusinessLayer/CoffeeApp.Repo.csproj"
+      "path": "../CoffeeApp.Repo/CoffeeApp.Repo.csproj",
+      "msbuildProject": "../CoffeeApp.Repo/CoffeeApp.Repo.csproj"
     },
     "CoffeeApp.Service/1.0.0": {
       "type": "project",
-      "path": "../CoffeeApp.PresentationLayer/CoffeeApp.Service.csproj",
-      "msbuildProject": "../CoffeeApp.PresentationLayer/CoffeeApp.Service.csproj"
+      "path": "../CoffeeApp.Service/CoffeeApp.Service.csproj",
+      "msbuildProject": "../CoffeeApp.Service/CoffeeApp.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CoffeeApp.Data >= 1.0.0",
       "CoffeeApp.Repo >= 1.0.0",
       "CoffeeApp.Service >= 1.0.0",
       "EntityFramework >= 6.4.4",
@@ -5904,11 +5905,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
-              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
             },
-            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
-              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj"
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj"
+            },
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj"
             }
           }
         }

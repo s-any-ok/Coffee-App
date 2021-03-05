@@ -7,6 +7,7 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.RazorAsse
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.RazorAssemblyInfo.cs
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\appsettings.json
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\libman.json
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Web.exe
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Web.deps.json
@@ -64,15 +65,12 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcor
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.DataLayer.dll
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.dll
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.pdb
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.BusinessLayer.dll.config
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.DataLayer.pdb
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.DataLayer.dll.config
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.pdb
-E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.PresentationLayer.dll.config
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Data.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Repo.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Repo.pdb
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Repo.dll.config
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Data.pdb
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Data.dll.config
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.TagHelpers.input.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.TagHelpers.output.cache
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.RazorCoreGenerate.cache
@@ -91,3 +89,5 @@ E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\staticwebassets\CoffeeA
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.dll
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.pdb
 E:\CoffeeApp\CoffeeApp\CoffeeApp\obj\Debug\netcoreapp3.1\CoffeeApp.Web.genruntimeconfig.cache
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Service.dll
+E:\CoffeeApp\CoffeeApp\CoffeeApp\bin\Debug\netcoreapp3.1\CoffeeApp.Service.pdb

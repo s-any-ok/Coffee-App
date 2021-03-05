@@ -4,16 +4,26 @@
     "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp\\CoffeeApp.Web.csproj": {}
   },
   "projects": {
-    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj",
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj",
+        "projectName": "CoffeeApp.Data",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj",
         "projectName": "CoffeeApp.Repo",
-        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
-                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
               }
             }
           }
@@ -23,29 +33,19 @@
         "net472": {}
       }
     },
-    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
+    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj",
-        "projectName": "CoffeeApp.Data",
-        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
-    "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
-      "restore": {
-        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj",
+        "projectUniqueName": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj",
         "projectName": "CoffeeApp.Service",
-        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj",
+        "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
-                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
               },
-              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj": {
-                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.DataLayer\\CoffeeApp.Data.csproj"
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj"
               }
             }
           }
@@ -78,11 +78,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj": {
-                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.BusinessLayer\\CoffeeApp.Repo.csproj"
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
               },
-              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj": {
-                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.PresentationLayer\\CoffeeApp.Service.csproj"
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Repo\\CoffeeApp.Repo.csproj"
+              },
+              "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj": {
+                "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Service\\CoffeeApp.Service.csproj"
               }
             }
           }

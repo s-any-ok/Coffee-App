@@ -1,4 +1,4 @@
-﻿using CoffeeApp.DataLayer.Entityes;
+﻿using CoffeeApp.Data.Entityes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeApp.PresentationLayer.Models
+namespace CoffeeApp.Service.Models
 {
     public class DrinkViewModelTest
     {
