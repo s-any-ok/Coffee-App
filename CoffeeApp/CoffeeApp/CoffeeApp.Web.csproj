@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoffeeApp.Console\CoffeeApp.Console.csproj" />
     <ProjectReference Include="..\CoffeeApp.Repo\CoffeeApp.Repo.csproj" />
     <ProjectReference Include="..\CoffeeApp.Data\CoffeeApp.Data.csproj" />
     <ProjectReference Include="..\CoffeeApp.Service\CoffeeApp.Service.csproj" />

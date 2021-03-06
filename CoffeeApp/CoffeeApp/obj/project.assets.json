@@ -1517,6 +1517,21 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "CoffeeApp.Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CoffeeApp.Repo": "1.0.0",
+          "CoffeeApp.Service": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.10"
+        },
+        "compile": {
+          "bin/placeholder/CoffeeApp.Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoffeeApp.Console.dll": {}
+        }
+      },
       "CoffeeApp.Data/1.0.0": {
         "type": "project",
         "compile": {
@@ -5850,6 +5865,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "CoffeeApp.Console/1.0.0": {
+      "type": "project",
+      "path": "../CoffeeApp.Console/CoffeeApp.Console.csproj",
+      "msbuildProject": "../CoffeeApp.Console/CoffeeApp.Console.csproj"
+    },
     "CoffeeApp.Data/1.0.0": {
       "type": "project",
       "path": "../CoffeeApp.Data/CoffeeApp.Data.csproj",
@@ -5868,6 +5888,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CoffeeApp.Console >= 1.0.0",
       "CoffeeApp.Data >= 1.0.0",
       "CoffeeApp.Repo >= 1.0.0",
       "CoffeeApp.Service >= 1.0.0",
@@ -5905,6 +5926,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Console\\CoffeeApp.Console.csproj": {
+              "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Console\\CoffeeApp.Console.csproj"
+            },
             "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj": {
               "projectPath": "E:\\CoffeeApp\\CoffeeApp\\CoffeeApp.Data\\CoffeeApp.Data.csproj"
             },
