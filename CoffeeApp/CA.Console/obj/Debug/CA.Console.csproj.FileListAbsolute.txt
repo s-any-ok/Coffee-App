@@ -1,5 +1,3 @@
-E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.csprojAssemblyReference.cache
-E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Console.exe.config
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Console.exe
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Console.pdb
@@ -7,6 +5,7 @@ E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Data.exe
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Repo.exe
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Service.exe
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\EntityFramework.dll
+E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\EntityFramework.SqlServer.dll
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Data.pdb
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Data.exe.config
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Repo.pdb
@@ -14,6 +13,11 @@ E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Repo.exe.config
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Service.pdb
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\CA.Service.exe.config
 E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\EntityFramework.xml
+E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\EntityFramework.SqlServer.xml
+E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.csprojAssemblyReference.cache
+E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.csproj.CopyComplete
 E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.exe
 E:\CoffeeApp\CoffeeApp\CA.Console\obj\Debug\CA.Console.pdb
+E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\AutoMapper.dll
+E:\CoffeeApp\CoffeeApp\CA.Console\bin\Debug\AutoMapper.xml

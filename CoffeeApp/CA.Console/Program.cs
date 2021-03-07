@@ -1,57 +1,42 @@
-﻿using CA.Repo;
+﻿using CA.Console;
+using CA.Data;
+using CA.Data.Entityes;
+using CA.Repo;
 using CA.Repo.Implementations;
 using CA.Service;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CoffeeApp.Console
 {
     class Program
     {
-        CoffeeMachinesRepository rep = new CoffeeMachinesRepository();
-        private DataManager _datamanager;
-        private ServicesManager _servicesmanager;
-        public Program()
-        {
-            _datamanager = new DataManager();
-            _servicesmanager = new ServicesManager(_datamanager);
-        }
-
-        public void getList()
-        {
-            var CoffeeMachines = _servicesmanager.CoffeeMachines.GetCoffeeMachinesList();
-            CoffeeMachines.ForEach(x => System.Console.WriteLine(x.CoffeeMachine));
-        }
-
-        
-
         static void Main(string[] args)
         {
-            Program controller = new Program();
-            controller.getList();
-            System.Console.WriteLine("Hello World!");
-        }
-    }
+            ConsoleManager controller = new ConsoleManager();
 
-    class Controller {
-        private DataManager _datamanager;
-        private ServicesManager _servicesmanager;
+            System.Console.WriteLine("Choose action:");
+            System.Console.WriteLine("1 - Get all CoffeeMachines");
+            System.Console.WriteLine("2 - Get CoffeeMachine by id");
+            string input = System.Console.ReadLine();
+            if (input == "1")
+            {
+                controller.CoffeeMachineController.GetCoffeeMachines();
+            }
+            else if (input == "2")
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("Input id");
+                string id = System.Console.ReadLine();
+                int Id = Int32.Parse(id);
+                controller.CoffeeMachineController.GetCoffeeMachineById(Id);
+            }
+            else {
+                Environment.Exit(1);
+            }
 
-        public Controller(DataManager dataManager)
-        {
-            _datamanager = dataManager;
-            _servicesmanager = new ServicesManager(dataManager);
-        }
-
-        public Controller()
-        {
-            _datamanager = new DataManager();
-            _servicesmanager = new ServicesManager(_datamanager);
-        }
-
-        public void getList()
-        {
-            var CoffeeMachines = _servicesmanager.CoffeeMachines.GetCoffeeMachinesList();
-            CoffeeMachines.ForEach(x => System.Console.WriteLine(x));
+            System.Console.ReadKey();
         }
     }
 }

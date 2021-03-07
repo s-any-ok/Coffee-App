@@ -8,14 +8,7 @@ using System.Threading.Tasks;
 
 namespace CA.Service.Models
 {
-    public class DrinkViewModel
-    {
-        public Drink Drink { get; set; }
-
-        //public List<IngredientViewModel> Ingredients { get; set; }
-    }
-
-    public class DrinkEditModel
+    public class DrinkDTO
     {
         public Int32 Id { get; set; }
 

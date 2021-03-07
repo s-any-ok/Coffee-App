@@ -11,81 +11,81 @@ namespace CA.Service.Services
 {
     public class DrinkService
     {
-        private DataManager _dataManager;
-        public DrinkService(DataManager dataManager)
+        private UnitOfWork _unitOfWork;
+        public DrinkService(UnitOfWork UnitOfWork)
         {
-            this._dataManager = dataManager;
+            this._unitOfWork = UnitOfWork;
         }
 
-        public List<DrinkViewModel> GetDrinksList()
-        {
-            var _drks = _dataManager.Drinks.GetAll();
-            List<DrinkViewModel> _modelsList = new List<DrinkViewModel>();
-            foreach (var item in _drks)
-            {
-                _modelsList.Add(DrinkDBToViewModelById(item.Id));
-            }
-            return _modelsList;
-        }
+        //public List<DrinkViewModel> GetDrinksList()
+        //{
+        //    var _drks = _unitOfWork.Drinks.GetAll();
+        //    List<DrinkViewModel> _modelsList = new List<DrinkViewModel>();
+        //    foreach (var item in _drks)
+        //    {
+        //        _modelsList.Add(DrinkDBToViewModelById(item.Id));
+        //    }
+        //    return _modelsList;
+        //}
 
-        public DrinkViewModel DrinkDBToViewModelById(int drinkId)
-        {
-            var _model = new DrinkViewModel()
-            {
-                Drink = _dataManager.Drinks.GetById(drinkId),
-            };
-            //var _cfm = _dataManager.CoffeeMachines.GetById(_model.Drink.CoffeeMachineId);
-            //_model.Drink.CoffeeMachine = _cfm;
+        //public DrinkViewModel DrinkDBToViewModelById(int drinkId)
+        //{
+        //    var _model = new DrinkViewModel()
+        //    {
+        //        Drink = _unitOfWork.Drinks.GetById(drinkId),
+        //    };
+        //    //var _cfm = _unitOfWork.CoffeeMachines.GetById(_model.Drink.CoffeeMachineId);
+        //    //_model.Drink.CoffeeMachine = _cfm;
 
-            //if (_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _ing.Ingredients.Count() - 1)
-            //{
-            //    _model.NextIngredient = _ing.Ingredients.ElementAt(_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) + 1);
-            //}
-            return _model;
-        }
+        //    //if (_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _ing.Ingredients.Count() - 1)
+        //    //{
+        //    //    _model.NextIngredient = _ing.Ingredients.ElementAt(_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) + 1);
+        //    //}
+        //    return _model;
+        //}
 
-        public DrinkEditModel GetDrinkEditModel(int DrinkId)
-        {
-            var _dbModel = _dataManager.Drinks.GetById(DrinkId);
-            var _editModel = new DrinkEditModel()
-            {
-                Id = _dbModel.Id = _dbModel.Id,
-                CoffeeMachineId = _dbModel.CoffeeMachineId,
-                DrinkName = _dbModel.DrinkName
-            };
-            return _editModel;
-        }
+        //public DrinkEditModel GetDrinkEditModel(int DrinkId)
+        //{
+        //    var _dbModel = _unitOfWork.Drinks.GetById(DrinkId);
+        //    var _editModel = new DrinkEditModel()
+        //    {
+        //        Id = _dbModel.Id = _dbModel.Id,
+        //        CoffeeMachineId = _dbModel.CoffeeMachineId,
+        //        DrinkName = _dbModel.DrinkName
+        //    };
+        //    return _editModel;
+        //}
 
-        public DrinkViewModel SaveDrinkEditModelToDb(DrinkEditModel editModel)
-        {
-            Drink Drink;
-            if (editModel.Id != 0)
-            {
-                Drink = _dataManager.Drinks.GetById(editModel.Id);
-            }
-            else
-            {
-                Drink = new Drink();
-            }
-            Drink.DrinkName = editModel.DrinkName;
-            Drink.CoffeeMachineId = editModel.CoffeeMachineId;
-            _dataManager.Drinks.Save(Drink);
-            return DrinkDBToViewModelById(Drink.Id);
-        }
-        public List<DrinkViewModel> DeleteDrinkEditModelToDb(int drinkId)
-        {
-            var _drink = _dataManager.Drinks.GetById(drinkId);
+        //public DrinkViewModel SaveDrinkEditModelToDb(DrinkEditModel editModel)
+        //{
+        //    Drink Drink;
+        //    if (editModel.Id != 0)
+        //    {
+        //        Drink = _unitOfWork.Drinks.GetById(editModel.Id);
+        //    }
+        //    else
+        //    {
+        //        Drink = new Drink();
+        //    }
+        //    Drink.DrinkName = editModel.DrinkName;
+        //    Drink.CoffeeMachineId = editModel.CoffeeMachineId;
+        //    _unitOfWork.Drinks.Create(Drink);
+        //    return DrinkDBToViewModelById(Drink.Id);
+        //}
+        //public List<DrinkViewModel> DeleteDrinkEditModelToDb(int drinkId)
+        //{
+        //    var _drink = _unitOfWork.Drinks.GetById(drinkId);
 
-            if (_drink.Id != 0)
-            {
-                _dataManager.Drinks.Delete(_drink);
-            }
+        //    if (_drink.Id != 0)
+        //    {
+        //        _unitOfWork.Drinks.Delete(_drink);
+        //    }
 
-            return GetDrinksList();
-        }
-        public DrinkEditModel CreateNewIngredientEditModel(int drinkId)
-        {
-            return new DrinkEditModel() { CoffeeMachineId = drinkId };
-        }
+        //    return GetDrinksList();
+        //}
+        //public DrinkEditModel CreateNewIngredientEditModel(int drinkId)
+        //{
+        //    return new DrinkEditModel() { CoffeeMachineId = drinkId };
+        //}
     }
 }

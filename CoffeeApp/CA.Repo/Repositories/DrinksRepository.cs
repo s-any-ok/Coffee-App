@@ -17,39 +17,33 @@ namespace CA.Repo.Implementations
         {
             this.context = context;
         }
-        public DrinksRepository()
-        {
-            this.context = new EFDBContext();
-        }
+
         public IEnumerable<Drink> GetAll()
         {
-            //if (includeCoffeeMachine)
-            //    return context.Set<Ingredient>().Include(x => x.CoffeeMachine).AsNoTracking().ToList();
-            //else
                 return context.Drink.ToList();
         }
 
         public Drink GetById(int drinkId)
         {
-            //if (includeCoffeeMachine)
-            //    return context.Set<Ingredient>().Include(x => x.CoffeeMachine).AsNoTracking().FirstOrDefault(x => x.Id == ingredientId);
-            //else
                 return context.Drink.FirstOrDefault(x => x.Id == drinkId);
         }
 
-        public void Save(Drink drink)
+        public void Update(Drink drink)
+        {
+            context.Entry(drink).State = EntityState.Modified;
+        }
+
+        public void Create(Drink drink)
         {
             if (drink.Id == 0)
                 context.Drink.Add(drink);
             else
                 context.Entry(drink).State = EntityState.Modified;
-            context.SaveChanges();
         }
 
         public void Delete(Drink drink)
         {
             context.Drink.Remove(drink);
-            context.SaveChanges();
         }
     }
 }

@@ -7,14 +7,7 @@ using System.Threading.Tasks;
 
 namespace CA.Service.Models
 {
-    public class CoffeeMachineViewModel
-    {
-        public CoffeeMachine CoffeeMachine { get; set; }
-        public List<CoffeeMachineIngredientViewModel> Ingredients { get; set; }
-        public List<DrinkViewModel> Drinks { get; set; }
-    }
-
-    public class CoffeeMachineEditModel
+    public class CoffeeMachineDTO
     {
         public Int32 Id { get; set; }
         public string CoffeeMachineName { get; set; }

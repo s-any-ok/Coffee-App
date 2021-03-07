@@ -53,19 +53,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFDBContext.cs" />
+    <Compile Include="EF\EFDBContext.cs" />
     <Compile Include="Entityes\CoffeeMachine.cs" />
     <Compile Include="Entityes\CoffeeMachineIngredient.cs" />
     <Compile Include="Entityes\Drink.cs" />
     <Compile Include="Entityes\DrinkIngredient.cs" />
     <Compile Include="Entityes\Order.cs" />
+    <Compile Include="Migrations\202103070725597_InitialCreate.cs" />
+    <Compile Include="Migrations\202103070725597_InitialCreate.designer.cs">
+      <DependentUpon>202103070725597_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103070734099_init.cs" />
+    <Compile Include="Migrations\202103070734099_init.designer.cs">
+      <DependentUpon>202103070734099_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103070932366_init1.cs" />
+    <Compile Include="Migrations\202103070932366_init1.designer.cs">
+      <DependentUpon>202103070932366_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartData.cs" />
+    <Compile Include="EF\StartData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103070725597_InitialCreate.resx">
+      <DependentUpon>202103070725597_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070734099_init.resx">
+      <DependentUpon>202103070734099_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070932366_init1.resx">
+      <DependentUpon>202103070932366_init1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

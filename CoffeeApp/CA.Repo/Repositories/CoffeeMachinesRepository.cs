@@ -19,40 +19,32 @@ namespace CA.Repo.Implementations
             this.context = context;
         }
 
-        public CoffeeMachinesRepository()
-        {
-            this.context = new EFDBContext();
-        }
-
         public IEnumerable<CoffeeMachine> GetAll()
         {
-            //if (true)
-            //    return context.Set<CoffeeMachine>().Include(x => x.CoffeeMachineIngredients).Include(x => x.Drinks).AsNoTracking().ToList();
-            //else
                 return context.CoffeeMachine;
         }
 
         public CoffeeMachine GetById(int coffeeMachineId)
         {
-            //if (true)
-            //    return context.Set<CoffeeMachine>().Include(x => x.CoffeeMachineIngredients).Include(x => x.Drinks).AsNoTracking().FirstOrDefault(x => x.Id == coffeeMachineId);
-            //else
-                return context.CoffeeMachine.FirstOrDefault(x => x.Id == coffeeMachineId);
+                return context.CoffeeMachine.First(x => x.Id == coffeeMachineId);
         }
 
-        public void Save(CoffeeMachine coffeeMachine)
+        public void Update(CoffeeMachine coffeeMachine)
+        {
+            context.Entry(coffeeMachine).State = EntityState.Modified;
+        }
+
+        public void Create(CoffeeMachine coffeeMachine)
         {
             if (coffeeMachine.Id == 0)
                 context.CoffeeMachine.Add(coffeeMachine);
             else
                 context.Entry(coffeeMachine).State = EntityState.Modified;
-            context.SaveChanges();
         }
 
         public void Delete(CoffeeMachine coffeeMachine)
         {
             context.CoffeeMachine.Remove(coffeeMachine);
-            context.SaveChanges();
         }
     }
 }

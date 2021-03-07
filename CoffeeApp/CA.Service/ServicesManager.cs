@@ -11,20 +11,17 @@ namespace CA.Service
 {
     public class ServicesManager
     {
-        DataManager _dataManager;
+        UnitOfWork _unitOfWork;
         private CoffeeMachineService _coffeeMachineService;
-        private CoffeeMachineIngredientService _coffeeMachineIngredientService;
         private DrinkService _drinkService;
 
-        public ServicesManager(DataManager dataManager)
+        public ServicesManager(UnitOfWork unitOfWork)
         {
-            _dataManager = dataManager;
-            _coffeeMachineService = new CoffeeMachineService(_dataManager);
-            _coffeeMachineIngredientService = new CoffeeMachineIngredientService(_dataManager);
-            _drinkService = new DrinkService(_dataManager);
+            _unitOfWork = unitOfWork;
+            _coffeeMachineService = new CoffeeMachineService(_unitOfWork);
+            _drinkService = new DrinkService(_unitOfWork);
         }
         public CoffeeMachineService CoffeeMachines { get { return _coffeeMachineService; } }
-        public CoffeeMachineIngredientService CoffeeMachineIngredients { get { return _coffeeMachineIngredientService; } }
         public DrinkService Drinks { get { return _drinkService; } }
     }
 }

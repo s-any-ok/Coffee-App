@@ -9,9 +9,10 @@ namespace CA.Repo.Interfaces
 {
     public interface IRepository<T> where T : class
     {
+        void Create(T item);
+        T GetById(int id);
         IEnumerable<T> GetAll();
-        T GetById(int drinktId);
-        void Save(T drink);
-        void Delete(T drink);
+        void Delete(T item);
+        void Update(T item);
     }
 }

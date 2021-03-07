@@ -8,12 +8,7 @@ using System.Threading.Tasks;
 
 namespace CA.Service.Models
 {
-    public class CoffeeMachineIngredientViewModel
-    {
-        public CoffeeMachineIngredient CoffeeMachineIngredient { get; set; }
-    }
-
-    public class CoffeeMachineIngredientEditModel
+    public class CoffeeMachineIngredientDTO
     {
         public Int32 Id { get; set; }
 

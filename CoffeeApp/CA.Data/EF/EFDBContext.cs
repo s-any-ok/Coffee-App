@@ -5,7 +5,7 @@ namespace CA.Data
 {
     public class EFDBContext : DbContext
     {
-        public EFDBContext() : base(@"Data Source=. ; Initial Catalog=CoffeeAppDB; Integrated Security=true") { }
+        public EFDBContext() : base("CoffeeAppDB") { }
         public DbSet<CoffeeMachine> CoffeeMachine { get; set; }
         public DbSet<DrinkIngredient> DrinkIngredient { get; set; }
         public DbSet<CoffeeMachineIngredient> CoffeeMachineIngredient { get; set; }
