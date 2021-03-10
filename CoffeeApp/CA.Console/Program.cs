@@ -14,7 +14,21 @@ namespace CoffeeApp.Console
     {
         static void Main(string[] args)
         {
-            ConsoleManager controller = new ConsoleManager();
+
+            //using (EFDBContext context = new EFDBContext()) {
+            //    var c1 = new CoffeeMachine() { CoffeeMachineName = "Tosh", Producer = "China" };
+            //    var c2 = new CoffeeMachine() { CoffeeMachineName = "Samsung", Producer = "China" };
+
+            //    context.CoffeeMachine.Add(c1);
+            //    context.CoffeeMachine.Add(c2);
+            //    context.SaveChanges();
+                
+            //    foreach (CoffeeMachine u in context.CoffeeMachine)
+            //    {
+            //        System.Console.WriteLine("{0} {1} {2}", u.Id, u.CoffeeMachineName, u.Producer);
+            //    }
+            //}
+                ConsoleManager controller = new ConsoleManager();
 
             System.Console.WriteLine("Choose action:");
             System.Console.WriteLine("1 - Get all CoffeeMachines");
