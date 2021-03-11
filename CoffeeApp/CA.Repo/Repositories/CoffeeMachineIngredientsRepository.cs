@@ -22,6 +22,11 @@ namespace CA.Repo.Implementations
                 return context.CoffeeMachineIngredient.ToList();
         }
 
+        public IEnumerable<CoffeeMachineIngredient> GetAll(int id)
+        {
+            return context.CoffeeMachineIngredient.Where(d => d.CoffeeMachineId == id);
+        }
+
         public CoffeeMachineIngredient GetById(int ingredientId)
         {
                 return context.CoffeeMachineIngredient.FirstOrDefault(x => x.Id == ingredientId);

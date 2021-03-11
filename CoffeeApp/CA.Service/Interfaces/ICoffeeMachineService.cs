@@ -14,8 +14,8 @@ namespace CA.Service
         void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO);
         void EditCoffeeMachine(int id);
         void DeleteCoffeeMachine(int id);
-        IEnumerable<DrinkDTO> GetDrinks();
+        IEnumerable<DrinkDTO> GetDrinks(int id);
         DrinkDTO GetDrinkById(int id);
-        IEnumerable<CoffeeMachineIngredientDTO> GetIngredients();
+        IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool isDefault);
     }
 }

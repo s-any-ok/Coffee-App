@@ -1,4 +1,5 @@
 ﻿using CA.Repo;
+using CA.Service.Interfaces;
 using CA.Service.Services;
 using CA.Service.Services;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CA.Service
 {
-    public class ServicesManager
+    public class ServicesManager : IServicesManager
     {
         UnitOfWork _unitOfWork;
         private CoffeeMachineService _coffeeMachineService;

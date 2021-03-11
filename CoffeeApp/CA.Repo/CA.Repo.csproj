@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Repositories\DrinkIngredientsRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Program.cs" />

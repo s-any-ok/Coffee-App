@@ -10,7 +10,7 @@ namespace CA.Service.Models
 {
     public class CoffeeMachineIngredientDTO
     {
-        public Int32 Id { get; set; }
+        public int Id { get; set; }
 
         public bool isDefault { get; set; }
 
@@ -19,6 +19,6 @@ namespace CA.Service.Models
         public float Volume { get; set; }
 
         [Required]
-        public Int32 CoffeeMachineId { get; set; }
+        public int CoffeeMachineId { get; set; }
     }
 }

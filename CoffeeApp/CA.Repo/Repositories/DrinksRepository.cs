@@ -20,7 +20,12 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<Drink> GetAll()
         {
-                return context.Drink.ToList();
+                return context.Drink;
+        }
+
+        public IEnumerable<Drink> GetAll(int id)
+        {
+            return context.Drink.Where(d => d.CoffeeMachineId == id);
         }
 
         public Drink GetById(int drinkId)

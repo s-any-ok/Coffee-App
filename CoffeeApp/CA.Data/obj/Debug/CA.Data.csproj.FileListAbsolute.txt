@@ -29,3 +29,4 @@ E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CoreCompileIn
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CopyComplete
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.exe
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.pdb
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csprojAssemblyReference.cache

@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace CA.Service.Services
 {
-    public class DrinkService
+    public class DrinkService : IDrinkService
     {
         private UnitOfWork _unitOfWork;
         public DrinkService(UnitOfWork UnitOfWork)
@@ -17,75 +18,41 @@ namespace CA.Service.Services
             this._unitOfWork = UnitOfWork;
         }
 
-        //public List<DrinkViewModel> GetDrinksList()
-        //{
-        //    var _drks = _unitOfWork.Drinks.GetAll();
-        //    List<DrinkViewModel> _modelsList = new List<DrinkViewModel>();
-        //    foreach (var item in _drks)
-        //    {
-        //        _modelsList.Add(DrinkDBToViewModelById(item.Id));
-        //    }
-        //    return _modelsList;
-        //}
+        public void AddDrink(DrinkIngredientDTO drinkIngredientDTO)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public DrinkViewModel DrinkDBToViewModelById(int drinkId)
-        //{
-        //    var _model = new DrinkViewModel()
-        //    {
-        //        Drink = _unitOfWork.Drinks.GetById(drinkId),
-        //    };
-        //    //var _cfm = _unitOfWork.CoffeeMachines.GetById(_model.Drink.CoffeeMachineId);
-        //    //_model.Drink.CoffeeMachine = _cfm;
+        public void DeleteDrink(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        //    //if (_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) != _ing.Ingredients.Count() - 1)
-        //    //{
-        //    //    _model.NextIngredient = _ing.Ingredients.ElementAt(_ing.Ingredients.IndexOf(_ing.Ingredients.FirstOrDefault(x => x.Id == _model.Ingredient.Id)) + 1);
-        //    //}
-        //    return _model;
-        //}
+        public void EditDrink(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public DrinkEditModel GetDrinkEditModel(int DrinkId)
-        //{
-        //    var _dbModel = _unitOfWork.Drinks.GetById(DrinkId);
-        //    var _editModel = new DrinkEditModel()
-        //    {
-        //        Id = _dbModel.Id = _dbModel.Id,
-        //        CoffeeMachineId = _dbModel.CoffeeMachineId,
-        //        DrinkName = _dbModel.DrinkName
-        //    };
-        //    return _editModel;
-        //}
+        public IEnumerable<DrinkIngredientDTO> GetAll()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public DrinkViewModel SaveDrinkEditModelToDb(DrinkEditModel editModel)
-        //{
-        //    Drink Drink;
-        //    if (editModel.Id != 0)
-        //    {
-        //        Drink = _unitOfWork.Drinks.GetById(editModel.Id);
-        //    }
-        //    else
-        //    {
-        //        Drink = new Drink();
-        //    }
-        //    Drink.DrinkName = editModel.DrinkName;
-        //    Drink.CoffeeMachineId = editModel.CoffeeMachineId;
-        //    _unitOfWork.Drinks.Create(Drink);
-        //    return DrinkDBToViewModelById(Drink.Id);
-        //}
-        //public List<DrinkViewModel> DeleteDrinkEditModelToDb(int drinkId)
-        //{
-        //    var _drink = _unitOfWork.Drinks.GetById(drinkId);
+        public DrinkIngredientDTO GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        //    if (_drink.Id != 0)
-        //    {
-        //        _unitOfWork.Drinks.Delete(_drink);
-        //    }
+        public IEnumerable<DrinkIngredientDTO> GetIngredients(int id)
+        {
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll();
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
+            }
 
-        //    return GetDrinksList();
-        //}
-        //public DrinkEditModel CreateNewIngredientEditModel(int drinkId)
-        //{
-        //    return new DrinkEditModel() { CoffeeMachineId = drinkId };
-        //}
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);
+        }
     }
 }

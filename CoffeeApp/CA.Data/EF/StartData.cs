@@ -86,6 +86,39 @@ namespace CA.Data
                 }
                 );
                 context.SaveChanges();
+
+                var d1 = new Drink() { DrinkName = "Americano", CoffeeMachine = c1 };
+                var d2 = new Drink() { DrinkName = "Latte", CoffeeMachine = c2 }; ;
+
+                context.Drink.Add(d1);
+                context.Drink.Add(d2);
+                context.SaveChanges();
+
+                context.DrinkIngredient.Add(new DrinkIngredient()
+                {
+                    IngredientName = "Coffee",
+                    Volume = 0.2f,
+                    Drink = d1
+                }
+                );
+
+
+
+                context.DrinkIngredient.Add(new DrinkIngredient()
+                {
+                    IngredientName = "Coffee",
+                    Volume = 0.2f,
+                    Drink = d2
+                }
+                );
+                context.DrinkIngredient.Add(new DrinkIngredient()
+                {
+                    IngredientName = "Milk",
+                    Volume = 0.2f,
+                    Drink = d2
+                }
+                );
+                context.SaveChanges();
             }
         }
 

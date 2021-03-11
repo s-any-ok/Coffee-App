@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace CA.Service.Models
 {
-    public class DrinkDTO
+    public class DrinkIngredientDTO
     {
         public int Id { get; set; }
 
-        public string DrinkName { get; set; }
+        public string IngredientName { get; set; }
+
+        public float Volume { get; set; }
 
         [Required]
-        public int CoffeeMachineId { get; set; }
+        public int DrinkId { get; set; }
     }
 }

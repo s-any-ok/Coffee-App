@@ -48,13 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\CoffeeMachineDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
+    <Compile Include="DTO\DrinkIngredientDTO.cs" />
     <Compile Include="DTO\CoffeeMachineIngredientDTO.cs" />
     <Compile Include="DTO\DrinkDTO.cs" />
+    <Compile Include="Interfaces\IOrderService.cs" />
+    <Compile Include="Interfaces\IDrinkService.cs" />
     <Compile Include="Interfaces\ICoffeeMachineService.cs" />
+    <Compile Include="Interfaces\IServicesManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesManager.cs" />
     <Compile Include="Services\CoffeeMachineService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\DrinkService.cs" />
   </ItemGroup>
   <ItemGroup>

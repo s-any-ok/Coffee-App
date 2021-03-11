@@ -14,21 +14,7 @@ namespace CoffeeApp.Console
     {
         static void Main(string[] args)
         {
-
-            //using (EFDBContext context = new EFDBContext()) {
-            //    var c1 = new CoffeeMachine() { CoffeeMachineName = "Tosh", Producer = "China" };
-            //    var c2 = new CoffeeMachine() { CoffeeMachineName = "Samsung", Producer = "China" };
-
-            //    context.CoffeeMachine.Add(c1);
-            //    context.CoffeeMachine.Add(c2);
-            //    context.SaveChanges();
-                
-            //    foreach (CoffeeMachine u in context.CoffeeMachine)
-            //    {
-            //        System.Console.WriteLine("{0} {1} {2}", u.Id, u.CoffeeMachineName, u.Producer);
-            //    }
-            //}
-                ConsoleManager controller = new ConsoleManager();
+            ConsoleManager controller = new ConsoleManager();
 
             System.Console.WriteLine("Choose action:");
             System.Console.WriteLine("1 - Get all CoffeeMachines");
@@ -44,7 +30,31 @@ namespace CoffeeApp.Console
                 System.Console.WriteLine("Input id");
                 string id = System.Console.ReadLine();
                 int Id = Int32.Parse(id);
+                System.Console.Clear();
                 controller.CoffeeMachineController.GetCoffeeMachineById(Id);
+                System.Console.WriteLine("Ingredients: ");
+                controller.CoffeeMachineController.GetCoffeeMachineIngredients(Id, true);
+                System.Console.WriteLine("Drinks: ");
+                controller.CoffeeMachineController.GetCoffeeMachineDrinks(Id);
+
+                System.Console.WriteLine();
+                System.Console.WriteLine("1 - Show drinks with ingredients");
+                System.Console.WriteLine("2 - Show drink with ingredient by id");
+                string drinkChoose = System.Console.ReadLine();
+                System.Console.Clear();
+                if (drinkChoose == "1")
+                {
+                    System.Console.Clear();
+                    System.Console.WriteLine("Drinks: ");
+                    controller.DrinkController.GetIngredientsByCoffeeMachineId(Id);
+                }
+                else if (drinkChoose == "2") {
+                    System.Console.Clear();
+                    controller.CoffeeMachineController.GetCoffeeMachineDrinks(Id);
+                    string drinkId = System.Console.ReadLine();
+                    int drinkIdInt = Int32.Parse(drinkId);
+                    controller.DrinkController.GetIngredients(drinkIdInt);
+                }
             }
             else {
                 Environment.Exit(1);
