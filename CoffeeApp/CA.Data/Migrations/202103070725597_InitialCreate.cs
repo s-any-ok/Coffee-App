@@ -22,7 +22,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        isDefault = c.Boolean(nullable: false),
+                        IsDefault = c.Boolean(nullable: false),
                         IngredientName = c.String(),
                         Volume = c.Single(nullable: false),
                         CoffeeMachineId = c.Int(nullable: false),

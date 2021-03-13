@@ -13,6 +13,9 @@ namespace CA.Repo.Interfaces
         CoffeeMachinesRepository CoffeeMachines { get; }
         DrinksRepository Drinks { get; }
         CoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
+        OrdersRepository Orders { get; }
+        DrinkIngredientsRepository DrinkIngredients { get; }
         void Save();
+        void Dispose();
     }
 }

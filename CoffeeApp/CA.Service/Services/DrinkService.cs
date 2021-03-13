@@ -13,12 +13,12 @@ namespace CA.Service.Services
     public class DrinkService : IDrinkService
     {
         private UnitOfWork _unitOfWork;
-        public DrinkService(UnitOfWork UnitOfWork)
+        public DrinkService()
         {
-            this._unitOfWork = UnitOfWork;
+            this._unitOfWork = new UnitOfWork();
         }
 
-        public void AddDrink(DrinkIngredientDTO drinkIngredientDTO)
+        public void AddDrink(DrinkDTO drinkIngredientDTO)
         {
             throw new NotImplementedException();
         }
@@ -33,12 +33,12 @@ namespace CA.Service.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<DrinkIngredientDTO> GetAll()
+        public IEnumerable<DrinkDTO> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public DrinkIngredientDTO GetById(int id)
+        public DrinkDTO GetById(int id)
         {
             throw new NotImplementedException();
         }
@@ -53,6 +53,11 @@ namespace CA.Service.Services
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);
+        }
+
+        public CoffeeMachineDTO GetCoffeeMachineById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

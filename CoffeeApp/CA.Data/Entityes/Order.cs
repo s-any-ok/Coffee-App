@@ -15,6 +15,10 @@ namespace CA.Data.Entityes
         public int DrinkId { get; set; }
 
         public Drink Drink { get; set; }
-     
+
+        public Order()
+        {
+            this.OrderDate = DateTime.UtcNow;
+        }
     }
 }

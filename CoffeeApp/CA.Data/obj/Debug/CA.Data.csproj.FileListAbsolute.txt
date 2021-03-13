@@ -24,9 +24,9 @@ E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.SqlServer.xm
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCreate.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init1.resources
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updateDatabase.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.GenerateResource.cache
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CopyComplete
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.exe
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.pdb
-E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csprojAssemblyReference.cache

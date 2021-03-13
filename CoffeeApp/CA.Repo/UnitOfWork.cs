@@ -17,6 +17,7 @@ namespace CA.Repo
         private DrinksRepository drinksRepository;
         private CoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository;
         private DrinkIngredientsRepository drinkIngredientsRepository;
+        private OrdersRepository ordersRepository;
 
         public CoffeeMachinesRepository CoffeeMachines
         {
@@ -53,6 +54,16 @@ namespace CA.Repo
                 if (drinkIngredientsRepository == null)
                     drinkIngredientsRepository = new DrinkIngredientsRepository(db);
                 return drinkIngredientsRepository;
+            }
+        }
+
+        public OrdersRepository Orders
+        {
+            get
+            {
+                if (ordersRepository == null)
+                    ordersRepository = new OrdersRepository(db);
+                return ordersRepository;
             }
         }
 

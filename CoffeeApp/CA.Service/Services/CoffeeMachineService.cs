@@ -14,9 +14,9 @@ namespace CA.Service.Services
     public class CoffeeMachineService : ICoffeeMachineService
     {
         private UnitOfWork _unitOfWork;
-        public CoffeeMachineService(UnitOfWork UnitOfWork)
+        public CoffeeMachineService()
         {
-            this._unitOfWork = UnitOfWork;
+            this._unitOfWork = new UnitOfWork();
         }
         public IEnumerable<CoffeeMachineDTO> GetAll()
         {
@@ -28,6 +28,28 @@ namespace CA.Service.Services
         {
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(id);
             return new CoffeeMachineDTO { Id = coffeeMachine.Id, CoffeeMachineName = coffeeMachine.CoffeeMachineName, Producer = coffeeMachine.Producer };
+        }
+
+        public bool IsEnoughIngredients(int id) 
+        {
+            bool isEnough = true;
+            var defIngs = GetIngredients(id, true);
+            var curIngs = GetIngredients(id, false);
+
+            foreach (var defIng in defIngs)
+            {
+                foreach (var curIng in curIngs)
+                {
+                    if (defIng.IngredientName == curIng.IngredientName)
+                    {
+                        if (defIng.Volume * 0.2f >= curIng.Volume)
+                        {
+                            isEnough = false;
+                        }
+                    }
+                }
+            }
+            return isEnough;
         }
 
         void ICoffeeMachineService.AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
@@ -62,12 +84,12 @@ namespace CA.Service.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool isDefault)
+        public IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool IsDefault)
         {
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.isDefault == isDefault);
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.IsDefault == IsDefault);
             if (!String.IsNullOrEmpty(id.ToString()))
             {
-                coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll(id).Where(i => i.isDefault == isDefault);
+                coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll(id).Where(i => i.IsDefault == IsDefault);
             }
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient, CoffeeMachineIngredientDTO>()).CreateMapper();

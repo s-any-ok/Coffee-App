@@ -11,6 +11,7 @@ namespace CA.Service
     {
         IEnumerable<OrderDTO> GetAll();
         OrderDTO GetById(int id);
+        bool IsCorrectOrder(OrderDTO orderDTO);
         void AddOrder(OrderDTO orderDTO);
         void EditOrder(int id);
         void DeleteOrder(int id);

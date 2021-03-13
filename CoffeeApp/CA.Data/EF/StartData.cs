@@ -20,7 +20,7 @@ namespace CA.Data
                 context.SaveChanges();
 
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient() {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Milk",
                     Volume = 1f,
                     CoffeeMachine = c1
@@ -28,7 +28,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Water",
                     Volume = 1.5f,
                     CoffeeMachine = c1
@@ -36,7 +36,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Coffee",
                     Volume = 1f,
                     CoffeeMachine = c1
@@ -44,7 +44,39 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
+                    IngredientName = "Sugar",
+                    Volume = 0.5f,
+                    CoffeeMachine = c1
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Milk",
+                    Volume = 1f,
+                    CoffeeMachine = c1
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Water",
+                    Volume = 1.5f,
+                    CoffeeMachine = c1
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Coffee",
+                    Volume = 1f,
+                    CoffeeMachine = c1
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
                     IngredientName = "Sugar",
                     Volume = 0.5f,
                     CoffeeMachine = c1
@@ -55,7 +87,7 @@ namespace CA.Data
 
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Milk",
                     Volume = 1.21f,
                     CoffeeMachine = c2
@@ -63,7 +95,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Water",
                     Volume = 1.8f,
                     CoffeeMachine = c2
@@ -71,7 +103,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
                     IngredientName = "Coffee",
                     Volume = 1.3f,
                     CoffeeMachine = c2
@@ -79,7 +111,39 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    isDefault = true,
+                    IsDefault = true,
+                    IngredientName = "Sugar",
+                    Volume = 0.6f,
+                    CoffeeMachine = c2
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Milk",
+                    Volume = 1.21f,
+                    CoffeeMachine = c2
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Water",
+                    Volume = 1.8f,
+                    CoffeeMachine = c2
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
+                    IngredientName = "Coffee",
+                    Volume = 1.3f,
+                    CoffeeMachine = c2
+                }
+                );
+                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
+                {
+                    IsDefault = false,
                     IngredientName = "Sugar",
                     Volume = 0.6f,
                     CoffeeMachine = c2

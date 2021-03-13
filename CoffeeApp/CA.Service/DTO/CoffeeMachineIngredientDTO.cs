@@ -12,7 +12,7 @@ namespace CA.Service.Models
     {
         public int Id { get; set; }
 
-        public bool isDefault { get; set; }
+        public bool IsDefault { get; set; }
 
         public string IngredientName { get; set; }
 

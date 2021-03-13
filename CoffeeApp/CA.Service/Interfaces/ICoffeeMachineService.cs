@@ -11,11 +11,12 @@ namespace CA.Service
     {
         IEnumerable<CoffeeMachineDTO> GetAll();
         CoffeeMachineDTO GetById(int id);
+        bool IsEnoughIngredients(int id);
         void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO);
         void EditCoffeeMachine(int id);
         void DeleteCoffeeMachine(int id);
         IEnumerable<DrinkDTO> GetDrinks(int id);
         DrinkDTO GetDrinkById(int id);
-        IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool isDefault);
+        IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool IsDefault);
     }
 }
