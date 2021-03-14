@@ -10,9 +10,9 @@ namespace CA.Console.Controllers
 {
     public class DrinkLogger
     {
-        ICoffeeMachineService coffeeMachineService;
-        IDrinkService drinkService;
-        CoffeeMachineLogger coffeeMachineLogger;
+        private ICoffeeMachineService coffeeMachineService;
+        private IDrinkService drinkService;
+        private CoffeeMachineLogger coffeeMachineLogger;
         public DrinkLogger()
         {
             coffeeMachineService = new CoffeeMachineService();
@@ -35,7 +35,6 @@ namespace CA.Console.Controllers
                 }
             );
         }
-
         public void LogDrinksWithIngredients(int id)
         {
             System.Console.WriteLine();

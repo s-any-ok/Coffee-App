@@ -24,7 +24,8 @@ namespace CA.Service.Services
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll(coffeeMachine.Id)
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
+                .Where(d => d.CoffeeMachineId == coffeeMachine.Id)
                 .Where(i => i.IsDefault == false);
 
             foreach (var drinkIngredient in drinkIngredients)
@@ -48,7 +49,8 @@ namespace CA.Service.Services
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll(coffeeMachine.Id)
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
+                .Where(d => d.CoffeeMachineId == coffeeMachine.Id)
                 .Where(i => i.IsDefault == false);
 
             foreach (var drinkIngredient in drinkIngredients)

@@ -12,18 +12,14 @@ namespace CA.Console.Controllers
 {
     public class OrderLogger
     {
-        ICoffeeMachineService coffeeMachineService;
-        IDrinkService drinkService;
-        IOrderService orderService;
-        CoffeeMachineLogger coffeeMachineLogger;
-        DrinkLogger drinkLogger;
+        private ICoffeeMachineService coffeeMachineService;
+        private IOrderService orderService;
+        private CoffeeMachineLogger coffeeMachineLogger;
         public OrderLogger()
         {
             coffeeMachineService = new CoffeeMachineService();
-            drinkService = new DrinkService();
             orderService = new OrderService();
             coffeeMachineLogger = new CoffeeMachineLogger();
-            drinkLogger = new DrinkLogger();
         }
         public void MakeOrder()
         {

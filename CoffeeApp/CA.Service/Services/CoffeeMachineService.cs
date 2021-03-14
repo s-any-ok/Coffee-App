@@ -52,17 +52,17 @@ namespace CA.Service.Services
             return isEnough;
         }
 
-        void ICoffeeMachineService.AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
+        public void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
         {
             throw new NotImplementedException();
         }
 
-        void ICoffeeMachineService.EditCoffeeMachine(int id)
+        public void EditCoffeeMachine(int id)
         {
             throw new NotImplementedException();
         }
 
-        void ICoffeeMachineService.DeleteCoffeeMachine(int id)
+        public void DeleteCoffeeMachine(int id)
         {
             throw new NotImplementedException();
         }
@@ -79,7 +79,7 @@ namespace CA.Service.Services
             return mapper.Map<IEnumerable<Drink>, List<DrinkDTO>>(drinks);
         }
 
-        DrinkDTO ICoffeeMachineService.GetDrinkById(int id)
+        public DrinkDTO GetDrinkById(int id)
         {
             throw new NotImplementedException();
         }
@@ -89,7 +89,8 @@ namespace CA.Service.Services
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.IsDefault == IsDefault);
             if (!String.IsNullOrEmpty(id.ToString()))
             {
-                coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll(id).Where(i => i.IsDefault == IsDefault);
+                coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
+                    .Where(d => d.CoffeeMachineId == id).Where(i => i.IsDefault == IsDefault);
             }
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient, CoffeeMachineIngredientDTO>()).CreateMapper();

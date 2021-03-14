@@ -10,7 +10,7 @@ namespace CA.Console.Controllers
 {
     public class CoffeeMachineLogger
     {
-        ICoffeeMachineService coffeeMachineService;
+        private ICoffeeMachineService coffeeMachineService;
         public CoffeeMachineLogger()
         {
             coffeeMachineService = new CoffeeMachineService();

@@ -19,12 +19,7 @@ namespace CA.Repo.Implementations
         }
         public IEnumerable<CoffeeMachineIngredient> GetAll()
         {
-                return context.CoffeeMachineIngredient.ToList();
-        }
-
-        public IEnumerable<CoffeeMachineIngredient> GetAll(int id)
-        {
-            return context.CoffeeMachineIngredient.Where(d => d.CoffeeMachineId == id);
+            return context.CoffeeMachineIngredient.ToList();
         }
 
         public CoffeeMachineIngredient GetById(int ingredientId)
