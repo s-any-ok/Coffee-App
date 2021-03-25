@@ -15,5 +15,6 @@ namespace CA.Service
         void AddOrder(OrderDTO orderDTO);
         void EditOrder(int id);
         void DeleteOrder(int id);
+        IEnumerable<OrderDTO> GetOrdersByDrinkId(int id);
     }
 }

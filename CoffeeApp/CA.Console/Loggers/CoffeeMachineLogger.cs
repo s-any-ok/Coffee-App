@@ -33,8 +33,8 @@ namespace CA.Console.Controllers
 
         public void GetCoffeeMachineDrinks(int id)
         {
-            var CoffeeMachines = coffeeMachineService.GetDrinks(id).ToList();
-            CoffeeMachines.ForEach(x =>
+            var Drinks = coffeeMachineService.GetDrinks(id).ToList();
+            Drinks.ForEach(x =>
                 System.Console.WriteLine("№{0} {1}", x.Id, x.DrinkName)
             );
         }
@@ -85,6 +85,19 @@ namespace CA.Console.Controllers
             }
             );
             
+        }
+
+        public void LogTimeToRechargeCoffeeMachines()
+        {
+            var CoffeeMachines = coffeeMachineService.GetAll().ToList();
+            CoffeeMachines.ForEach(x =>
+            {
+                var time = coffeeMachineService.GetTimeToRefreshIngredients(x.Id);
+                System.Console.WriteLine("{0} - {1}", x.Id, x.CoffeeMachineName);
+                System.Console.WriteLine(string.Format("\t{0:%d} days, {0:%h} hours, {0:%m} minutes, {0:%s} seconds\n", time));
+            }
+            );
+
         }
     }
 }

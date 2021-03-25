@@ -89,5 +89,12 @@ namespace CA.Service.Services
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<OrderDTO> GetOrdersByDrinkId(int id)
+        {
+            var orders = _unitOfWork.Orders.GetAll().Where(order => order.DrinkId == id);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Order>, List<OrderDTO>>(orders);
+        }
     }
 }

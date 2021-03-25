@@ -18,5 +18,6 @@ namespace CA.Service
         IEnumerable<DrinkDTO> GetDrinks(int id);
         DrinkDTO GetDrinkById(int id);
         IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool IsDefault);
+        TimeSpan GetTimeToRefreshIngredients(int id);
     }
 }

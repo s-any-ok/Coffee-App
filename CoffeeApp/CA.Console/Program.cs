@@ -25,6 +25,7 @@ namespace CoffeeApp.Console
             System.Console.WriteLine("2 - Get CoffeeMachine by id");
             System.Console.WriteLine("3 - Make order");
             System.Console.WriteLine("4 - Get CoffeeMachines status");
+            System.Console.WriteLine("5 - Get time to recharge ingredients");
             string input = System.Console.ReadLine();
             System.Console.Clear();
             if (input == "1")
@@ -48,6 +49,10 @@ namespace CoffeeApp.Console
             else if (input == "4")
             {
                 coffeeMachineLogger.LogCoffeeMachinesStatus();
+            }
+            else if (input == "5")
+            {
+                coffeeMachineLogger.LogTimeToRechargeCoffeeMachines();
             }
             else {
                 Environment.Exit(1);
