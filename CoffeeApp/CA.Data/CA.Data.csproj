@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +77,18 @@
     <Compile Include="Migrations\202103131436439_updateDatabase.designer.cs">
       <DependentUpon>202103131436439_updateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104040921176_InitialCreate1.cs" />
+    <Compile Include="Migrations\202104040921176_InitialCreate1.designer.cs">
+      <DependentUpon>202104040921176_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104041053154_updatedDB.cs" />
+    <Compile Include="Migrations\202104041053154_updatedDB.designer.cs">
+      <DependentUpon>202104041053154_updatedDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104041141567_updatedDB2.cs" />
+    <Compile Include="Migrations\202104041141567_updatedDB2.designer.cs">
+      <DependentUpon>202104041141567_updatedDB2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +110,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103131436439_updateDatabase.resx">
       <DependentUpon>202103131436439_updateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104040921176_InitialCreate1.resx">
+      <DependentUpon>202104040921176_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104041053154_updatedDB.resx">
+      <DependentUpon>202104041053154_updatedDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104041141567_updatedDB2.resx">
+      <DependentUpon>202104041141567_updatedDB2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

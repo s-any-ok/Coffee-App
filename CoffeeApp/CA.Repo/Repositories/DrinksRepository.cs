@@ -25,7 +25,7 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<Drink> GetAll(int id)
         {
-            return context.Drink.Where(d => d.CoffeeMachineId == id);
+            return context.CoffeeMachine.Where(c => c.Id == id).SelectMany(c => c.Drinks);
         }
 
         public Drink GetById(int drinkId)

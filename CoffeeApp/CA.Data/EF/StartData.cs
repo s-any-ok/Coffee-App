@@ -151,12 +151,18 @@ namespace CA.Data
                 );
                 context.SaveChanges();
 
-                var d1 = new Drink() { DrinkName = "Americano", CoffeeMachine = c1 };
-                var d2 = new Drink() { DrinkName = "Latte", CoffeeMachine = c2 }; ;
+                var d1 = new Drink() { DrinkName = "Americano"};
+                var d2 = new Drink() { DrinkName = "Latte" }; ;
+                context.Drink.AddRange(new List<Drink> { d1, d2 });
 
-                context.Drink.Add(d1);
-                context.Drink.Add(d2);
+                //context.Drink.Add(d1);
+                //context.Drink.Add(d2);
                 context.SaveChanges();
+
+                c1.Drinks.Add(d1);
+
+                c2.Drinks.Add(d1);
+                c2.Drinks.Add(d2);
 
                 context.DrinkIngredient.Add(new DrinkIngredient()
                 {

@@ -1,0 +1,6 @@
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\bin\Debug\CA.OOP.exe.config
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\bin\Debug\CA.OOP.exe
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\bin\Debug\CA.OOP.pdb
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\obj\Debug\CA.OOP.csproj.CoreCompileInputs.cache
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\obj\Debug\CA.OOP.exe
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.OOP\obj\Debug\CA.OOP.pdb

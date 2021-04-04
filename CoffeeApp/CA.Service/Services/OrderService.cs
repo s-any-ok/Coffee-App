@@ -65,7 +65,7 @@ namespace CA.Service.Services
                 }
             }
             Console.WriteLine("Thank you for your ordering");
-            var order = new Order() { DrinkId = orderDTO.DrinkId };
+            var order = new Order() { DrinkId = orderDTO.DrinkId, CoffeeMachineId = orderDTO.CoffeeMachineId };
             _unitOfWork.Orders.Create(order);
             _unitOfWork.Save();
         }

@@ -25,8 +25,11 @@ E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCr
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init1.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updateDatabase.resources
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCreate1.resources
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB.resources
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.GenerateResource.cache
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CoreCompileInputs.cache
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CopyComplete
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.exe
 E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.pdb
+E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB2.resources

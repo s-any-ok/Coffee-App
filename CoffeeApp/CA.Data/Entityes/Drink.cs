@@ -12,10 +12,13 @@ namespace CA.Data.Entityes
 
         public string DrinkName { get; set; }
 
-        public int CoffeeMachineId { get; set; }
-
-        public CoffeeMachine CoffeeMachine { get; set; }
-
         public List<DrinkIngredient> DrinkIngredients { get; set; }
+
+        public List<CoffeeMachine> CoffeeMachines { get; set; }
+
+        public Drink()
+        {
+            CoffeeMachines = new List<CoffeeMachine>();
+        }
     }
 }

@@ -16,6 +16,6 @@ namespace CA.Data.Entityes
 
         public CoffeeMachine CoffeeMachine { get; set; }
 
-        public List<DrinkIngredient> DrinkIngredients { get; set; }
+        //public List<DrinkIngredient> DrinkIngredients { get; set; }
     }
 }

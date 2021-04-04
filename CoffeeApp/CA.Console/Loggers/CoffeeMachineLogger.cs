@@ -35,7 +35,7 @@ namespace CA.Console.Controllers
         {
             var Drinks = coffeeMachineService.GetDrinks(id).ToList();
             Drinks.ForEach(x =>
-                System.Console.WriteLine("№{0} {1}", x.Id, x.DrinkName)
+                System.Console.WriteLine("№{0}a{1} {2}", id, x.Id, x.DrinkName)
             );
         }
 

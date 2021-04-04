@@ -131,6 +131,8 @@ namespace CA.Service.Services
 
         private TimeSpan GetTimeDuration(List<DateTime> dates)
         {
+            if (dates.Count == 1) return DateTime.Now - dates[0];
+            if (dates.Count == 0) return TimeSpan.Zero;
             var sortedDates = SortDateTimes(dates);
             var firstDate = sortedDates.First();
             var lastDate = sortedDates.Last();
@@ -145,7 +147,7 @@ namespace CA.Service.Services
             {
                 foreach (var curIng in currentIngredients)
                 {
-                    if (defIng.IngredientName == curIng.IngredientName)
+                    if (defIng.IngredientName == curIng.IngredientName && defIng.Volume != curIng.Volume)
                     {
                         var diff = defIng.Volume - curIng.Volume;
                         var coeff = (defIng.Volume / diff) - 1;
@@ -153,6 +155,7 @@ namespace CA.Service.Services
                     }
                 }
             }
+            
             double lowestCoeff = coeffs.Any() ? coeffs.Min() : 0;
             return lowestCoeff;
         }

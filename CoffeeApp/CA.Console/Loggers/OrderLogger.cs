@@ -32,9 +32,11 @@ namespace CA.Console.Controllers
             });
             System.Console.WriteLine();
             System.Console.WriteLine("Input drink number(№)");
-            string number = System.Console.ReadLine();
-            int numberInt = Int32.Parse(number);
-            var order = new OrderDTO() { DrinkId = numberInt };
+            string str = System.Console.ReadLine();
+            string[] strNums = str.Split('a');
+            int coffeeMachineId = Int32.Parse(strNums[0]);
+            int drinkId = Int32.Parse(strNums[1]);
+            var order = new OrderDTO() { DrinkId = drinkId, CoffeeMachineId = coffeeMachineId };
             if (orderService.IsCorrectOrder(order))
             {
                 orderService.AddOrder(order);

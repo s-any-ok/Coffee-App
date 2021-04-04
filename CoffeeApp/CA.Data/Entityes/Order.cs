@@ -12,6 +12,10 @@ namespace CA.Data.Entityes
 
         public DateTime OrderDate { get; set; }
 
+        public int CoffeeMachineId { get; set; }
+
+        public CoffeeMachine CoffeeMachine { get; set; }
+
         public int DrinkId { get; set; }
 
         public Drink Drink { get; set; }

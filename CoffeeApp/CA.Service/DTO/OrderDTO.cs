@@ -16,5 +16,7 @@ namespace CA.Service.Models
 
         [Required]
         public int DrinkId { get; set; }
+        [Required]
+        public int CoffeeMachineId { get; set; }
     }
 }
