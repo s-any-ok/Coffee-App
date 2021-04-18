@@ -7,6 +7,7 @@ namespace CA.Data
     {
         public EFDBContext() : base("CoffeeAppDB") { }
         public DbSet<CoffeeMachine> CoffeeMachine { get; set; }
+        public DbSet<IngredientType> IngredientType { get; set; }
         public DbSet<DrinkIngredient> DrinkIngredient { get; set; }
         public DbSet<CoffeeMachineIngredient> CoffeeMachineIngredient { get; set; }
         public DbSet<Drink> Drink { get; set; }

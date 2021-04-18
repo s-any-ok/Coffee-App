@@ -1,4 +1,5 @@
 ﻿using CA.Service;
+using CA.Service.Interfaces;
 using CA.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -12,18 +13,22 @@ namespace CA.Console.Controllers
     {
         private ICoffeeMachineService coffeeMachineService;
         private IDrinkService drinkService;
+        private IIngredientService ingredientService;
         private CoffeeMachineLogger coffeeMachineLogger;
+       
         public DrinkLogger()
         {
             coffeeMachineService = new CoffeeMachineService();
             drinkService = new DrinkService();
             coffeeMachineLogger = new CoffeeMachineLogger();
+            ingredientService = new IngredientService();
         }
         public void GetIngredients(int id)
         {
+            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
             var drinks = drinkService.GetIngredients(id).ToList();
             drinks.ForEach(x =>
-                System.Console.WriteLine("{0} - {1} - {2}", x.Id, x.IngredientName, x.Volume)
+                System.Console.WriteLine("- {0} - {1}", GetIngredientName(x.Id), x.Volume)
             );
         }
         public void GetIngredientsByCoffeeMachineId(int id)
@@ -50,9 +55,13 @@ namespace CA.Console.Controllers
             else if (drinkChoose == "2")
             {
                 coffeeMachineLogger.GetCoffeeMachineDrinks(id);
-                string drinkId = System.Console.ReadLine();
-                int drinkIdInt = Int32.Parse(drinkId);
-                GetIngredients(drinkIdInt);
+                string str = System.Console.ReadLine();
+                string[] strNums = str.Split('a');
+                int coffeeMachineId = Int32.Parse(strNums[0]);
+                int drinkId = Int32.Parse(strNums[1]);
+                //string drinkId = System.Console.ReadLine();
+                //int drinkIdInt = Int32.Parse(drinkId);
+                GetIngredients(drinkId);
             }
         }
     }

@@ -12,7 +12,9 @@ namespace CA.Data.Entityes
 
         public bool IsDefault { get; set; }
 
-        public string IngredientName { get; set; }
+        public int IngredientTypeId { get; set; }
+
+        public IngredientType IngredientType { get; set; }
 
         public float Volume { get; set; }
 

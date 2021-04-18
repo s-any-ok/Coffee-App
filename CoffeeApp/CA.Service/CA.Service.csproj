@@ -52,12 +52,14 @@
     <Compile Include="DTO\DrinkIngredientDTO.cs" />
     <Compile Include="DTO\CoffeeMachineIngredientDTO.cs" />
     <Compile Include="DTO\DrinkDTO.cs" />
+    <Compile Include="Interfaces\IIngredientService.cs" />
     <Compile Include="Interfaces\IOrderService.cs" />
     <Compile Include="Interfaces\IDrinkService.cs" />
     <Compile Include="Interfaces\ICoffeeMachineService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CoffeeMachineService.cs" />
+    <Compile Include="Services\IngredientService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\DrinkService.cs" />
   </ItemGroup>

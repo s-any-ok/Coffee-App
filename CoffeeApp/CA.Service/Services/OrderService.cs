@@ -32,7 +32,7 @@ namespace CA.Service.Services
             {
                 foreach (var coffeeMachineIngredient in coffeeMachineIngredients)
                 {
-                    if (drinkIngredient.IngredientName == coffeeMachineIngredient.IngredientName)
+                    if (drinkIngredient.IngredientTypeId == coffeeMachineIngredient.IngredientTypeId)
                     {
                         if (coffeeMachineIngredient.Volume < drinkIngredient.Volume) {
                             return false;
@@ -48,7 +48,7 @@ namespace CA.Service.Services
             var drink = _unitOfWork.Drinks.GetById(orderDTO.DrinkId);
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
-            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
+            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.CoffeeMachineId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
                 .Where(d => d.CoffeeMachineId == coffeeMachine.Id)
                 .Where(i => i.IsDefault == false);
@@ -57,7 +57,7 @@ namespace CA.Service.Services
             {
                 foreach (var coffeeMachineIngredient in coffeeMachineIngredients)
                 {
-                    if (drinkIngredient.IngredientName == coffeeMachineIngredient.IngredientName) 
+                    if (drinkIngredient.IngredientTypeId == coffeeMachineIngredient.IngredientTypeId) 
                     {
                         coffeeMachineIngredient.Volume -= drinkIngredient.Volume;
                         _unitOfWork.CoffeeMachineIngredients.Update(coffeeMachineIngredient);

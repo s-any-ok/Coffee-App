@@ -60,6 +60,7 @@
     <Compile Include="Entityes\CoffeeMachineIngredient.cs" />
     <Compile Include="Entityes\Drink.cs" />
     <Compile Include="Entityes\DrinkIngredient.cs" />
+    <Compile Include="Entityes\IngredientType.cs" />
     <Compile Include="Entityes\Order.cs" />
     <Compile Include="Migrations\202103070725597_InitialCreate.cs" />
     <Compile Include="Migrations\202103070725597_InitialCreate.designer.cs">
@@ -88,6 +89,10 @@
     <Compile Include="Migrations\202104041141567_updatedDB2.cs" />
     <Compile Include="Migrations\202104041141567_updatedDB2.designer.cs">
       <DependentUpon>202104041141567_updatedDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104181725267_updatedDB3.cs" />
+    <Compile Include="Migrations\202104181725267_updatedDB3.designer.cs">
+      <DependentUpon>202104181725267_updatedDB3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -119,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104041141567_updatedDB2.resx">
       <DependentUpon>202104041141567_updatedDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104181725267_updatedDB3.resx">
+      <DependentUpon>202104181725267_updatedDB3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

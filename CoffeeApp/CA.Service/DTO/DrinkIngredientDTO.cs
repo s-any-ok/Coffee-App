@@ -12,11 +12,12 @@ namespace CA.Service.Models
     {
         public int Id { get; set; }
 
-        public string IngredientName { get; set; }
-
         public float Volume { get; set; }
 
         [Required]
         public int DrinkId { get; set; }
+
+        [Required]
+        public int IngredientTypeId { get; set; }
     }
 }

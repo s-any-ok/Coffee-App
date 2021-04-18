@@ -14,11 +14,12 @@ namespace CA.Service.Models
 
         public bool IsDefault { get; set; }
 
-        public string IngredientName { get; set; }
-
         public float Volume { get; set; }
 
         [Required]
         public int CoffeeMachineId { get; set; }
+
+        [Required]
+        public int IngredientTypeId { get; set; }
     }
 }

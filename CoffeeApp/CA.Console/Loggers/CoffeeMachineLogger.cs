@@ -1,4 +1,5 @@
 ﻿using CA.Service;
+using CA.Service.Interfaces;
 using CA.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace CA.Console.Controllers
     public class CoffeeMachineLogger
     {
         private ICoffeeMachineService coffeeMachineService;
+        private IIngredientService ingredientService;
         public CoffeeMachineLogger()
         {
             coffeeMachineService = new CoffeeMachineService();
+            ingredientService = new IngredientService();
         }
 
         public void GetCoffeeMachines()
@@ -41,9 +44,10 @@ namespace CA.Console.Controllers
 
         public void GetCoffeeMachineIngredients(int id, bool IsDefault)
         {
+            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
             var CoffeeMachines = coffeeMachineService.GetIngredients(id, IsDefault).ToList();
             CoffeeMachines.ForEach(x =>
-                System.Console.WriteLine("{0} - {1}", x.IngredientName, x.Volume)
+                System.Console.WriteLine("{0} - {1}", GetIngredientName(x.IngredientTypeId), x.Volume)
             );
         }
 
@@ -51,14 +55,17 @@ namespace CA.Console.Controllers
         {
             var defIngs = coffeeMachineService.GetIngredients(id, true).ToList();
             var curIngs = coffeeMachineService.GetIngredients(id, false).ToList();
+
+            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
+
             foreach (var defIng in defIngs)
             {
                 foreach (var curIng in curIngs)
                 {
-                    if (defIng.IngredientName == curIng.IngredientName)
+                    if (defIng.IngredientTypeId == curIng.IngredientTypeId)
                     {
                         var proc = (100f * curIng.Volume) / defIng.Volume;
-                        System.Console.WriteLine(string.Format(" {0,-10} {1,-8} {2,-8} {3}%", defIng.IngredientName, defIng.Volume, curIng.Volume, proc));
+                        System.Console.WriteLine(string.Format(" {0,-10} {1,-8} {2,-8} {3}%", GetIngredientName(defIng.IngredientTypeId), defIng.Volume, curIng.Volume, proc));
                     }
                 }
             }

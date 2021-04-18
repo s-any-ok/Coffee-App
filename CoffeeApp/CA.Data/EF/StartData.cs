@@ -12,6 +12,11 @@ namespace CA.Data
         public static void InitData(EFDBContext context) {
             if (true) {
 
+                var i1 = new IngredientType() { IngredientName = "Milk" };
+                var i2 = new IngredientType() { IngredientName = "Water" };
+                var i3 = new IngredientType() { IngredientName = "Coffee" };
+                var i4 = new IngredientType() { IngredientName = "Sugar" };
+
                 var c1 = new CoffeeMachine() { CoffeeMachineName = "Toshiba", Producer = "China" };
                 var c2 = new CoffeeMachine() { CoffeeMachineName = "LG", Producer = "Germany" };
 
@@ -21,7 +26,7 @@ namespace CA.Data
 
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient() {
                     IsDefault = true,
-                    IngredientName = "Milk",
+                    IngredientType = i1,
                     Volume = 1f,
                     CoffeeMachine = c1
                 }
@@ -29,7 +34,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Water",
+                    IngredientType = i2,
                     Volume = 1.5f,
                     CoffeeMachine = c1
                 }
@@ -37,7 +42,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 1f,
                     CoffeeMachine = c1
                 }
@@ -45,7 +50,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Sugar",
+                    IngredientType = i4,
                     Volume = 0.5f,
                     CoffeeMachine = c1
                 }
@@ -53,7 +58,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Milk",
+                    IngredientType = i1,
                     Volume = 1f,
                     CoffeeMachine = c1
                 }
@@ -61,7 +66,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Water",
+                    IngredientType = i2,
                     Volume = 1.5f,
                     CoffeeMachine = c1
                 }
@@ -69,7 +74,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 1f,
                     CoffeeMachine = c1
                 }
@@ -77,7 +82,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Sugar",
+                    IngredientType = i4,
                     Volume = 0.5f,
                     CoffeeMachine = c1
                 }
@@ -88,7 +93,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Milk",
+                    IngredientType = i1,
                     Volume = 1.21f,
                     CoffeeMachine = c2
                 }
@@ -96,7 +101,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Water",
+                    IngredientType = i2,
                     Volume = 1.8f,
                     CoffeeMachine = c2
                 }
@@ -104,7 +109,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 1.3f,
                     CoffeeMachine = c2
                 }
@@ -112,7 +117,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = true,
-                    IngredientName = "Sugar",
+                    IngredientType = i4,
                     Volume = 0.6f,
                     CoffeeMachine = c2
                 }
@@ -120,7 +125,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Milk",
+                    IngredientType = i1,
                     Volume = 1.21f,
                     CoffeeMachine = c2
                 }
@@ -128,7 +133,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Water",
+                    IngredientType = i2,
                     Volume = 1.8f,
                     CoffeeMachine = c2
                 }
@@ -136,7 +141,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 1.3f,
                     CoffeeMachine = c2
                 }
@@ -144,7 +149,7 @@ namespace CA.Data
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
                     IsDefault = false,
-                    IngredientName = "Sugar",
+                    IngredientType = i4,
                     Volume = 0.6f,
                     CoffeeMachine = c2
                 }
@@ -166,7 +171,7 @@ namespace CA.Data
 
                 context.DrinkIngredient.Add(new DrinkIngredient()
                 {
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 0.2f,
                     Drink = d1
                 }
@@ -176,14 +181,14 @@ namespace CA.Data
 
                 context.DrinkIngredient.Add(new DrinkIngredient()
                 {
-                    IngredientName = "Coffee",
+                    IngredientType = i3,
                     Volume = 0.2f,
                     Drink = d2
                 }
                 );
                 context.DrinkIngredient.Add(new DrinkIngredient()
                 {
-                    IngredientName = "Milk",
+                    IngredientType = i1,
                     Volume = 0.2f,
                     Drink = d2
                 }

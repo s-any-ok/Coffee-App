@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CA.Repo.Implementations;
 using CA.Data;
+using CA.Repo.Repositories;
 
 namespace CA.Repo
 {
@@ -18,6 +19,7 @@ namespace CA.Repo
         private CoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository;
         private DrinkIngredientsRepository drinkIngredientsRepository;
         private OrdersRepository ordersRepository;
+        private IngredientTypeRepository ingredientTypeRepository;
 
         public CoffeeMachinesRepository CoffeeMachines
         {
@@ -64,6 +66,16 @@ namespace CA.Repo
                 if (ordersRepository == null)
                     ordersRepository = new OrdersRepository(db);
                 return ordersRepository;
+            }
+        }
+
+        public IngredientTypeRepository IngredientType
+        {
+            get
+            {
+                if (ingredientTypeRepository == null)
+                    ingredientTypeRepository = new IngredientTypeRepository(db);
+                return ingredientTypeRepository;
             }
         }
 

@@ -40,7 +40,7 @@ namespace CA.Service.Services
             {
                 foreach (var curIng in curIngs)
                 {
-                    if (defIng.IngredientName == curIng.IngredientName)
+                    if (defIng.Id == curIng.Id)
                     {
                         if (defIng.Volume * 0.2f >= curIng.Volume)
                         {
@@ -147,7 +147,7 @@ namespace CA.Service.Services
             {
                 foreach (var curIng in currentIngredients)
                 {
-                    if (defIng.IngredientName == curIng.IngredientName && defIng.Volume != curIng.Volume)
+                    if (defIng.Id == curIng.Id && defIng.Volume != curIng.Volume)
                     {
                         var diff = defIng.Volume - curIng.Volume;
                         var coeff = (defIng.Volume / diff) - 1;
