@@ -46,7 +46,6 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Data.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Repo.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Repo.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\AutoMapper.xml
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csprojAssemblyReference.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CoreCompileInputs.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CopyComplete

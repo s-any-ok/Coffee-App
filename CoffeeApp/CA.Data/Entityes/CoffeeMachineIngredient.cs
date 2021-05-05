@@ -10,13 +10,13 @@ namespace CA.Data.Entityes
     {
         public int Id { get; set; }
 
-        public bool IsDefault { get; set; }
-
         public int IngredientTypeId { get; set; }
 
         public IngredientType IngredientType { get; set; }
 
         public float Volume { get; set; }
+        
+        public float MaxVolume { get; set; }
 
         public int CoffeeMachineId { get; set; }
 

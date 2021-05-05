@@ -12,8 +12,7 @@ namespace CA.Service.Models
     {
         public int Id { get; set; }
 
-        public bool IsDefault { get; set; }
-
+        public float MaxVolume { get; set; }
         public float Volume { get; set; }
 
         [Required]

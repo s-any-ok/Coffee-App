@@ -25,8 +25,7 @@ namespace CA.Service.Services
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                .Where(d => d.CoffeeMachineId == coffeeMachine.Id)
-                .Where(i => i.IsDefault == false);
+                .Where(d => d.CoffeeMachineId == coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
             {
@@ -50,8 +49,7 @@ namespace CA.Service.Services
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.CoffeeMachineId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                .Where(d => d.CoffeeMachineId == coffeeMachine.Id)
-                .Where(i => i.IsDefault == false);
+                .Where(d => d.CoffeeMachineId == coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
             {
@@ -70,7 +68,16 @@ namespace CA.Service.Services
             _unitOfWork.Save();
         }
 
-        public void DeleteOrder(int id)
+        public IEnumerable<OrderDTO> GetOrdersByDrinkId(int id)
+        {
+            var orders = _unitOfWork.Orders.GetAll().Where(order => order.DrinkId == id);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Order>, List<OrderDTO>>(orders);
+        }
+
+        #region NotImplemented
+
+        /*public void DeleteOrder(int id)
         {
             throw new NotImplementedException();
         }
@@ -88,13 +95,8 @@ namespace CA.Service.Services
         public OrderDTO GetById(int id)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
-        public IEnumerable<OrderDTO> GetOrdersByDrinkId(int id)
-        {
-            var orders = _unitOfWork.Orders.GetAll().Where(order => order.DrinkId == id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Order>, List<OrderDTO>>(orders);
-        }
+        #endregion
     }
 }

@@ -33,38 +33,18 @@ namespace CA.Service.Services
         public bool IsEnoughIngredients(int id) 
         {
             bool isEnough = true;
-            var defIngs = GetIngredients(id, true);
-            var curIngs = GetIngredients(id, false);
+            /*var defIngs = GetIngredients(id, true);
+            var curIngs = GetIngredients(id, false);*/
+            var ingredients = GetIngredients(id);
 
-            foreach (var defIng in defIngs)
+            foreach (var ingredient in ingredients)
             {
-                foreach (var curIng in curIngs)
+                if (ingredient.MaxVolume * 0.2f >= ingredient.Volume)
                 {
-                    if (defIng.Id == curIng.Id)
-                    {
-                        if (defIng.Volume * 0.2f >= curIng.Volume)
-                        {
-                            isEnough = false;
-                        }
-                    }
+                    isEnough = false;
                 }
             }
             return isEnough;
-        }
-
-        public void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditCoffeeMachine(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteCoffeeMachine(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<DrinkDTO> GetDrinks(int id)
@@ -79,19 +59,17 @@ namespace CA.Service.Services
             return mapper.Map<IEnumerable<Drink>, List<DrinkDTO>>(drinks);
         }
 
-        public DrinkDTO GetDrinkById(int id)
+        public IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id, bool IsDefault)
-        {
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.IsDefault == IsDefault);
-            if (!String.IsNullOrEmpty(id.ToString()))
+            /*var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.IsDefault == IsDefault);*/
+            /*if (!String.IsNullOrEmpty(id.ToString()))
             {
-                coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                    .Where(d => d.CoffeeMachineId == id).Where(i => i.IsDefault == IsDefault);
-            }
+                var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
+                    .Where(d => d.CoffeeMachineId == id);
+            }*/
+            
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
+                .Where(d => d.CoffeeMachineId == id);
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient, CoffeeMachineIngredientDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<CoffeeMachineIngredient>, List<CoffeeMachineIngredientDTO>>(coffeeMachineIngredients);
@@ -111,11 +89,13 @@ namespace CA.Service.Services
             }
             );
 
-            var coffeeMachineIngredientsDefault = GetIngredients(id, true).ToList();
-            var coffeeMachineIngredientsCurrent = GetIngredients(id, false).ToList();
+            /*var coffeeMachineIngredientsDefault = GetIngredients(id, true).ToList();
+            var coffeeMachineIngredientsCurrent = GetIngredients(id, false).ToList();*/
+            
+            var coffeeMachineIngredients = GetIngredients(id).ToList();
 
             var duration = GetTimeDuration(times);
-            var coeff = GetIngredientsCoeff(coffeeMachineIngredientsDefault, coffeeMachineIngredientsCurrent);
+            var coeff = GetIngredientsCoeff(coffeeMachineIngredients);
             var result = coeff * duration.TotalSeconds;
 
             TimeSpan tresultTime = TimeSpan.FromSeconds(result);
@@ -140,24 +120,43 @@ namespace CA.Service.Services
             return duration;
         }
 
-        private double GetIngredientsCoeff(List<CoffeeMachineIngredientDTO> defaulIngredients, List<CoffeeMachineIngredientDTO> currentIngredients)
+        private double GetIngredientsCoeff(List<CoffeeMachineIngredientDTO> coffeeMachineIngredients)
         {
             var coeffs = new List<double>();
-            foreach (var defIng in defaulIngredients)
+            foreach (var ingredient in coffeeMachineIngredients)
             {
-                foreach (var curIng in currentIngredients)
-                {
-                    if (defIng.Id == curIng.Id && defIng.Volume != curIng.Volume)
-                    {
-                        var diff = defIng.Volume - curIng.Volume;
-                        var coeff = (defIng.Volume / diff) - 1;
-                        if (coeff > 0) coeffs.Add(coeff);
-                    }
-                }
+                var diff = ingredient.MaxVolume - ingredient.Volume;
+                var coeff = (ingredient.MaxVolume / diff) - 1;
+                if (coeff > 0) coeffs.Add(coeff);
             }
-            
+
             double lowestCoeff = coeffs.Any() ? coeffs.Min() : 0;
             return lowestCoeff;
         }
+
+        #region NotImplemented
+
+        /*public void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditCoffeeMachine(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCoffeeMachine(int id)
+        {
+            throw new NotImplementedException();
+        }*/
+        
+        /*public DrinkDTO GetDrinkById(int id)
+        {
+            throw new NotImplementedException();
+        }*/
+
+        #endregion
+        
     }
 }

@@ -9,12 +9,19 @@ namespace CA.Service
 {
     public interface IDrinkService
     {
-        IEnumerable<DrinkDTO> GetAll();
+        
+        IEnumerable<DrinkIngredientDTO> GetIngredients(int id);
+        
+        #region NotImplemented
+
+        /*IEnumerable<DrinkDTO> GetAll();
         DrinkDTO GetById(int id);
         void AddDrink(DrinkDTO drinkDTO);
         void EditDrink(int id);
         void DeleteDrink(int id);
-        IEnumerable<DrinkIngredientDTO> GetIngredients(int id);
-        CoffeeMachineDTO GetCoffeeMachineById(int id);
+        
+        CoffeeMachineDTO GetCoffeeMachineById(int id);*/
+
+        #endregion
     }
 }

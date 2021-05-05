@@ -17,7 +17,27 @@ namespace CA.Service.Services
         {
             this._unitOfWork = new UnitOfWork();
         }
+        
+        public IEnumerable<DrinkIngredientDTO> GetIngredients(int id)
+        {
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll();
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
+            }
 
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);
+        }
+
+        
+        #region NotImplemented
+
+        /*public CoffeeMachineDTO GetCoffeeMachineById(int id)
+        {
+            throw new NotImplementedException();
+        }
+        
         public void AddDrink(DrinkDTO drinkIngredientDTO)
         {
             throw new NotImplementedException();
@@ -41,23 +61,8 @@ namespace CA.Service.Services
         public DrinkDTO GetById(int id)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
-        public IEnumerable<DrinkIngredientDTO> GetIngredients(int id)
-        {
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll();
-            if (!String.IsNullOrEmpty(id.ToString()))
-            {
-                drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
-            }
-
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);
-        }
-
-        public CoffeeMachineDTO GetCoffeeMachineById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

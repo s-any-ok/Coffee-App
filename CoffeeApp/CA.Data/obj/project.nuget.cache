@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CITCCmuUtSISX2+DVbBqbSAzl3sRjCL5T6UfaiRvVPGa7ozgK2lbxn/7oysS01qfbcQSxJj99zPWRQnOA1lH2g==",
+  "success": true,
+  "projectFilePath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512"
+  ],
+  "logs": []
+}

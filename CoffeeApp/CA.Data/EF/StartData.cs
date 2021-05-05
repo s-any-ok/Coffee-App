@@ -25,7 +25,7 @@ namespace CA.Data
                 context.SaveChanges();
 
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient() {
-                    IsDefault = true,
+                    MaxVolume = 1f,
                     IngredientType = i1,
                     Volume = 1f,
                     CoffeeMachine = c1
@@ -33,7 +33,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 1.5f,
                     IngredientType = i2,
                     Volume = 1.5f,
                     CoffeeMachine = c1
@@ -41,7 +41,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 1f,
                     IngredientType = i3,
                     Volume = 1f,
                     CoffeeMachine = c1
@@ -49,50 +49,16 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 0.5f,
                     IngredientType = i4,
                     Volume = 0.5f,
                     CoffeeMachine = c1
                 }
                 );
+                
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = false,
-                    IngredientType = i1,
-                    Volume = 1f,
-                    CoffeeMachine = c1
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i2,
-                    Volume = 1.5f,
-                    CoffeeMachine = c1
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i3,
-                    Volume = 1f,
-                    CoffeeMachine = c1
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i4,
-                    Volume = 0.5f,
-                    CoffeeMachine = c1
-                }
-                );
-
-
-
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = true,
+                    MaxVolume = 1.21f,
                     IngredientType = i1,
                     Volume = 1.21f,
                     CoffeeMachine = c2
@@ -100,7 +66,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 1.8f,
                     IngredientType = i2,
                     Volume = 1.8f,
                     CoffeeMachine = c2
@@ -108,7 +74,7 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 1.3f,
                     IngredientType = i3,
                     Volume = 1.3f,
                     CoffeeMachine = c2
@@ -116,44 +82,13 @@ namespace CA.Data
                 );
                 context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
                 {
-                    IsDefault = true,
+                    MaxVolume = 0.6f,
                     IngredientType = i4,
                     Volume = 0.6f,
                     CoffeeMachine = c2
                 }
                 );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i1,
-                    Volume = 1.21f,
-                    CoffeeMachine = c2
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i2,
-                    Volume = 1.8f,
-                    CoffeeMachine = c2
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i3,
-                    Volume = 1.3f,
-                    CoffeeMachine = c2
-                }
-                );
-                context.CoffeeMachineIngredient.Add(new CoffeeMachineIngredient()
-                {
-                    IsDefault = false,
-                    IngredientType = i4,
-                    Volume = 0.6f,
-                    CoffeeMachine = c2
-                }
-                );
+
                 context.SaveChanges();
 
                 var d1 = new Drink() { DrinkName = "Americano"};
@@ -176,8 +111,6 @@ namespace CA.Data
                     Drink = d1
                 }
                 );
-
-
 
                 context.DrinkIngredient.Add(new DrinkIngredient()
                 {

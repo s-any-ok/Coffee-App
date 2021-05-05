@@ -9,12 +9,17 @@ namespace CA.Service
 {
     public interface IOrderService
     {
-        IEnumerable<OrderDTO> GetAll();
-        OrderDTO GetById(int id);
         bool IsCorrectOrder(OrderDTO orderDTO);
         void AddOrder(OrderDTO orderDTO);
-        void EditOrder(int id);
+
+        #region NotImplemented
+
+        /*void EditOrder(int id);
         void DeleteOrder(int id);
         IEnumerable<OrderDTO> GetOrdersByDrinkId(int id);
+        IEnumerable<OrderDTO> GetAll();
+        OrderDTO GetById(int id);*/
+
+        #endregion
     }
 }
