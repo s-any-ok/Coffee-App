@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace CA.Console.Controllers
 {
-    public class DrinkLogger
+    public class DrinkConsoleWriter
     {
         private ICoffeeMachineService coffeeMachineService;
         private IDrinkService drinkService;
         private IIngredientService ingredientService;
-        private CoffeeMachineLogger coffeeMachineLogger;
+        private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
        
-        public DrinkLogger()
+        public DrinkConsoleWriter()
         {
             coffeeMachineService = new CoffeeMachineService();
             drinkService = new DrinkService();
-            coffeeMachineLogger = new CoffeeMachineLogger();
+            coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
             ingredientService = new IngredientService();
         }
         public void GetIngredients(int id)
@@ -54,7 +54,7 @@ namespace CA.Console.Controllers
             }
             else if (drinkChoose == "2")
             {
-                coffeeMachineLogger.GetCoffeeMachineDrinks(id);
+                coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(id);
                 string str = System.Console.ReadLine();
                 string[] strNums = str.Split('a');
                 int coffeeMachineId = Int32.Parse(strNums[0]);

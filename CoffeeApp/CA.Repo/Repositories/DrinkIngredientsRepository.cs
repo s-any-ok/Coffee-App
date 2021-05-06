@@ -19,12 +19,12 @@ namespace CA.Repo.Implementations
         }
         public IEnumerable<DrinkIngredient> GetAll()
         {
-                return context.DrinkIngredient.ToList();
+                return context.DrinkIngredient.AsNoTracking();
         }
 
         public IEnumerable<DrinkIngredient> GetAll(int id)
         {
-            return context.DrinkIngredient.Where(d => d.DrinkId == id);
+            return context.DrinkIngredient.Where(d => d.DrinkId == id).AsNoTracking();
         }
 
         public DrinkIngredient GetById(int ingredientId)

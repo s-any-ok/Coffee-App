@@ -24,8 +24,7 @@ namespace CA.Service.Services
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                .Where(d => d.CoffeeMachineId == coffeeMachine.Id);
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
             {
@@ -48,8 +47,7 @@ namespace CA.Service.Services
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.CoffeeMachineId);
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                .Where(d => d.CoffeeMachineId == coffeeMachine.Id);
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
             {
@@ -62,7 +60,7 @@ namespace CA.Service.Services
                     }
                 }
             }
-            Console.WriteLine("Thank you for your ordering");
+            
             var order = new Order() { DrinkId = orderDTO.DrinkId, CoffeeMachineId = orderDTO.CoffeeMachineId };
             _unitOfWork.Orders.Create(order);
             _unitOfWork.Save();
@@ -70,7 +68,7 @@ namespace CA.Service.Services
 
         public IEnumerable<OrderDTO> GetOrdersByDrinkId(int id)
         {
-            var orders = _unitOfWork.Orders.GetAll().Where(order => order.DrinkId == id);
+            var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<Order>, List<OrderDTO>>(orders);
         }

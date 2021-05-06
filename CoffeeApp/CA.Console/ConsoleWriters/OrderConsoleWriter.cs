@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace CA.Console.Controllers
 {
-    public class OrderLogger
+    public class OrderConsoleWriter
     {
         private ICoffeeMachineService coffeeMachineService;
         private IOrderService orderService;
-        private CoffeeMachineLogger coffeeMachineLogger;
-        public OrderLogger()
+        private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
+        public OrderConsoleWriter()
         {
             coffeeMachineService = new CoffeeMachineService();
             orderService = new OrderService();
-            coffeeMachineLogger = new CoffeeMachineLogger();
+            coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
         }
         public void MakeOrder()
         {
@@ -27,7 +27,7 @@ namespace CA.Console.Controllers
             CoffeeMachines.ForEach(x =>
             {
                 System.Console.WriteLine("---- {0} ----", x.CoffeeMachineName);
-                coffeeMachineLogger.GetCoffeeMachineDrinks(x.Id);
+                coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(x.Id);
                 System.Console.WriteLine("\n\n");
             });
             System.Console.WriteLine();
@@ -40,6 +40,7 @@ namespace CA.Console.Controllers
             if (orderService.IsCorrectOrder(order))
             {
                 orderService.AddOrder(order);
+                System.Console.WriteLine("Thank you for your ordering");
             }
             else 
             {

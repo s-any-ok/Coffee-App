@@ -16,9 +16,9 @@ namespace CoffeeApp.Console
     {
         static void Main(string[] args)
         {
-            CoffeeMachineLogger coffeeMachineLogger = new CoffeeMachineLogger();
-            DrinkLogger drinkLogger = new DrinkLogger();
-            OrderLogger orderLogger = new OrderLogger();
+            CoffeeMachineConsoleWriter coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
+            DrinkConsoleWriter drinkConsoleWriter = new DrinkConsoleWriter();
+            OrderConsoleWriter orderConsoleWriter = new OrderConsoleWriter();
 
             System.Console.WriteLine("Choose action:");
             System.Console.WriteLine("1 - Get all CoffeeMachines");
@@ -30,7 +30,7 @@ namespace CoffeeApp.Console
             System.Console.Clear();
             if (input == "1")
             {
-                coffeeMachineLogger.GetCoffeeMachines();
+                coffeeMachineConsoleWriter.GetCoffeeMachines();
             }
             else if (input == "2")
             {
@@ -39,20 +39,20 @@ namespace CoffeeApp.Console
                 string id = System.Console.ReadLine();
                 int Id = Int32.Parse(id);
                 System.Console.Clear();
-                coffeeMachineLogger.LogCoffeeMachineById(Id);
-                drinkLogger.LogDrinksWithIngredients(Id);
+                coffeeMachineConsoleWriter.LogCoffeeMachineById(Id);
+                drinkConsoleWriter.LogDrinksWithIngredients(Id);
             }
             else if (input == "3") 
             {
-                orderLogger.MakeOrder();
+                orderConsoleWriter.MakeOrder();
 ;           }
             else if (input == "4")
             {
-                coffeeMachineLogger.LogCoffeeMachinesStatus();
+                coffeeMachineConsoleWriter.LogCoffeeMachinesStatus();
             }
             else if (input == "5")
             {
-                coffeeMachineLogger.LogTimeToRechargeCoffeeMachines();
+                coffeeMachineConsoleWriter.LogTimeToRechargeCoffeeMachines();
             }
             else {
                 Environment.Exit(1);

@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace CA.Repo.Implementations
 {
-    public class CoffeeMachineIngredientsRepository : IRepository<CoffeeMachineIngredient>
+    public class CoffeeMachineIngredientsRepository : IRepository<CoffeeMachineIngredient>, ICoffeeMachineIngredientsRepository
     {
         private EFDBContext context;
         public CoffeeMachineIngredientsRepository(EFDBContext context)
@@ -19,7 +19,12 @@ namespace CA.Repo.Implementations
         }
         public IEnumerable<CoffeeMachineIngredient> GetAll()
         {
-            return context.CoffeeMachineIngredient.ToList();
+            return context.CoffeeMachineIngredient.AsNoTracking();
+        }
+        
+        public IEnumerable<CoffeeMachineIngredient> GetAllByCoffeeMachineId(int id)
+        {
+            return context.CoffeeMachineIngredient.Where(ing => ing.CoffeeMachineId == id).AsNoTracking();
         }
 
         public CoffeeMachineIngredient GetById(int ingredientId)

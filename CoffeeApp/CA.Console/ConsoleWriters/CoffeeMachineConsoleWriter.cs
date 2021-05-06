@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CA.Console.Controllers
 {
-    public class CoffeeMachineLogger
+    public class CoffeeMachineConsoleWriter
     {
         private ICoffeeMachineService coffeeMachineService;
         private IIngredientService ingredientService;
-        public CoffeeMachineLogger()
+        public CoffeeMachineConsoleWriter()
         {
             coffeeMachineService = new CoffeeMachineService();
             ingredientService = new IngredientService();

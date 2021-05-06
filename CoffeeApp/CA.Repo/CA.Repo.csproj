@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICoffeeMachineIngredientsRepository.cs" />
+    <Compile Include="Interfaces\IOrdersRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\DrinkIngredientsRepository.cs" />

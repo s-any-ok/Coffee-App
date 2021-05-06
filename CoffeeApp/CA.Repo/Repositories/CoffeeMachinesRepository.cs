@@ -21,7 +21,7 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<CoffeeMachine> GetAll()
         {
-                return context.CoffeeMachine;
+                return context.CoffeeMachine.AsNoTracking();
         }
 
         public CoffeeMachine GetById(int coffeeMachineId)

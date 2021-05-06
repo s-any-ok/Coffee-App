@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace CA.Repo.Implementations
 {
-    public class OrdersRepository : IRepository<Order>
+    public class OrdersRepository : IRepository<Order>, IOrdersRepository
     {
         private EFDBContext context;
         public OrdersRepository(EFDBContext context)
@@ -20,12 +20,17 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<Order> GetAll()
         {
-                return context.Order;
+                return context.Order.AsNoTracking();
         }
 
         public IEnumerable<Order> GetAll(int id)
         {
-            return context.Order.Where(o => o.DrinkId == id);
+            return context.Order.Where(o => o.Id == id).AsNoTracking();
+        }
+        
+        public IEnumerable<Order> GetAllByDrinkId(int id)
+        {
+            return context.Order.Where(o => o.DrinkId == id).AsNoTracking();
         }
 
         public Order GetById(int orderId)

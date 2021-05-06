@@ -20,12 +20,12 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<Drink> GetAll()
         {
-                return context.Drink;
+                return context.Drink.AsNoTracking();
         }
 
         public IEnumerable<Drink> GetAll(int id)
         {
-            return context.CoffeeMachine.Where(c => c.Id == id).SelectMany(c => c.Drinks);
+            return context.CoffeeMachine.Where(c => c.Id == id).SelectMany(c => c.Drinks).AsNoTracking();
         }
 
         public Drink GetById(int drinkId)

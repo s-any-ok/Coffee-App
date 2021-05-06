@@ -33,8 +33,6 @@ namespace CA.Service.Services
         public bool IsEnoughIngredients(int id) 
         {
             bool isEnough = true;
-            /*var defIngs = GetIngredients(id, true);
-            var curIngs = GetIngredients(id, false);*/
             var ingredients = GetIngredients(id);
 
             foreach (var ingredient in ingredients)
@@ -49,11 +47,7 @@ namespace CA.Service.Services
 
         public IEnumerable<DrinkDTO> GetDrinks(int id)
         {
-            var drinks = _unitOfWork.Drinks.GetAll();
-            if (!String.IsNullOrEmpty(id.ToString()))
-            {
-                drinks = _unitOfWork.Drinks.GetAll(id);
-            }
+            var drinks = _unitOfWork.Drinks.GetAll(id);
             
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Drink, DrinkDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<Drink>, List<DrinkDTO>>(drinks);
@@ -61,15 +55,7 @@ namespace CA.Service.Services
 
         public IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id)
         {
-            /*var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll().Where(i => i.IsDefault == IsDefault);*/
-            /*if (!String.IsNullOrEmpty(id.ToString()))
-            {
-                var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                    .Where(d => d.CoffeeMachineId == id);
-            }*/
-            
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAll()
-                .Where(d => d.CoffeeMachineId == id);
+            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(id);
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient, CoffeeMachineIngredientDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<CoffeeMachineIngredient>, List<CoffeeMachineIngredientDTO>>(coffeeMachineIngredients);
@@ -81,7 +67,7 @@ namespace CA.Service.Services
             var drks = GetDrinks(id).ToList();
             drks.ForEach(drk =>
             {
-                var orders = _unitOfWork.Orders.GetAll().Where(order => order.DrinkId == drk.Id).ToList();
+                var orders = _unitOfWork.Orders.GetAllByDrinkId(drk.Id).ToList();
                 orders.ForEach(order =>
                 {
                     times.Add(order.OrderDate);
@@ -89,9 +75,6 @@ namespace CA.Service.Services
             }
             );
 
-            /*var coffeeMachineIngredientsDefault = GetIngredients(id, true).ToList();
-            var coffeeMachineIngredientsCurrent = GetIngredients(id, false).ToList();*/
-            
             var coffeeMachineIngredients = GetIngredients(id).ToList();
 
             var duration = GetTimeDuration(times);
@@ -125,9 +108,12 @@ namespace CA.Service.Services
             var coeffs = new List<double>();
             foreach (var ingredient in coffeeMachineIngredients)
             {
-                var diff = ingredient.MaxVolume - ingredient.Volume;
-                var coeff = (ingredient.MaxVolume / diff) - 1;
-                if (coeff > 0) coeffs.Add(coeff);
+                if (ingredient.MaxVolume - ingredient.Volume > 0)
+                {
+                    var diff = ingredient.MaxVolume - ingredient.Volume;
+                    var coeff = (ingredient.MaxVolume / diff) - 1;
+                    if (coeff > 0) coeffs.Add(coeff);
+                }
             }
 
             double lowestCoeff = coeffs.Any() ? coeffs.Min() : 0;

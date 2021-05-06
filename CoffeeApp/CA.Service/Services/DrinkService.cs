@@ -20,11 +20,7 @@ namespace CA.Service.Services
         
         public IEnumerable<DrinkIngredientDTO> GetIngredients(int id)
         {
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll();
-            if (!String.IsNullOrEmpty(id.ToString()))
-            {
-                drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
-            }
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
             return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);

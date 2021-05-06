@@ -19,7 +19,7 @@ namespace CA.Repo.Repositories
         }
         public IEnumerable<IngredientType> GetAll()
         {
-            return context.IngredientType.ToList();
+            return context.IngredientType.AsNoTracking();
         }
 
         public IEnumerable<IngredientType> GetAll(int id)
