@@ -1,5 +1,6 @@
 ﻿using CA.Data.Entityes;
 using CA.Repo.Implementations;
+using CA.Repo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace CA.Repo.Interfaces
         CoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
         OrdersRepository Orders { get; }
         DrinkIngredientsRepository DrinkIngredients { get; }
+        IngredientTypesRepository IngredientTypes { get; }
         void Save();
         void Dispose();
     }

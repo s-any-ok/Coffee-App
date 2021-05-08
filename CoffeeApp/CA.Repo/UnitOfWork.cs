@@ -19,7 +19,7 @@ namespace CA.Repo
         private CoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository;
         private DrinkIngredientsRepository drinkIngredientsRepository;
         private OrdersRepository ordersRepository;
-        private IngredientTypeRepository ingredientTypeRepository;
+        private IngredientTypesRepository ingredientTypeRepository;
 
         public CoffeeMachinesRepository CoffeeMachines
         {
@@ -69,12 +69,12 @@ namespace CA.Repo
             }
         }
 
-        public IngredientTypeRepository IngredientType
+        public IngredientTypesRepository IngredientTypes
         {
             get
             {
                 if (ingredientTypeRepository == null)
-                    ingredientTypeRepository = new IngredientTypeRepository(db);
+                    ingredientTypeRepository = new IngredientTypesRepository(db);
                 return ingredientTypeRepository;
             }
         }

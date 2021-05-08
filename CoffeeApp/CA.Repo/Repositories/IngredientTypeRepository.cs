@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Repositories
 {
-    public class IngredientTypeRepository : IRepository<IngredientType>
+    public class IngredientTypesRepository : IRepository<IngredientType>
     {
         private EFDBContext context;
-        public IngredientTypeRepository(EFDBContext context)
+        public IngredientTypesRepository(EFDBContext context)
         {
             this.context = context;
         }
