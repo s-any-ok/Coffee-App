@@ -52,10 +52,7 @@ namespace CA.Console.Controllers
         }
 
         public void GetCoffeeMachineIngredientsStatus(int id)
-        {
-            /*var defIngs = coffeeMachineService.GetIngredients(id, true).ToList();
-            var curIngs = coffeeMachineService.GetIngredients(id, false).ToList();*/
-            
+        {      
             var ingredients = coffeeMachineService.GetIngredients(id).ToList();
 
             string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);

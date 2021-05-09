@@ -1,0 +1,89 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CA.WPF/1.0.0": {
+        "dependencies": {
+          "CA.Service": "1.0.0"
+        },
+        "runtime": {
+          "CA.WPF.dll": {}
+        }
+      },
+      "CA.Data/1.0.0": {
+        "runtime": {
+          "CA.Data.exe": {}
+        }
+      },
+      "CA.Repo/1.0.0": {
+        "dependencies": {
+          "CA.Data": "1.0.0"
+        },
+        "runtime": {
+          "CA.Repo.exe": {}
+        }
+      },
+      "CA.Service/1.0.0": {
+        "dependencies": {
+          "CA.Data": "1.0.0",
+          "CA.Repo": "1.0.0"
+        },
+        "runtime": {
+          "CA.Service.exe": {}
+        }
+      },
+      "AutoMapper/10.0.0.0": {
+        "runtime": {
+          "AutoMapper.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.1.1.0"
+          }
+        }
+      },
+      "EntityFramework/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.400.420.21404"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CA.WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CA.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CA.Repo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CA.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AutoMapper/10.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

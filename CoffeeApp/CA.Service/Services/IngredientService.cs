@@ -15,7 +15,6 @@ namespace CA.Service.Services
         {
             this._unitOfWork = new UnitOfWork();
         }
-
         public string GetIngredientNameByTypeId(int id) =>_unitOfWork.IngredientTypes.GetById(id).IngredientName;
     }
 }

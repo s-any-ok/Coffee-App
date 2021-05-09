@@ -1,0 +1,103 @@
+﻿<Window x:Class="CA.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CA.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="10 0"  FontSize="16" FontWeight="Bold"  Text="CoffeeMachines" />
+            </StackPanel>
+            <ListView Grid.Row="1" x:Name="ViewCoffeeMachines" ItemsSource="{Binding CoffeeMachines}"
+                          SelectedItem="{Binding SelectedCoffeeMachine}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="30" Header="№"                                            
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                        <GridViewColumn Width="180" Header="CoffeeMachineName"
+                                            DisplayMemberBinding="{Binding Path=CoffeeMachineName}"/>
+                        <GridViewColumn Width="180" Header="Producer"
+                                            DisplayMemberBinding="{Binding Path=Producer}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <TabControl Grid.Row="0" Grid.Column="1">
+            <TabItem Name="DrinksTab">
+                <TabItem.Header>
+                    <TextBlock Text="Drinks"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewDrinks" ItemsSource="{Binding Drinks}"
+                          SelectedItem="{Binding SelectedDrink}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="30" Header="№"                                           
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn  Width="150" Header="Drink"
+                                            DisplayMemberBinding="{Binding Path=Drink}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Name="IngredientsTab">
+                <TabItem.Header>
+                    <TextBlock Text="Ingredients"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewGetCoffeeMachineIngredients" ItemsSource="{Binding CoffeeMachineIngredients}"
+                          SelectedItem="{Binding SelectedGetCoffeeMachineIngredient}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="30" Header="№"
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Width="100" Header="Ingredient"
+                                            DisplayMemberBinding="{Binding Path=Ingredient}"/>
+                            <GridViewColumn Width="100" Header="MaxVolume"
+                                            DisplayMemberBinding="{Binding Path=MaxVolume}"/>
+                            <GridViewColumn Width="100" Header="Volume"
+                                            DisplayMemberBinding="{Binding Path=Volume}"/>
+                            <GridViewColumn Width="100" Header="Fulfilment (%)"
+                                            DisplayMemberBinding="{Binding Path=Fulfilment}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Name="OrdersTab">
+                <TabItem.Header>
+                    <TextBlock Text="Orders"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewOrders" ItemsSource="{Binding Orders}"
+                          SelectedItem="{Binding SelectedOrder}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="30" Header="№"
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Width="180" Header="DrinkId" 
+                                            DisplayMemberBinding="{Binding Path=DrinkId}"/>
+                            <GridViewColumn Width="180" Header="Order date" 
+                                            DisplayMemberBinding="{Binding Path=OrderDate }"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <Button Width="150" FontSize="18" FontWeight="Bold" Content="Make Order" Command="{Binding OpenMakeOrderWnd}"/>
+        </StackPanel>
+    </Grid>
+</Window>

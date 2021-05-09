@@ -1,0 +1,159 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.WPF\\CA.WPF.csproj": {}
+  },
+  "projects": {
+    "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj",
+        "projectName": "CA.Data",
+        "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Repo\\CA.Repo.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Repo\\CA.Repo.csproj",
+        "projectName": "CA.Repo",
+        "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Repo\\CA.Repo.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj": {
+                "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Service\\CA.Service.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Service\\CA.Service.csproj",
+        "projectName": "CA.Service",
+        "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Service\\CA.Service.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj": {
+                "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Data\\CA.Data.csproj"
+              },
+              "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Repo\\CA.Repo.csproj": {
+                "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Repo\\CA.Repo.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.WPF\\CA.WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.WPF\\CA.WPF.csproj",
+        "projectName": "CA.WPF",
+        "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.WPF\\CA.WPF.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.WPF\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Service\\CA.Service.csproj": {
+                "projectPath": "D:\\CoffeeApp\\Coffee-App\\CoffeeApp\\CA.Service\\CA.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
