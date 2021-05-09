@@ -36,9 +36,8 @@ E:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\CA.Data.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\CA.Data.pdb
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.SqlServer.dll
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csprojAssemblyReference.cache
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCreate.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init1.resources
@@ -46,10 +45,10 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updateDat
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCreate1.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB2.resources
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB3.resources
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.CoffeeMachineIngredients.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.GenerateResource.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CoreCompileInputs.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CopyComplete
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.pdb
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.updatedDB3.resources
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.CoffeeMachineIngredients.resources

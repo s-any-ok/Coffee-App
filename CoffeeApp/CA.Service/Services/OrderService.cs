@@ -18,12 +18,12 @@ namespace CA.Service.Services
             this._unitOfWork = new UnitOfWork();
         }
 
-        public bool IsCorrectOrder(OrderDTO orderDTO) 
+        public bool IsCorrectOrder(OrderView order) 
         {
-            var drink = _unitOfWork.Drinks.GetById(orderDTO.DrinkId);
+            var drink = _unitOfWork.Drinks.GetById(order.DrinkId);
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
-            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.DrinkId);
+            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(order.DrinkId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
@@ -41,12 +41,12 @@ namespace CA.Service.Services
             return true;
         }
 
-        public void AddOrder(OrderDTO orderDTO)
+        public void AddOrder(OrderView order)
         {
-            var drink = _unitOfWork.Drinks.GetById(orderDTO.DrinkId);
+            var drink = _unitOfWork.Drinks.GetById(order.DrinkId);
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
 
-            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(orderDTO.CoffeeMachineId);
+            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(order.CoffeeMachineId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);
 
             foreach (var drinkIngredient in drinkIngredients)
@@ -61,16 +61,16 @@ namespace CA.Service.Services
                 }
             }
             
-            var order = new Order() { DrinkId = orderDTO.DrinkId, CoffeeMachineId = orderDTO.CoffeeMachineId };
-            _unitOfWork.Orders.Create(order);
+            var newOrder = new Order() { DrinkId = order.DrinkId, CoffeeMachineId = order.CoffeeMachineId };
+            _unitOfWork.Orders.Create(newOrder);
             _unitOfWork.Save();
         }
 
-        public IEnumerable<OrderDTO> GetOrdersByDrinkId(int id)
+        public IEnumerable<OrderView> GetOrdersByDrinkId(int id)
         {
             var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Order>, List<OrderDTO>>(orders);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
+            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
         }
 
         #region NotImplemented

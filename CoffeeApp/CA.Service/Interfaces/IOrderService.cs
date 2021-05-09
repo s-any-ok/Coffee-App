@@ -9,8 +9,8 @@ namespace CA.Service
 {
     public interface IOrderService
     {
-        bool IsCorrectOrder(OrderDTO orderDTO);
-        void AddOrder(OrderDTO orderDTO);
+        bool IsCorrectOrder(OrderView order);
+        void AddOrder(OrderView order);
 
         #region NotImplemented
 

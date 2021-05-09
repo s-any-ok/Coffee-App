@@ -36,7 +36,7 @@ namespace CA.Console.Controllers
             string[] strNums = str.Split('a');
             int coffeeMachineId = Int32.Parse(strNums[0]);
             int drinkId = Int32.Parse(strNums[1]);
-            var order = new OrderDTO() { DrinkId = drinkId, CoffeeMachineId = coffeeMachineId };
+            var order = new OrderView() { DrinkId = drinkId, CoffeeMachineId = coffeeMachineId };
             if (orderService.IsCorrectOrder(order))
             {
                 orderService.AddOrder(order);

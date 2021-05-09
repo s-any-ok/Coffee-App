@@ -9,13 +9,13 @@ namespace CA.Service
 {
     public interface ICoffeeMachineService
     {
-        IEnumerable<CoffeeMachineDTO> GetAll();
-        CoffeeMachineDTO GetById(int id);
+        IEnumerable<CoffeeMachineView> GetAll();
+        CoffeeMachineView GetById(int id);
         bool IsEnoughIngredients(int id);
         
-        IEnumerable<DrinkDTO> GetDrinks(int id);
+        IEnumerable<DrinkView> GetDrinks(int id);
         
-        IEnumerable<CoffeeMachineIngredientDTO> GetIngredients(int id);
+        IEnumerable<CoffeeMachineIngredientView> GetIngredients(int id);
         TimeSpan GetTimeToRefreshIngredients(int id);
 
         #region NotImplemented

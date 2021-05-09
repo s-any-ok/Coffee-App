@@ -51,3 +51,6 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CoreCom
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CopyComplete
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.pdb
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.SqlServer.xml

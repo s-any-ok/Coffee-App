@@ -10,7 +10,7 @@ namespace CA.Service
     public interface IDrinkService
     {
         
-        IEnumerable<DrinkIngredientDTO> GetIngredients(int id);
+        IEnumerable<DrinkIngredientView> GetIngredients(int id);
         
         #region NotImplemented
 

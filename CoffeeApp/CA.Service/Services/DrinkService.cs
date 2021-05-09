@@ -18,12 +18,12 @@ namespace CA.Service.Services
             this._unitOfWork = new UnitOfWork();
         }
         
-        public IEnumerable<DrinkIngredientDTO> GetIngredients(int id)
+        public IEnumerable<DrinkIngredientView> GetIngredients(int id)
         {
             var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
 
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientDTO>>(drinkIngredients);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientView>()).CreateMapper();
+            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientView>>(drinkIngredients);
         }
 
         
