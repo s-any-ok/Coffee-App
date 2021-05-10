@@ -1,0 +1,34 @@
+﻿<Window x:Class="CA.WPF.View.MakeOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CA.WPF.View"
+        mc:Ignorable="d"
+        Title="MakeOrderWindow" Height="300" Width="300"
+        Name="MakeOrderWnd">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200">
+            <TextBlock Text="CoffeeMachine"/>
+            <ComboBox ItemsSource="{Binding CoffeeMachines}"
+                      DisplayMemberPath="CoffeeMachineName"
+                      SelectedItem="{Binding SelectedCoffeeMachine }"
+                      />
+            <Button Margin="0 20 0 20" Content="Get Drinks" Command="{Binding GetDrinks}"/>
+            <TextBlock Text="Drink"/>
+            <ComboBox ItemsSource="{Binding Drinks}"
+                      DisplayMemberPath="DrinkName"
+                      SelectedItem="{Binding SelectedDrink}"/>
+        </StackPanel>
+        <Button Grid.Row="1" Content="Make order"
+                Command="{Binding MakeOrder}"
+                />
+    </Grid>
+</Window>

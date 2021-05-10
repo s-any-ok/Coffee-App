@@ -27,14 +27,22 @@
                           SelectedItem="{Binding SelectedCoffeeMachine}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="30" Header="№"                                            
+                        <GridViewColumn Header="№"                                            
                                             DisplayMemberBinding="{Binding Path=Id}"/>
-                        <GridViewColumn Width="180" Header="CoffeeMachineName"
+                        <GridViewColumn Header="CoffeeMachineName"
                                             DisplayMemberBinding="{Binding Path=CoffeeMachineName}"/>
-                        <GridViewColumn Width="180" Header="Producer"
+                        <GridViewColumn Header="Producer"
                                             DisplayMemberBinding="{Binding Path=Producer}"/>
                     </GridView>
                 </ListView.View>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Drinks" Command="{Binding GetDrinks}"/>
+                        <MenuItem Header="Ingredients" Command="{Binding GetIngredients}"/>
+                        <MenuItem Header="Orders" Command="{Binding GetOrders}"/>
+                        <MenuItem Header="All" Command="{Binding GetAll}"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
             </ListView>
         </Grid>
         <TabControl Grid.Row="0" Grid.Column="1">
@@ -46,10 +54,10 @@
                           SelectedItem="{Binding SelectedDrink}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="30" Header="№"                                           
+                            <GridViewColumn Header="№"                                           
                                             DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn  Width="150" Header="Drink"
-                                            DisplayMemberBinding="{Binding Path=Drink}"/>
+                            <GridViewColumn Header="Drink"
+                                            DisplayMemberBinding="{Binding Path=DrinkName}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -62,15 +70,15 @@
                           SelectedItem="{Binding SelectedGetCoffeeMachineIngredient}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="30" Header="№"
+                            <GridViewColumn Header="№"
                                             DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn Width="100" Header="Ingredient"
-                                            DisplayMemberBinding="{Binding Path=Ingredient}"/>
-                            <GridViewColumn Width="100" Header="MaxVolume"
+                            <GridViewColumn Header="Ingredient"
+                                            DisplayMemberBinding="{Binding Path=IngredientName}"/>
+                            <GridViewColumn Header="MaxVolume"
                                             DisplayMemberBinding="{Binding Path=MaxVolume}"/>
-                            <GridViewColumn Width="100" Header="Volume"
+                            <GridViewColumn Header="Volume"
                                             DisplayMemberBinding="{Binding Path=Volume}"/>
-                            <GridViewColumn Width="100" Header="Fulfilment (%)"
+                            <GridViewColumn Header="Fulfilment (%)"
                                             DisplayMemberBinding="{Binding Path=Fulfilment}"/>
                         </GridView>
                     </ListView.View>
@@ -84,11 +92,11 @@
                           SelectedItem="{Binding SelectedOrder}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="30" Header="№"
+                            <GridViewColumn Header="№"
                                             DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn Width="180" Header="DrinkId" 
+                            <GridViewColumn Header="DrinkId" 
                                             DisplayMemberBinding="{Binding Path=DrinkId}"/>
-                            <GridViewColumn Width="180" Header="Order date" 
+                            <GridViewColumn Header="Order date" 
                                             DisplayMemberBinding="{Binding Path=OrderDate }"/>
                         </GridView>
                     </ListView.View>
@@ -97,7 +105,8 @@
         </TabControl>
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     HorizontalAlignment="Left">
-            <Button Width="150" FontSize="18" FontWeight="Bold" Content="Make Order" Command="{Binding OpenMakeOrderWnd}"/>
+            <Button Margin="0 0 10 0" Width="150" FontSize="18" FontWeight="Bold" Content="Make Order" Command="{Binding OpenMakeOrderWnd}"/>
+            <Button Width="180" FontSize="18" FontWeight="Bold" Content="Time To Recharge" Command="{Binding OpenTimeToRechargeWnd}"/>
         </StackPanel>
     </Grid>
 </Window>

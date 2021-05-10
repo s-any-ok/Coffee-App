@@ -12,8 +12,11 @@ namespace CA.Service.Models
     {
         public int Id { get; set; }
 
+        public string IngredientName { get; set; }
         public float MaxVolume { get; set; }
         public float Volume { get; set; }
+
+        public float Fulfilment { get; set; }
 
         [Required]
         public int CoffeeMachineId { get; set; }

@@ -14,9 +14,12 @@ namespace CA.Service
         bool IsEnoughIngredients(int id);
         
         IEnumerable<DrinkView> GetDrinks(int id);
-        
+        IEnumerable<OrderView> GetOrders(int id);
+
         IEnumerable<CoffeeMachineIngredientView> GetIngredients(int id);
         TimeSpan GetTimeToRefreshIngredients(int id);
+
+        TimeSpan GetTimeToRefreshIngredientsInDuration(int id, DateTime firstDate, DateTime lastDate);
 
         #region NotImplemented
         /*void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO);

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ManageStaff.Model
+namespace CA.WPF.Commands
 {
     public class RelayCommand : ICommand
     {

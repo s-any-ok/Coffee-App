@@ -66,13 +66,8 @@ namespace CA.Service.Services
             _unitOfWork.Save();
         }
 
-        public IEnumerable<OrderView> GetOrdersByDrinkId(int id)
-        {
-            var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
-            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
-        }
-
+        public DateTime GetFirstOrderDate(int id) => _unitOfWork.Orders.GetFirstOrder(id).OrderDate;
+        public DateTime GetLastOrderDate(int id) => _unitOfWork.Orders.GetLastOrder(id).OrderDate;
         #region NotImplemented
 
         /*public void DeleteOrder(int id)

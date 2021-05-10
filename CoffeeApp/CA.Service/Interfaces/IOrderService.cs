@@ -12,6 +12,10 @@ namespace CA.Service
         bool IsCorrectOrder(OrderView order);
         void AddOrder(OrderView order);
 
+        DateTime GetLastOrderDate(int id);
+
+        DateTime GetFirstOrderDate(int id);
+
         #region NotImplemented
 
         /*void EditOrder(int id);

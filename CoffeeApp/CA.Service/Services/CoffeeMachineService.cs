@@ -48,17 +48,26 @@ namespace CA.Service.Services
         public IEnumerable<DrinkView> GetDrinks(int id)
         {
             var drinks = _unitOfWork.Drinks.GetAll(id);
-            
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Drink, DrinkView>()).CreateMapper();
             return mapper.Map<IEnumerable<Drink>, List<DrinkView>>(drinks);
+        }
+
+        public IEnumerable<OrderView> GetOrders(int id)
+        {
+            var orders = _unitOfWork.Orders.GetAll(id);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
+            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
         }
 
         public IEnumerable<CoffeeMachineIngredientView> GetIngredients(int id)
         {
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(id);
-
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient, CoffeeMachineIngredientView>()).CreateMapper();
-            return mapper.Map<IEnumerable<CoffeeMachineIngredient>, List<CoffeeMachineIngredientView>>(coffeeMachineIngredients);
+           
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient ,CoffeeMachineIngredientView>()
+                    .ForMember("IngredientName", opt => opt.MapFrom(ing => GetIngridientName(ing.IngredientTypeId)))
+                    .ForMember("Fulfilment", opt => opt.MapFrom(ing => GetFulfilment(ing.Volume, ing.MaxVolume))));
+            var mapper = new Mapper(config);
+            return mapper.Map<IEnumerable <CoffeeMachineIngredient>, List <CoffeeMachineIngredientView>> (coffeeMachineIngredients);
         }
 
         public TimeSpan GetTimeToRefreshIngredients(int id)
@@ -78,6 +87,19 @@ namespace CA.Service.Services
             var coffeeMachineIngredients = GetIngredients(id).ToList();
 
             var duration = GetTimeDuration(times);
+            var coeff = GetIngredientsCoeff(coffeeMachineIngredients);
+            var result = coeff * duration.TotalSeconds;
+
+            TimeSpan tresultTime = TimeSpan.FromSeconds(result);
+
+            return tresultTime;
+        }
+
+        public TimeSpan GetTimeToRefreshIngredientsInDuration(int id, DateTime firstDate, DateTime lastDate)
+        {
+
+            var coffeeMachineIngredients = GetIngredients(id).ToList();
+            TimeSpan duration = lastDate - firstDate;
             var coeff = GetIngredientsCoeff(coffeeMachineIngredients);
             var result = coeff * duration.TotalSeconds;
 
@@ -120,6 +142,9 @@ namespace CA.Service.Services
             return lowestCoeff;
         }
 
+        private string GetIngridientName(int Id) => _unitOfWork.IngredientTypes.GetById(Id).IngredientName;
+        private float GetFulfilment(float currentValue, float maxValue) => (100f * currentValue) / maxValue;
+
         #region NotImplemented
 
         /*public void AddCoffeeMachine(CoffeeMachineDTO coffeeMachineDTO)
@@ -136,13 +161,13 @@ namespace CA.Service.Services
         {
             throw new NotImplementedException();
         }*/
-        
+
         /*public DrinkDTO GetDrinkById(int id)
         {
             throw new NotImplementedException();
         }*/
 
         #endregion
-        
+
     }
 }

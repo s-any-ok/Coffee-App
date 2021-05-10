@@ -44,10 +44,9 @@ namespace CA.Console.Controllers
 
         public void GetCoffeeMachineIngredients(int id, bool IsDefault)
         {
-            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
             var CoffeeMachines = coffeeMachineService.GetIngredients(id).ToList();
             CoffeeMachines.ForEach(x =>
-                System.Console.WriteLine("{0} - {1}", GetIngredientName(x.IngredientTypeId), IsDefault ? x.MaxVolume : x.Volume)
+                System.Console.WriteLine("{0} - {1}", x.IngredientName, IsDefault ? x.MaxVolume : x.Volume)
             );
         }
 
@@ -55,13 +54,10 @@ namespace CA.Console.Controllers
         {      
             var ingredients = coffeeMachineService.GetIngredients(id).ToList();
 
-            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
-
             foreach (var ingredient in ingredients)
             {
-                var proc = (100f * ingredient.Volume) / ingredient.MaxVolume;
                 System.Console.WriteLine(string.Format(" {0,-10} {1,-8} {2,-8} {3}%",
-                    GetIngredientName(ingredient.IngredientTypeId), ingredient.MaxVolume, ingredient.Volume, proc));
+                    ingredient.IngredientName, ingredient.MaxVolume, ingredient.Volume, ingredient.Fulfilment));
             }
         }
 

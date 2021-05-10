@@ -26,7 +26,21 @@ namespace CA.Service.Services
             return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientView>>(drinkIngredients);
         }
 
-        
+        public IEnumerable<OrderView> GetOrders(int id)
+        {
+            var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
+            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
+        }
+
+        public IEnumerable<DrinkView> GetAll()
+        {
+            var drinks = _unitOfWork.Drinks.GetAll();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Drink, DrinkView>()).CreateMapper();
+            return mapper.Map<IEnumerable<Drink>, List<DrinkView>>(drinks);
+        }
+
+
         #region NotImplemented
 
         /*public CoffeeMachineDTO GetCoffeeMachineById(int id)
@@ -45,11 +59,6 @@ namespace CA.Service.Services
         }
 
         public void EditDrink(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<DrinkDTO> GetAll()
         {
             throw new NotImplementedException();
         }

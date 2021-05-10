@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\App.xaml
-1-487866684
+31837126441
 
-8837459601
+12-989681313
 199845428177
-View\MainWindow.xaml;
+View\MainWindow.xaml;View\MakeOrderWindow.xaml;View\TimeToRechargeWindow.xaml;
 
-True
+False
 

@@ -1,0 +1,51 @@
+﻿<Window x:Class="CA.WPF.View.TimeToRechargeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CA.WPF.View"
+        mc:Ignorable="d"
+        Title="TimeToRechargeWindow" Height="320" Width="300"
+        Name="TimeToRechargeWnd">
+    <Window.Resources>
+        <Thickness x:Key="buttonMargin" Bottom="15"/>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Grid.Row="0" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200">
+            <TextBlock Text="CoffeeMachine"/>
+            <ComboBox ItemsSource="{Binding CoffeeMachines}"
+                      DisplayMemberPath="CoffeeMachineName"
+                      SelectedItem="{Binding SelectedCoffeeMachine }"
+                      Margin="{StaticResource buttonMargin}"
+                      />
+            <Button Margin="0 0 0 10" Content="Set CoffeeMachine" Command="{Binding SetCoffeeMachine}"/>
+            <TextBlock Text="From"/>
+            <DatePicker Name="DateFrom" SelectedDate="{Binding DateFrom}"
+                        DisplayDateStart="1/01/09" DisplayDateEnd="12/31/09" 
+                        SelectedDateFormat="Short" 
+                        Margin="{StaticResource buttonMargin}"/>
+            <TextBlock Text="To"/>
+            <DatePicker Name="DateTo" SelectedDate="{Binding DateTo}"
+                        SelectedDateFormat="Short"
+                        Margin="{StaticResource buttonMargin}">
+            </DatePicker>
+            <Button Margin="0 10 0 15" Content="Get Time To Recharge" Command="{Binding GetTimeToRecharge}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Time: "/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock TextAlignment="Right" Text="{Binding TimeToRecharge}"/>
+                </StackPanel>
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+</Window>

@@ -25,7 +25,7 @@ namespace CA.Repo.Implementations
 
         public IEnumerable<Order> GetAll(int id)
         {
-            return context.Order.Where(o => o.Id == id).AsNoTracking();
+            return context.Order.Where(o => o.CoffeeMachineId == id).AsNoTracking();
         }
         
         public IEnumerable<Order> GetAllByDrinkId(int id)
@@ -36,6 +36,16 @@ namespace CA.Repo.Implementations
         public Order GetById(int orderId)
         {
                 return context.Order.FirstOrDefault(x => x.Id == orderId);
+        }
+
+        public Order GetFirstOrder(int coffeeMachineId)
+        {
+            return context.Order.FirstOrDefault(x => x.CoffeeMachineId == coffeeMachineId);
+        }
+
+        public Order GetLastOrder(int coffeeMachineId)
+        {
+            return context.Order.OrderByDescending(o => o.Id).FirstOrDefault(x => x.CoffeeMachineId == coffeeMachineId);
         }
 
         public void Update(Order order)

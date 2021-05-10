@@ -11,7 +11,9 @@ namespace CA.Service
     {
         
         IEnumerable<DrinkIngredientView> GetIngredients(int id);
-        
+        IEnumerable<OrderView> GetOrders(int id);
+        IEnumerable<DrinkView> GetAll();
+
         #region NotImplemented
 
         /*IEnumerable<DrinkDTO> GetAll();
