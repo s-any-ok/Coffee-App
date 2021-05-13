@@ -19,6 +19,24 @@ namespace CA.WPF.ViewModel
 
         private ObservableCollection<CoffeeMachineView> _coffeeMachines;
         private ObservableCollection<DrinkView> _drinks;
+        public ObservableCollection<CoffeeMachineView> CoffeeMachines
+        {
+            get => _coffeeMachines;
+            private set
+            {
+                _coffeeMachines = value;
+                OnPropertyChanged(nameof(CoffeeMachines));
+            }
+        }
+        public ObservableCollection<DrinkView> Drinks
+        {
+            get => _drinks;
+            private set
+            {
+                _drinks = value;
+                OnPropertyChanged(nameof(Drinks));
+            }
+        }
 
         private CoffeeMachineView _selectedCoffeeMachine;
         public CoffeeMachineView SelectedCoffeeMachine
@@ -39,25 +57,6 @@ namespace CA.WPF.ViewModel
             {
                 _selectedDrink = value;
                 OnPropertyChanged(nameof(SelectedDrink));
-            }
-        }
-
-        public ObservableCollection<CoffeeMachineView> CoffeeMachines
-        {
-            get => _coffeeMachines;
-            private set
-            {
-                _coffeeMachines = value;
-                OnPropertyChanged(nameof(CoffeeMachines));
-            }
-        }
-        public ObservableCollection<DrinkView> Drinks
-        {
-            get => _drinks;
-            private set
-            {
-                _drinks = value;
-                OnPropertyChanged(nameof(Drinks));
             }
         }
 

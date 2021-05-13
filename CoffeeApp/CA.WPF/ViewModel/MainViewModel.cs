@@ -19,25 +19,11 @@ namespace CA.WPF.ViewModel
     public class MainViewModel : ObservableObject
     {
         private ICoffeeMachineService _coffeeMachineService;
-        private IDrinkService _drinkService;
-        private IIngredientService _ingredientService;
-        private IOrderService _orderService;
 
         private ObservableCollection<CoffeeMachineView> _coffeeMachines;
         private ObservableCollection<DrinkView> _drinks;
         private ObservableCollection<CoffeeMachineIngredientView> _coffeeMachineIngredients;
         private ObservableCollection<OrderView> _orders;
-
-        private CoffeeMachineView _selectedCoffeeMachine;
-        public CoffeeMachineView SelectedCoffeeMachine
-        {
-            get => _selectedCoffeeMachine;
-            set
-            {
-                _selectedCoffeeMachine = value;
-                OnPropertyChanged(nameof(SelectedCoffeeMachine));
-            }
-        }
 
         public ObservableCollection<CoffeeMachineView> CoffeeMachines
         {
@@ -73,6 +59,17 @@ namespace CA.WPF.ViewModel
             {
                 _orders = value;
                 OnPropertyChanged(nameof(Orders));
+            }
+        }
+
+        private CoffeeMachineView _selectedCoffeeMachine;
+        public CoffeeMachineView SelectedCoffeeMachine
+        {
+            get => _selectedCoffeeMachine;
+            set
+            {
+                _selectedCoffeeMachine = value;
+                OnPropertyChanged(nameof(SelectedCoffeeMachine));
             }
         }
 
@@ -140,16 +137,6 @@ namespace CA.WPF.ViewModel
             }
         }
 
-        public MainViewModel()
-        {
-            _coffeeMachineService = new CoffeeMachineService();
-            _drinkService = new DrinkService();
-            _ingredientService = new IngredientService();
-            _orderService = new OrderService();
-            Init();
-           
-        }
-
         private RelayCommand _opneMakeOrderWindow;
         public RelayCommand OpenMakeOrderWnd
         {
@@ -193,6 +180,13 @@ namespace CA.WPF.ViewModel
             window.Owner = Application.Current.MainWindow;
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.ShowDialog();
+        }
+
+        public MainViewModel()
+        {
+            _coffeeMachineService = new CoffeeMachineService();
+            Init();
+
         }
 
         private void Init()

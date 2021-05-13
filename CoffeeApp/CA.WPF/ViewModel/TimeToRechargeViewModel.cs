@@ -14,6 +14,15 @@ namespace CA.WPF.ViewModel
         private IOrderService _orderService;
 
         private ObservableCollection<CoffeeMachineView> _coffeeMachines;
+        public ObservableCollection<CoffeeMachineView> CoffeeMachines
+        {
+            get => _coffeeMachines;
+            private set
+            {
+                _coffeeMachines = value;
+                OnPropertyChanged(nameof(CoffeeMachines));
+            }
+        }
 
         private CoffeeMachineView _selectedCoffeeMachine;
         public CoffeeMachineView SelectedCoffeeMachine
@@ -61,16 +70,6 @@ namespace CA.WPF.ViewModel
             }
         }
 
-        public ObservableCollection<CoffeeMachineView> CoffeeMachines
-        {
-            get => _coffeeMachines;
-            private set
-            {
-                _coffeeMachines = value;
-                OnPropertyChanged(nameof(CoffeeMachines));
-            }
-        }
-
         private RelayCommand _setCoffeeMachine;
         public RelayCommand SetCoffeeMachine
         {
@@ -97,6 +96,7 @@ namespace CA.WPF.ViewModel
 
                     int coffeeMachineId = SelectedCoffeeMachine.Id;
                     var time = _coffeeMachineService.GetTimeToRefreshIngredientsInDuration(coffeeMachineId, DateFrom, DateTo);
+                    if (time == null) time = _coffeeMachineService.GetTimeToRefreshIngredients(coffeeMachineId);
                     TimeToRecharge = String.Format("{0:%d} d, {0:%h} h, {0:%m} m, {0:%s} s", time);
                 }
                 );
