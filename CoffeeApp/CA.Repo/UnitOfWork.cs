@@ -13,89 +13,95 @@ namespace CA.Repo
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private EFDBContext db = new EFDBContext();
-        private CoffeeMachinesRepository coffeeMachinesRepository;
-        private DrinksRepository drinksRepository;
-        private CoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository;
-        private DrinkIngredientsRepository drinkIngredientsRepository;
-        private OrdersRepository ordersRepository;
-        private IngredientTypesRepository ingredientTypeRepository;
+        private EFDBContext _db = new EFDBContext();
+        private IRepository<CoffeeMachine> _coffeeMachinesRepository;
+        private IDrinkRepository _drinksRepository;
+        private ICoffeeMachineIngredientsRepository _coffeeMachineIngredientsRepository;
+        private IDrinkIngredients _drinkIngredientsRepository;
+        private IOrdersRepository _ordersRepository;
+        private IRepository<IngredientType> _ingredientTypeRepository;
 
-        public CoffeeMachinesRepository CoffeeMachines
+        public IRepository<CoffeeMachine> CoffeeMachines
         {
             get
             {
-                if (coffeeMachinesRepository == null)
-                    coffeeMachinesRepository = new CoffeeMachinesRepository(db);
-                return coffeeMachinesRepository;
+                if (_coffeeMachinesRepository == null)
+                    _coffeeMachinesRepository = new CoffeeMachinesRepository(_db);
+                return _coffeeMachinesRepository;
             }
         }
-        public DrinksRepository Drinks
+        public IDrinkRepository Drinks
         {
             get
             {
-                if (drinksRepository == null)
-                    drinksRepository = new DrinksRepository(db);
-                return drinksRepository;
+                if (_drinksRepository == null)
+                    _drinksRepository = new DrinksRepository(_db);
+                return _drinksRepository;
             }
         }
-        public CoffeeMachineIngredientsRepository CoffeeMachineIngredients
+        public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients
         {
             get
             {
-                if (coffeeMachineIngredientsRepository == null)
-                    coffeeMachineIngredientsRepository = new CoffeeMachineIngredientsRepository(db);
-                return coffeeMachineIngredientsRepository;
-            }
-        }
-
-        public DrinkIngredientsRepository DrinkIngredients
-        {
-            get
-            {
-                if (drinkIngredientsRepository == null)
-                    drinkIngredientsRepository = new DrinkIngredientsRepository(db);
-                return drinkIngredientsRepository;
+                if (_coffeeMachineIngredientsRepository == null)
+                    _coffeeMachineIngredientsRepository = new CoffeeMachineIngredientsRepository(_db);
+                return _coffeeMachineIngredientsRepository;
             }
         }
 
-        public OrdersRepository Orders
+        public IDrinkIngredients DrinkIngredients
         {
             get
             {
-                if (ordersRepository == null)
-                    ordersRepository = new OrdersRepository(db);
-                return ordersRepository;
+                if (_drinkIngredientsRepository == null)
+                    _drinkIngredientsRepository = new DrinkIngredientsRepository(_db);
+                return _drinkIngredientsRepository;
             }
         }
 
-        public IngredientTypesRepository IngredientTypes
+        public IOrdersRepository Orders
         {
             get
             {
-                if (ingredientTypeRepository == null)
-                    ingredientTypeRepository = new IngredientTypesRepository(db);
-                return ingredientTypeRepository;
+                if (_ordersRepository == null)
+                    _ordersRepository = new OrdersRepository(_db);
+                return _ordersRepository;
+            }
+        }
+
+        public IRepository<IngredientType> IngredientTypes
+        {
+            get
+            {
+                if (_ingredientTypeRepository == null)
+                    _ingredientTypeRepository = new IngredientTypesRepository(_db);
+                return _ingredientTypeRepository;
             }
         }
 
         public void Save()
         {
-            db.SaveChanges();
+            _db.SaveChanges();
         }
 
-        private bool disposed = false;
+        #region IDisposable Members
 
+        private bool _disposed = false;
         public virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (_disposed) return;
+
+            if (disposing)
             {
-                if (disposing)
-                {
-                    db.Dispose();
-                }
-                this.disposed = true;
-            }
+                 _coffeeMachinesRepository = null;
+                 _drinksRepository = null;
+                 _coffeeMachineIngredientsRepository = null;
+                 _drinkIngredientsRepository = null;
+                 _ordersRepository = null;
+                 _ingredientTypeRepository = null;
+    }
+            _db.Dispose();
+            _disposed = true;
         }
 
         public void Dispose()
@@ -103,5 +109,12 @@ namespace CA.Repo
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        ~UnitOfWork()
+        {
+            Dispose(false);
+        }
+
+        #endregion
     }
 }

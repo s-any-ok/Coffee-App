@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace CA.Repo.Implementations
 {
-    public class DrinkIngredientsRepository : IRepository<DrinkIngredient>
+    public class DrinkIngredientsRepository : IDrinkIngredients
     {
         private EFDBContext context;
         public DrinkIngredientsRepository(EFDBContext context)
@@ -22,7 +22,7 @@ namespace CA.Repo.Implementations
                 return context.DrinkIngredient.AsNoTracking();
         }
 
-        public IEnumerable<DrinkIngredient> GetAll(int id)
+        public IEnumerable<DrinkIngredient> GetAllByDrinkId(int id)
         {
             return context.DrinkIngredient.Where(d => d.DrinkId == id).AsNoTracking();
         }

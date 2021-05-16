@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using CA.Service.Mappers;
 
 namespace CA.Service.Services
 {
@@ -20,8 +21,11 @@ namespace CA.Service.Services
         }
         public IEnumerable<CoffeeMachineView> GetAll()
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachine, CoffeeMachineView>()).CreateMapper();
-            return mapper.Map<IEnumerable<CoffeeMachine>, List<CoffeeMachineView>>(_unitOfWork.CoffeeMachines.GetAll());
+            var coffeeMachines = _unitOfWork.CoffeeMachines.GetAll();
+            List<CoffeeMachineView> coffeeMachineViews = new List<CoffeeMachineView>();
+            foreach (var coffeeMachine in coffeeMachines) 
+                coffeeMachineViews.Add(CoffeeMachineEntityViewMappper.MapToView(coffeeMachine));
+            return coffeeMachineViews;
         }
 
         public CoffeeMachineView GetById(int id)
@@ -47,16 +51,20 @@ namespace CA.Service.Services
 
         public IEnumerable<DrinkView> GetDrinks(int id)
         {
-            var drinks = _unitOfWork.Drinks.GetAll(id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Drink, DrinkView>()).CreateMapper();
-            return mapper.Map<IEnumerable<Drink>, List<DrinkView>>(drinks);
+            var drinks = _unitOfWork.Drinks.GetAllByCoffeeMachineId(id);
+            List<DrinkView> drinkViews = new List<DrinkView>();
+            foreach (var drink in drinks)
+                drinkViews.Add(DrinkEntityViewMappper.MapToView(drink));
+            return drinkViews;
         }
 
         public IEnumerable<OrderView> GetOrders(int id)
         {
-            var orders = _unitOfWork.Orders.GetAll(id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
-            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
+            var orders = _unitOfWork.Orders.GetAllBCoffeeMachineId(id);
+            List<OrderView> orderViews = new List<OrderView>();
+            foreach (var order in orders)
+                orderViews.Add(OrderEntityViewMappper.MapToView(order));
+            return orderViews;
         }
 
         public IEnumerable<CoffeeMachineIngredientView> GetIngredients(int id)

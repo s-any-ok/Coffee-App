@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ICoffeeMachineIngredientsRepository.cs" />
+    <Compile Include="Interfaces\IDrinkIngredients.cs" />
+    <Compile Include="Interfaces\IDrinkRepository.cs" />
     <Compile Include="Interfaces\IOrdersRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Program.cs" />

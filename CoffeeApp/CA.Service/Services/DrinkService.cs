@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using CA.Service.Mappers;
 
 namespace CA.Service.Services
 {
@@ -20,24 +21,29 @@ namespace CA.Service.Services
         
         public IEnumerable<DrinkIngredientView> GetIngredients(int id)
         {
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(id);
-
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<DrinkIngredient, DrinkIngredientView>()).CreateMapper();
-            return mapper.Map<IEnumerable<DrinkIngredient>, List<DrinkIngredientView>>(drinkIngredients);
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAllByDrinkId(id);
+            List<DrinkIngredientView> drinkIngredientViews = new List<DrinkIngredientView>();
+            foreach (var drinkIngredient in drinkIngredients)
+                drinkIngredientViews.Add(DrinkIngredientEntityViewMappper.MapToView(drinkIngredient));
+            return drinkIngredientViews;
         }
 
         public IEnumerable<OrderView> GetOrders(int id)
         {
             var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderView>()).CreateMapper();
-            return mapper.Map<IEnumerable<Order>, List<OrderView>>(orders);
+            List<OrderView> orderViews = new List<OrderView>();
+            foreach (var order in orders)
+                orderViews.Add(OrderEntityViewMappper.MapToView(order));
+            return orderViews;
         }
 
         public IEnumerable<DrinkView> GetAll()
         {
             var drinks = _unitOfWork.Drinks.GetAll();
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Drink, DrinkView>()).CreateMapper();
-            return mapper.Map<IEnumerable<Drink>, List<DrinkView>>(drinks);
+            List<DrinkView> drinkViews = new List<DrinkView>();
+            foreach (var drink in drinks)
+                drinkViews.Add(DrinkEntityViewMappper.MapToView(drink));
+            return drinkViews;
         }
 
 

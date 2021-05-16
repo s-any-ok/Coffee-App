@@ -17,7 +17,7 @@ namespace CA.WPF.ViewModel
         public ObservableCollection<CoffeeMachineView> CoffeeMachines
         {
             get => _coffeeMachines;
-            private set
+            set
             {
                 _coffeeMachines = value;
                 OnPropertyChanged(nameof(CoffeeMachines));

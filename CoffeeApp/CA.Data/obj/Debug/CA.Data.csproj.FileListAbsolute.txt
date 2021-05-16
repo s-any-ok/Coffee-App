@@ -38,7 +38,6 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\CA.Data.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\bin\Debug\EntityFramework.dll
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csprojAssemblyReference.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.InitialCreate.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.Migrations.init1.resources
@@ -53,3 +52,4 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CoreCompileIn
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csproj.CopyComplete
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.pdb
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Data\obj\Debug\CA.Data.csprojAssemblyReference.cache

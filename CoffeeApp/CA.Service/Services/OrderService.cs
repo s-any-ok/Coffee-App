@@ -21,7 +21,7 @@ namespace CA.Service.Services
         public bool IsCorrectOrder(OrderView order) 
         {
             var drink = _unitOfWork.Drinks.GetById(order.DrinkId);
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAllByDrinkId(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(order.DrinkId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);
@@ -44,7 +44,7 @@ namespace CA.Service.Services
         public void AddOrder(OrderView order)
         {
             var drink = _unitOfWork.Drinks.GetById(order.DrinkId);
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAll(drink.Id);
+            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAllByDrinkId(drink.Id);
 
             var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(order.CoffeeMachineId);
             var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(coffeeMachine.Id);

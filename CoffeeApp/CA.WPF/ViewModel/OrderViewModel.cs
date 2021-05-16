@@ -22,7 +22,7 @@ namespace CA.WPF.ViewModel
         public ObservableCollection<CoffeeMachineView> CoffeeMachines
         {
             get => _coffeeMachines;
-            private set
+            set
             {
                 _coffeeMachines = value;
                 OnPropertyChanged(nameof(CoffeeMachines));
@@ -31,7 +31,7 @@ namespace CA.WPF.ViewModel
         public ObservableCollection<DrinkView> Drinks
         {
             get => _drinks;
-            private set
+            set
             {
                 _drinks = value;
                 OnPropertyChanged(nameof(Drinks));

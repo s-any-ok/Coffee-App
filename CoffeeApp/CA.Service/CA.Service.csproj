@@ -56,11 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewEntities\CoffeeMachineView.cs" />
-    <Compile Include="ViewEntities\OrderView.cs" />
-    <Compile Include="ViewEntities\DrinkIngredientView.cs" />
-    <Compile Include="ViewEntities\CoffeeMachineIngredientView.cs" />
-    <Compile Include="ViewEntities\DrinkView.cs" />
+    <Compile Include="Mappers\CoffeeMachineEntityViewMappper.cs" />
+    <Compile Include="Mappers\DrinkIngredientEntityViewMappper.cs" />
+    <Compile Include="Mappers\OrderEntityViewMappper .cs" />
+    <Compile Include="Mappers\DrinkEntityViewMappper.cs" />
+    <Compile Include="Views\CoffeeMachineView.cs" />
+    <Compile Include="Views\OrderView.cs" />
+    <Compile Include="Views\DrinkIngredientView.cs" />
+    <Compile Include="Views\CoffeeMachineIngredientView.cs" />
+    <Compile Include="Views\DrinkView.cs" />
     <Compile Include="Interfaces\IIngredientService.cs" />
     <Compile Include="Interfaces\IOrderService.cs" />
     <Compile Include="Interfaces\IDrinkService.cs" />

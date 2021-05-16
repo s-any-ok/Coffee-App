@@ -27,11 +27,13 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\AutoMapper.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.csprojAssemblyReference.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MainWindow.g.cs
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MakeOrderWindow.g.cs
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\TimeToRechargeWindow.g.cs
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\App.g.cs
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF_MarkupCompile.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF_MarkupCompile.lref
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MainWindow.baml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MakeOrderWindow.baml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\TimeToRechargeWindow.baml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.g.resources
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.GeneratedMSBuildEditorConfig.editorconfig
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.AssemblyInfoInputs.cache
@@ -42,5 +44,3 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\ref\CA.WPF.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.genruntimeconfig.cache
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\TimeToRechargeWindow.g.cs
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\TimeToRechargeWindow.baml

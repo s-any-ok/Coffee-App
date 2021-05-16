@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace CA.Repo.Implementations
 {
-    public class CoffeeMachineIngredientsRepository : IRepository<CoffeeMachineIngredient>, ICoffeeMachineIngredientsRepository
+    public class CoffeeMachineIngredientsRepository : ICoffeeMachineIngredientsRepository
     {
         private EFDBContext context;
         public CoffeeMachineIngredientsRepository(EFDBContext context)
