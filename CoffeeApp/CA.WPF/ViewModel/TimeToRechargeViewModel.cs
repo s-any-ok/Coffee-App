@@ -75,7 +75,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _setCoffeeMachine ?? new RelayCommand(obj =>
+                return _setCoffeeMachine ??= new RelayCommand(obj =>
                 {
 
                     int coffeeMachineId = SelectedCoffeeMachine.Id;
@@ -91,11 +91,11 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getTimeToRecharge ?? new RelayCommand(obj =>
+                return _getTimeToRecharge ??= new RelayCommand(obj =>
                 {
 
                     int coffeeMachineId = SelectedCoffeeMachine.Id;
-                    var time = _coffeeMachineService.GetTimeToRefreshIngredientsInDuration(coffeeMachineId, DateFrom, DateTo);
+                    TimeSpan time = _coffeeMachineService.GetTimeToRefreshIngredientsInDuration(coffeeMachineId, DateFrom, DateTo);
                     if (time == null) time = _coffeeMachineService.GetTimeToRefreshIngredients(coffeeMachineId);
                     TimeToRecharge = String.Format("{0:%d} d, {0:%h} h, {0:%m} m, {0:%s} s", time);
                 }

@@ -78,7 +78,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getDrinks ?? new RelayCommand(obj =>
+                return _getDrinks ??= new RelayCommand(obj =>
                 {
                     int id = SelectedCoffeeMachine.Id;
                     var result = _coffeeMachineService.GetDrinks(id);
@@ -93,7 +93,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getIngredients ?? new RelayCommand(obj =>
+                return _getIngredients ??= new RelayCommand(obj =>
                 {
                     int id = SelectedCoffeeMachine.Id;
                     var result = _coffeeMachineService.GetIngredients(id);
@@ -108,7 +108,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getOrders ?? new RelayCommand(obj =>
+                return _getOrders ??= new RelayCommand(obj =>
                 {
                     int id = SelectedCoffeeMachine.Id;
                     var result = _coffeeMachineService.GetOrders(id);
@@ -123,7 +123,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getAll ?? new RelayCommand(obj =>
+                return _getAll ??= new RelayCommand(obj =>
                 {
                     int id = SelectedCoffeeMachine.Id;
                     var resultDrinks = _coffeeMachineService.GetDrinks(id);
@@ -142,7 +142,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _opneMakeOrderWindow ?? new RelayCommand(obj =>
+                return _opneMakeOrderWindow ??= new RelayCommand(obj =>
                 {
                     OpenMakeOrderWindow();
                 }
@@ -155,7 +155,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _opneTimeToRechargeWindow ?? new RelayCommand(obj =>
+                return _opneTimeToRechargeWindow ??= new RelayCommand(obj =>
                 {
                     OpenTimeToRechargeWindow();
                 }

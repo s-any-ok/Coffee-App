@@ -14,14 +14,14 @@ namespace CA.Repo
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private EFDBContext _db = new EFDBContext();
-        private IRepository<CoffeeMachine> _coffeeMachinesRepository;
+        private ICoffeeMachineRepository _coffeeMachinesRepository;
         private IDrinkRepository _drinksRepository;
         private ICoffeeMachineIngredientsRepository _coffeeMachineIngredientsRepository;
         private IDrinkIngredients _drinkIngredientsRepository;
         private IOrdersRepository _ordersRepository;
-        private IRepository<IngredientType> _ingredientTypeRepository;
+        private IIngredientTypesRepository _ingredientTypeRepository;
 
-        public IRepository<CoffeeMachine> CoffeeMachines
+        public ICoffeeMachineRepository CoffeeMachines
         {
             get
             {
@@ -69,7 +69,7 @@ namespace CA.Repo
             }
         }
 
-        public IRepository<IngredientType> IngredientTypes
+        public IIngredientTypesRepository IngredientTypes
         {
             get
             {

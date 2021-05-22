@@ -65,7 +65,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _getDrinks ?? new RelayCommand(obj =>
+                return _getDrinks ??= new RelayCommand(obj =>
                 {
                     int id = SelectedCoffeeMachine.Id;
                     var result = _coffeeMachineService.GetDrinks(id);
@@ -80,7 +80,7 @@ namespace CA.WPF.ViewModel
         {
             get
             {
-                return _makeOrder ?? new RelayCommand(obj =>
+                return _makeOrder ??= new RelayCommand(obj =>
                 {
 
                     int coffeeMachineId = SelectedCoffeeMachine.Id;

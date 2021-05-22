@@ -10,44 +10,8 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Repositories
 {
-    public class IngredientTypesRepository : IRepository<IngredientType>
+    public class IngredientTypesRepository : Repository<IngredientType>, IIngredientTypesRepository
     {
-        private EFDBContext context;
-        public IngredientTypesRepository(EFDBContext context)
-        {
-            this.context = context;
-        }
-        public IEnumerable<IngredientType> GetAll()
-        {
-            return context.IngredientType.AsNoTracking();
-        }
-
-        public IEnumerable<IngredientType> GetAll(int id)
-        {
-            return GetAll();
-        }
-
-        public IngredientType GetById(int ingredientId)
-        {
-            return context.IngredientType.FirstOrDefault(x => x.Id == ingredientId);
-        }
-
-        public void Update(IngredientType ingredient)
-        {
-            context.Entry(ingredient).State = EntityState.Modified;
-        }
-
-        public void Create(IngredientType ingredient)
-        {
-            if (ingredient.Id == 0)
-                context.IngredientType.Add(ingredient);
-            else
-                context.Entry(ingredient).State = EntityState.Modified;
-        }
-
-        public void Delete(IngredientType ingredient)
-        {
-            context.IngredientType.Remove(ingredient);
-        }
+        public IngredientTypesRepository(EFDBContext _context) : base(_context) { }
     }
 }

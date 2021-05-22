@@ -7,47 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using CA.Repo.Repositories;
 
 namespace CA.Repo.Implementations
 {
-    public class DrinkIngredientsRepository : IDrinkIngredients
+    public class DrinkIngredientsRepository : Repository<DrinkIngredient>, IDrinkIngredients
     {
-        private EFDBContext context;
-        public DrinkIngredientsRepository(EFDBContext context)
-        {
-            this.context = context;
-        }
-        public IEnumerable<DrinkIngredient> GetAll()
-        {
-                return context.DrinkIngredient.AsNoTracking();
-        }
+        public DrinkIngredientsRepository(EFDBContext _context) : base(_context) { }
 
         public IEnumerable<DrinkIngredient> GetAllByDrinkId(int id)
         {
-            return context.DrinkIngredient.Where(d => d.DrinkId == id).AsNoTracking();
-        }
-
-        public DrinkIngredient GetById(int ingredientId)
-        {
-                return context.DrinkIngredient.FirstOrDefault(x => x.Id == ingredientId);
-        }
-
-        public void Update(DrinkIngredient ingredient)
-        {
-            context.Entry(ingredient).State = EntityState.Modified;
-        }
-
-        public void Create(DrinkIngredient ingredient)
-        {
-            if (ingredient.Id == 0)
-                context.DrinkIngredient.Add(ingredient);
-            else
-                context.Entry(ingredient).State = EntityState.Modified;
-        }
-
-        public void Delete(DrinkIngredient ingredient)
-        {
-            context.DrinkIngredient.Remove(ingredient);
+            return _context.DrinkIngredient.Where(d => d.DrinkId == id).AsNoTracking();
         }
     }
 }

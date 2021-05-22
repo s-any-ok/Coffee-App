@@ -7,48 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using CA.Repo.Repositories;
 
 namespace CA.Repo.Implementations
 {
-    public class DrinksRepository : IDrinkRepository
+    public class DrinksRepository : Repository<Drink>, IDrinkRepository
     {
-        private EFDBContext context;
-        public DrinksRepository(EFDBContext context)
-        {
-            this.context = context;
-        }
-
-        public IEnumerable<Drink> GetAll()
-        {
-                return context.Drink.AsNoTracking();
-        }
+        public DrinksRepository(EFDBContext _context) : base(_context) { }
 
         public IEnumerable<Drink> GetAllByCoffeeMachineId(int id)
         {
-            return context.CoffeeMachine.Where(c => c.Id == id).SelectMany(c => c.Drinks).AsNoTracking();
-        }
-
-        public Drink GetById(int drinkId)
-        {
-                return context.Drink.FirstOrDefault(x => x.Id == drinkId);
-        }
-
-        public void Update(Drink drink)
-        {
-            context.Entry(drink).State = EntityState.Modified;
-        }
-
-        public void Create(Drink drink)
-        {
-            if (drink.Id == 0)
-                context.Drink.Add(drink);
-            else
-                context.Entry(drink).State = EntityState.Modified;
-        }
-
-        public void Delete(Drink drink)
-        {
-            context.Drink.Remove(drink);
+            return _context.CoffeeMachine.Where(c => c.Id == id).SelectMany(c => c.Drinks).AsNoTracking();
         }
     }
 }

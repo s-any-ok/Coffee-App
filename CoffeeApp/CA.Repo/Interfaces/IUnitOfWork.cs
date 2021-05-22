@@ -11,13 +11,12 @@ namespace CA.Repo.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<CoffeeMachine> CoffeeMachines { get; }
+        ICoffeeMachineRepository CoffeeMachines { get; }
         IDrinkRepository Drinks { get; }
         ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
         IOrdersRepository Orders { get; }
         IDrinkIngredients DrinkIngredients { get; }
-        IRepository<IngredientType> IngredientTypes { get; }
+        IIngredientTypesRepository IngredientTypes { get; }
         void Save();
-        void Dispose();
     }
 }
