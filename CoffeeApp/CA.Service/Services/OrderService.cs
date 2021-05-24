@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using CA.Service.Mappers;
 
 namespace CA.Service.Services
 {
@@ -61,8 +62,7 @@ namespace CA.Service.Services
                 }
             }
             
-            var newOrder = new Order() { DrinkId = order.DrinkId, CoffeeMachineId = order.CoffeeMachineId };
-            _unitOfWork.Orders.Create(newOrder);
+            _unitOfWork.Orders.Create(OrderEntityViewMappper.MapToEntity(order));
             _unitOfWork.Save();
         }
 

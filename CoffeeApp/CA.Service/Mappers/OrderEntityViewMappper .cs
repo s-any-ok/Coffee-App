@@ -14,8 +14,8 @@ namespace CA.Service.Mappers
         {
             return new Order()
             {
-                Id = view.Id,
-                OrderDate = view.OrderDate
+                DrinkId = view.DrinkId,
+                CoffeeMachineId = view.CoffeeMachineId
             };
         }
 
@@ -24,7 +24,9 @@ namespace CA.Service.Mappers
             return new OrderView()
             {
                 Id = entity.Id,
-                OrderDate = entity.OrderDate
+                DrinkId = entity.DrinkId,
+                OrderDate = entity.OrderDate,
+                CoffeeMachineId = entity.CoffeeMachineId
             };
         }
     }

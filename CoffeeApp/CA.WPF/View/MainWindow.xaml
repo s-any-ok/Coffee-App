@@ -73,7 +73,7 @@
                             <GridViewColumn Header="№"
                                             DisplayMemberBinding="{Binding Path=Id}"/>
                             <GridViewColumn Header="Ingredient"
-                                            DisplayMemberBinding="{Binding Path=IngredientName}"/>
+                                            DisplayMemberBinding="{Binding Path=IngredientType.IngredientName}"/>
                             <GridViewColumn Header="MaxVolume"
                                             DisplayMemberBinding="{Binding Path=MaxVolume}"/>
                             <GridViewColumn Header="Volume"

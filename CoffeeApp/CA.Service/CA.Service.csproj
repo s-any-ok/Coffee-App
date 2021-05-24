@@ -58,9 +58,12 @@
   <ItemGroup>
     <Compile Include="Mappers\CoffeeMachineEntityViewMappper.cs" />
     <Compile Include="Mappers\DrinkIngredientEntityViewMappper.cs" />
+    <Compile Include="Mappers\CoffeeMachineIngredientEntityViewMappper.cs" />
+    <Compile Include="Mappers\IngredientTypeEntityViewMappper.cs" />
     <Compile Include="Mappers\OrderEntityViewMappper .cs" />
     <Compile Include="Mappers\DrinkEntityViewMappper.cs" />
     <Compile Include="Views\CoffeeMachineView.cs" />
+    <Compile Include="Views\IngredientTypeView.cs" />
     <Compile Include="Views\OrderView.cs" />
     <Compile Include="Views\DrinkIngredientView.cs" />
     <Compile Include="Views\CoffeeMachineIngredientView.cs" />

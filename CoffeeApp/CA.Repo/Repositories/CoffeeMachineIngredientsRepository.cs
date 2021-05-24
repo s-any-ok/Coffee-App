@@ -16,7 +16,7 @@ namespace CA.Repo.Implementations
         public CoffeeMachineIngredientsRepository(EFDBContext _context) : base(_context) { }        
         public IEnumerable<CoffeeMachineIngredient> GetAllByCoffeeMachineId(int id)
         {
-            return _context.CoffeeMachineIngredient.Where(ing => ing.CoffeeMachineId == id).AsNoTracking();
+            return _context.CoffeeMachineIngredient.Where(ing => ing.CoffeeMachineId == id).Include(ing => ing.IngredientType).AsNoTracking();
         }
     }
 }

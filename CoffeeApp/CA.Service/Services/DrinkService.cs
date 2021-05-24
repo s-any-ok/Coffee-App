@@ -21,29 +21,17 @@ namespace CA.Service.Services
         
         public IEnumerable<DrinkIngredientView> GetIngredients(int id)
         {
-            var drinkIngredients = _unitOfWork.DrinkIngredients.GetAllByDrinkId(id);
-            List<DrinkIngredientView> drinkIngredientViews = new List<DrinkIngredientView>();
-            foreach (var drinkIngredient in drinkIngredients)
-                drinkIngredientViews.Add(DrinkIngredientEntityViewMappper.MapToView(drinkIngredient));
-            return drinkIngredientViews;
+            return _unitOfWork.DrinkIngredients.GetAllByDrinkId(id).Select(DrinkIngredientEntityViewMappper.MapToView);
         }
 
         public IEnumerable<OrderView> GetOrders(int id)
         {
-            var orders = _unitOfWork.Orders.GetAllByDrinkId(id);
-            List<OrderView> orderViews = new List<OrderView>();
-            foreach (var order in orders)
-                orderViews.Add(OrderEntityViewMappper.MapToView(order));
-            return orderViews;
+            return _unitOfWork.Orders.GetAllByDrinkId(id).Select(OrderEntityViewMappper.MapToView);
         }
 
         public IEnumerable<DrinkView> GetAll()
         {
-            var drinks = _unitOfWork.Drinks.GetAll();
-            List<DrinkView> drinkViews = new List<DrinkView>();
-            foreach (var drink in drinks)
-                drinkViews.Add(DrinkEntityViewMappper.MapToView(drink));
-            return drinkViews;
+            return _unitOfWork.Drinks.GetAll().Select(DrinkEntityViewMappper.MapToView);
         }
 
 

@@ -16,14 +16,12 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\runtimes\win\l
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Repo.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Service.exe
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\AutoMapper.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Service.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Service.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Data.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Data.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Repo.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\CA.Repo.exe.config
-D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\bin\Debug\net5.0-windows\AutoMapper.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\CA.WPF.csprojAssemblyReference.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MainWindow.g.cs
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.WPF\obj\Debug\net5.0-windows\View\MakeOrderWindow.g.cs

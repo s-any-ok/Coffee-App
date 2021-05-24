@@ -21,17 +21,12 @@ namespace CA.Service.Services
         }
         public IEnumerable<CoffeeMachineView> GetAll()
         {
-            var coffeeMachines = _unitOfWork.CoffeeMachines.GetAll();
-            List<CoffeeMachineView> coffeeMachineViews = new List<CoffeeMachineView>();
-            foreach (var coffeeMachine in coffeeMachines) 
-                coffeeMachineViews.Add(CoffeeMachineEntityViewMappper.MapToView(coffeeMachine));
-            return coffeeMachineViews;
+            return _unitOfWork.CoffeeMachines.GetAll().Select(CoffeeMachineEntityViewMappper.MapToView);
         }
 
         public CoffeeMachineView GetById(int id)
         {
-            var coffeeMachine = _unitOfWork.CoffeeMachines.GetById(id);
-            return new CoffeeMachineView { Id = coffeeMachine.Id, CoffeeMachineName = coffeeMachine.CoffeeMachineName, Producer = coffeeMachine.Producer };
+            return CoffeeMachineEntityViewMappper.MapToView(_unitOfWork.CoffeeMachines.GetById(id));
         }
 
         public bool IsEnoughIngredients(int id) 
@@ -51,31 +46,19 @@ namespace CA.Service.Services
 
         public IEnumerable<DrinkView> GetDrinks(int id)
         {
-            var drinks = _unitOfWork.Drinks.GetAllByCoffeeMachineId(id);
-            List<DrinkView> drinkViews = new List<DrinkView>();
-            foreach (var drink in drinks)
-                drinkViews.Add(DrinkEntityViewMappper.MapToView(drink));
-            return drinkViews;
+            return _unitOfWork.Drinks.GetAllByCoffeeMachineId(id).Select(DrinkEntityViewMappper.MapToView);
         }
 
         public IEnumerable<OrderView> GetOrders(int id)
         {
-            var orders = _unitOfWork.Orders.GetAllBCoffeeMachineId(id);
-            List<OrderView> orderViews = new List<OrderView>();
-            foreach (var order in orders)
-                orderViews.Add(OrderEntityViewMappper.MapToView(order));
-            return orderViews;
+            return _unitOfWork.Orders.GetAllBCoffeeMachineId(id).Select(OrderEntityViewMappper.MapToView);
         }
 
         public IEnumerable<CoffeeMachineIngredientView> GetIngredients(int id)
         {
-            var coffeeMachineIngredients = _unitOfWork.CoffeeMachineIngredients.GetAllByCoffeeMachineId(id);
-           
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<CoffeeMachineIngredient ,CoffeeMachineIngredientView>()
-                    .ForMember("IngredientName", opt => opt.MapFrom(ing => GetIngridientName(ing.IngredientTypeId)))
-                    .ForMember("Fulfilment", opt => opt.MapFrom(ing => GetFulfilment(ing.Volume, ing.MaxVolume))));
-            var mapper = new Mapper(config);
-            return mapper.Map<IEnumerable <CoffeeMachineIngredient>, List <CoffeeMachineIngredientView>> (coffeeMachineIngredients);
+            return _unitOfWork.CoffeeMachineIngredients
+                .GetAllByCoffeeMachineId(id)
+                .Select(CoffeeMachineIngredientEntityViewMappper.MapToView);
         }
 
         public TimeSpan GetTimeToRefreshIngredients(int id)
@@ -149,9 +132,6 @@ namespace CA.Service.Services
             double lowestCoeff = coeffs.Any() ? coeffs.Min() : 0;
             return lowestCoeff;
         }
-
-        private string GetIngridientName(int Id) => _unitOfWork.IngredientTypes.GetById(Id).IngredientName;
-        private float GetFulfilment(float currentValue, float maxValue) => (100f * currentValue) / maxValue;
 
         #region NotImplemented
 
