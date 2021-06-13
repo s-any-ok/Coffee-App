@@ -2,7 +2,7 @@
 
 namespace CA.Repo.Interfaces
 {
-    public interface ICoffeeMachineRepository : IRepository<CoffeeMachine>
+    public interface ICoffeeMachineRepository : IRepository<CoffeeMachine, int>
     {
         
     }

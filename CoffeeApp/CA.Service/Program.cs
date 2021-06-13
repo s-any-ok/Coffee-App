@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA.Service
 {
-    class Program
+    class  Program
     {
         static void Main(string[] args)
         {

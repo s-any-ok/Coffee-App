@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Interfaces
 {
-    public interface IDrinkRepository : IRepository<Drink>
+    public interface IDrinkRepository : IRepository<Drink, int>
     {
         IEnumerable<Drink> GetAllByCoffeeMachineId(int id);
     }

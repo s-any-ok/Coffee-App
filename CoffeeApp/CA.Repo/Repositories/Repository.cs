@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T, K> : IRepository<T, K> where T : class
     {
 
         protected readonly EFDBContext _context;
@@ -26,7 +26,7 @@ namespace CA.Repo.Repositories
             return _dbSet.AsNoTracking();
         }
 
-        public T GetById(int coffeeMachineId)
+        public T GetById(K coffeeMachineId)
         {
             return _dbSet.Find(coffeeMachineId);
         }

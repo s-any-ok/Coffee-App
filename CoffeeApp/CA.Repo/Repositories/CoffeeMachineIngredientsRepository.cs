@@ -11,7 +11,7 @@ using CA.Repo.Repositories;
 
 namespace CA.Repo.Implementations
 {
-    public class CoffeeMachineIngredientsRepository : Repository<CoffeeMachineIngredient>, ICoffeeMachineIngredientsRepository
+    public class CoffeeMachineIngredientsRepository : Repository<CoffeeMachineIngredient, int>, ICoffeeMachineIngredientsRepository
     {
         public CoffeeMachineIngredientsRepository(EFDBContext _context) : base(_context) { }        
         public IEnumerable<CoffeeMachineIngredient> GetAllByCoffeeMachineId(int id)

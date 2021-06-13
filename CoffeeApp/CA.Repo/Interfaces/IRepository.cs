@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Interfaces
 {
-    public interface IRepository<T>  where T : class
+    public interface IRepository<T, K>  where T : class
     {
         void Create(T item);
-        T GetById(int id);
+        T GetById(K id);
         IEnumerable<T> GetAll();
         void Delete(T item);
         void Update(T item);

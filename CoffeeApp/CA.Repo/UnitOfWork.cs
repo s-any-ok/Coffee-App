@@ -87,33 +87,39 @@ namespace CA.Repo
         #region IDisposable Members
 
         private bool _disposed = false;
-        protected virtual void Dispose(bool disposing)
+         
+        protected virtual void CleabData(bool disposing)
         {
             if (_disposed) return;
 
             if (disposing)
             {
-                 _coffeeMachinesRepository = null;
-                 _drinksRepository = null;
-                 _coffeeMachineIngredientsRepository = null;
-                 _drinkIngredientsRepository = null;
-                 _ordersRepository = null;
-                 _ingredientTypeRepository = null;
-    }
+                
+            }
             _db.Dispose();
             _disposed = true;
         }
 
         public void Dispose()
         {
-            Dispose(true);
+            CleabData(true);
             GC.SuppressFinalize(this);
         }
 
         ~UnitOfWork()
         {
-            Dispose(false);
+            CleabData(false);
         }
+        
+        /*public void Dispose()
+        {
+            _db.Dispose();
+        }
+
+        ~UnitOfWork()
+        {
+            Dispose();
+        }*/
 
         #endregion
     }

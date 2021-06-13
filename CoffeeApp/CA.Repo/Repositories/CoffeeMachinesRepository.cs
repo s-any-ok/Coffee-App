@@ -11,7 +11,7 @@ using CA.Repo.Repositories;
 
 namespace CA.Repo.Implementations
 {
-    public class CoffeeMachinesRepository : Repository<CoffeeMachine>, ICoffeeMachineRepository
+    public class CoffeeMachinesRepository : Repository<CoffeeMachine, int>, ICoffeeMachineRepository
     {
         public CoffeeMachinesRepository(EFDBContext _context) : base(_context) { }
     }

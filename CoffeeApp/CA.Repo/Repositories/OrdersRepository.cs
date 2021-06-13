@@ -11,7 +11,7 @@ using CA.Repo.Repositories;
 
 namespace CA.Repo.Implementations
 {
-    public class OrdersRepository : Repository<Order>, IOrdersRepository
+    public class OrdersRepository : Repository<Order, int>, IOrdersRepository
     {
 
         public OrdersRepository(EFDBContext _context) : base(_context) { }

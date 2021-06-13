@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CA.Repo.Repositories
 {
-    public class IngredientTypesRepository : Repository<IngredientType>, IIngredientTypesRepository
+    public class IngredientTypesRepository : Repository<IngredientType, int>, IIngredientTypesRepository
     {
         public IngredientTypesRepository(EFDBContext _context) : base(_context) { }
     }

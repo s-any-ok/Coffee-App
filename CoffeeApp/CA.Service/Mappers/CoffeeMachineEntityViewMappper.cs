@@ -5,7 +5,8 @@ namespace CA.Service.Mappers
 {
     public static class CoffeeMachineEntityViewMappper
     {
-        public static CoffeeMachine MapToEntity(this CoffeeMachineView view) {
+        public static CoffeeMachine MapToEntity(this CoffeeMachineView view)
+        {
             return new CoffeeMachine()
             {
                 Id = view.Id,

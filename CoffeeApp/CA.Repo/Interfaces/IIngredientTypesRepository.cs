@@ -2,7 +2,7 @@
 
 namespace CA.Repo.Interfaces
 {
-    public interface IIngredientTypesRepository : IRepository<IngredientType>
+    public interface IIngredientTypesRepository : IRepository<IngredientType, int>
     {
         
     }

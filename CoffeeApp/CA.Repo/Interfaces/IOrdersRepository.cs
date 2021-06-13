@@ -4,7 +4,7 @@ using CA.Data.Entityes;
 
 namespace CA.Repo.Interfaces
 {
-    public interface IOrdersRepository : IRepository<Order>
+    public interface IOrdersRepository : IRepository<Order, int>
     {
         IEnumerable<Order> GetAllBCoffeeMachineId(int id);
         IEnumerable<Order> GetAllByDrinkId(int id);
