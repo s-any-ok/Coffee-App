@@ -13,75 +13,30 @@ namespace CA.Repo
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private EFDBContext _db = new EFDBContext();
-        private ICoffeeMachineRepository _coffeeMachinesRepository;
-        private IDrinkRepository _drinksRepository;
-        private ICoffeeMachineIngredientsRepository _coffeeMachineIngredientsRepository;
-        private IDrinkIngredients _drinkIngredientsRepository;
-        private IOrdersRepository _ordersRepository;
-        private IIngredientTypesRepository _ingredientTypeRepository;
-
-        public ICoffeeMachineRepository CoffeeMachines
+        private readonly EFDBContext _context;
+        public ICoffeeMachineRepository CoffeeMachines { get; }
+        public IDrinkRepository Drinks { get; }
+        public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
+        public IDrinkIngredientsRepository DrinkIngredients { get; }
+        public IOrdersRepository Orders { get; }
+        public IIngredientTypesRepository IngredientTypes { get; }
+        
+        public UnitOfWork(EFDBContext context, ICoffeeMachineRepository coffeeMachineRepository,
+            IDrinkRepository drinkRepository, ICoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository,
+            IDrinkIngredientsRepository drinkIngredientsRepository, IOrdersRepository orderRepository, IIngredientTypesRepository ingredientTypeRepository)
         {
-            get
-            {
-                if (_coffeeMachinesRepository == null)
-                    _coffeeMachinesRepository = new CoffeeMachinesRepository(_db);
-                return _coffeeMachinesRepository;
-            }
-        }
-        public IDrinkRepository Drinks
-        {
-            get
-            {
-                if (_drinksRepository == null)
-                    _drinksRepository = new DrinksRepository(_db);
-                return _drinksRepository;
-            }
-        }
-        public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients
-        {
-            get
-            {
-                if (_coffeeMachineIngredientsRepository == null)
-                    _coffeeMachineIngredientsRepository = new CoffeeMachineIngredientsRepository(_db);
-                return _coffeeMachineIngredientsRepository;
-            }
-        }
-
-        public IDrinkIngredients DrinkIngredients
-        {
-            get
-            {
-                if (_drinkIngredientsRepository == null)
-                    _drinkIngredientsRepository = new DrinkIngredientsRepository(_db);
-                return _drinkIngredientsRepository;
-            }
-        }
-
-        public IOrdersRepository Orders
-        {
-            get
-            {
-                if (_ordersRepository == null)
-                    _ordersRepository = new OrdersRepository(_db);
-                return _ordersRepository;
-            }
-        }
-
-        public IIngredientTypesRepository IngredientTypes
-        {
-            get
-            {
-                if (_ingredientTypeRepository == null)
-                    _ingredientTypeRepository = new IngredientTypesRepository(_db);
-                return _ingredientTypeRepository;
-            }
+            _context = context;
+            CoffeeMachines = coffeeMachineRepository;
+            Drinks = drinkRepository;
+            CoffeeMachineIngredients = coffeeMachineIngredientsRepository;
+            Orders= orderRepository;
+            DrinkIngredients = drinkIngredientsRepository;
+            IngredientTypes = ingredientTypeRepository;
         }
 
         public void Save()
         {
-            _db.SaveChanges();
+            _context.SaveChanges();
         }
 
         #region IDisposable Members
@@ -96,7 +51,7 @@ namespace CA.Repo
             {
                 
             }
-            _db.Dispose();
+            _context.Dispose();
             _disposed = true;
         }
 
@@ -113,7 +68,7 @@ namespace CA.Repo
         
         /*public void Dispose()
         {
-            _db.Dispose();
+            _context.Dispose();
         }
 
         ~UnitOfWork()

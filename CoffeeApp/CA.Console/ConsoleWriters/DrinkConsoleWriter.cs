@@ -11,24 +11,21 @@ namespace CA.Console.Controllers
 {
     public class DrinkConsoleWriter
     {
-        private ICoffeeMachineService coffeeMachineService;
-        private IDrinkService drinkService;
-        private IIngredientService ingredientService;
-        private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
+        private readonly ICoffeeMachineService coffeeMachineService;
+        private readonly IDrinkService drinkService;
+        // private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
        
-        public DrinkConsoleWriter()
+        public DrinkConsoleWriter(ICoffeeMachineService coffeeMachineService, IDrinkService drinkService)
         {
-            coffeeMachineService = new CoffeeMachineService();
-            drinkService = new DrinkService();
-            coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
-            ingredientService = new IngredientService();
+            this.coffeeMachineService = coffeeMachineService;
+            this.drinkService = drinkService;
+            // coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
         }
         public void GetIngredients(int id)
         {
-            string GetIngredientName(int IngId) => ingredientService.GetIngredientNameByTypeId(IngId);
             var drinks = drinkService.GetIngredients(id).ToList();
             drinks.ForEach(x =>
-                System.Console.WriteLine("- {0} - {1}", GetIngredientName(x.Id), x.Volume)
+                System.Console.WriteLine("- {0} - {1}",  coffeeMachineService.GetIngredients(x.Id), x.Volume)
             );
         }
         public void GetIngredientsByCoffeeMachineId(int id)
@@ -54,7 +51,7 @@ namespace CA.Console.Controllers
             }
             else if (drinkChoose == "2")
             {
-                coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(id);
+                //coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(id);
                 string str = System.Console.ReadLine();
                 string[] strNums = str.Split('a');
                 int coffeeMachineId = Int32.Parse(strNums[0]);

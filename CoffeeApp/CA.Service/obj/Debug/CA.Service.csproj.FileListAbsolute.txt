@@ -42,6 +42,11 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Data.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Repo.exe
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Data.pdb
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Data.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Repo.pdb
@@ -49,6 +54,11 @@ D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\CA.Repo.exe.config
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\AutoMapper.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csprojAssemblyReference.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CoreCompileInputs.cache
 D:\CoffeeApp\Coffee-App\CoffeeApp\CA.Service\obj\Debug\CA.Service.csproj.CopyComplete

@@ -11,12 +11,11 @@ namespace CA.Console.Controllers
 {
     public class CoffeeMachineConsoleWriter
     {
-        private ICoffeeMachineService coffeeMachineService;
-        private IIngredientService ingredientService;
-        public CoffeeMachineConsoleWriter()
+        private readonly ICoffeeMachineService coffeeMachineService;
+
+        public CoffeeMachineConsoleWriter(ICoffeeMachineService coffeeMachineService)
         {
-            coffeeMachineService = new CoffeeMachineService();
-            ingredientService = new IngredientService();
+            this.coffeeMachineService = coffeeMachineService;
         }
 
         public void GetCoffeeMachines()

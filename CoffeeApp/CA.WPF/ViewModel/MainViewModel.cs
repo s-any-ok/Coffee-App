@@ -19,6 +19,8 @@ namespace CA.WPF.ViewModel
     public class MainViewModel : ObservableObject
     {
         private ICoffeeMachineService _coffeeMachineService;
+        private readonly TimeToRechargeViewModel timeToRechargeViewModel;
+        private readonly OrderViewModel orderViewModel;
 
         private ObservableCollection<CoffeeMachineView> _coffeeMachines;
         private ObservableCollection<DrinkView> _drinks;
@@ -166,12 +168,14 @@ namespace CA.WPF.ViewModel
         private void OpenMakeOrderWindow()
         {
             MakeOrderWindow makeOrderWindow = new MakeOrderWindow();
+            makeOrderWindow.DataContext = orderViewModel;
             SetCenterPositionAndOpen(makeOrderWindow);
         }
 
         private void OpenTimeToRechargeWindow()
         {
             TimeToRechargeWindow timeToRechargeWindow = new TimeToRechargeWindow();
+            timeToRechargeWindow.DataContext = timeToRechargeViewModel;
             SetCenterPositionAndOpen(timeToRechargeWindow);
         }
 
@@ -182,9 +186,11 @@ namespace CA.WPF.ViewModel
             window.ShowDialog();
         }
 
-        public MainViewModel()
+        public MainViewModel(ICoffeeMachineService coffeeMachineService, TimeToRechargeViewModel timeToRechargeViewModel, OrderViewModel orderViewModel)
         {
-            _coffeeMachineService = new CoffeeMachineService();
+            _coffeeMachineService = coffeeMachineService;
+            this.timeToRechargeViewModel = timeToRechargeViewModel;
+            this.orderViewModel = orderViewModel;
             Init();
 
         }

@@ -8,16 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using CA.Repo.Interfaces;
 using CA.Service.Mappers;
 
 namespace CA.Service.Services
 {
     public class CoffeeMachineService : ICoffeeMachineService
     {
-        private UnitOfWork _unitOfWork;
-        public CoffeeMachineService()
+        private readonly IUnitOfWork _unitOfWork;
+        public CoffeeMachineService(IUnitOfWork unitOfWork)
         {
-            this._unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
         }
         public IEnumerable<CoffeeMachineView> GetAll()
         {

@@ -12,14 +12,15 @@ namespace CA.Console.Controllers
 {
     public class OrderConsoleWriter
     {
-        private ICoffeeMachineService coffeeMachineService;
-        private IOrderService orderService;
-        private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
-        public OrderConsoleWriter()
+        private readonly ICoffeeMachineService coffeeMachineService;
+        private readonly IOrderService orderService;
+
+        // private CoffeeMachineConsoleWriter coffeeMachineConsoleWriter;
+        public OrderConsoleWriter(ICoffeeMachineService coffeeMachineService, IOrderService orderService)
         {
-            coffeeMachineService = new CoffeeMachineService();
-            orderService = new OrderService();
-            coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
+            this.coffeeMachineService = coffeeMachineService;
+            this.orderService = orderService;
+            // coffeeMachineConsoleWriter = new CoffeeMachineConsoleWriter();
         }
         public void MakeOrder()
         {
@@ -27,7 +28,7 @@ namespace CA.Console.Controllers
             CoffeeMachines.ForEach(x =>
             {
                 System.Console.WriteLine("---- {0} ----", x.CoffeeMachineName);
-                coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(x.Id);
+                //coffeeMachineConsoleWriter.GetCoffeeMachineDrinks(x.Id);
                 System.Console.WriteLine("\n\n");
             });
             System.Console.WriteLine();

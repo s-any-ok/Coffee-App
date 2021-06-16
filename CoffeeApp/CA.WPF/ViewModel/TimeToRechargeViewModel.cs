@@ -5,6 +5,7 @@ using CA.WPF.Commands;
 using CA.WPF.Model;
 using System;
 using System.Collections.ObjectModel;
+using CA.Repo;
 
 namespace CA.WPF.ViewModel
 {
@@ -103,10 +104,10 @@ namespace CA.WPF.ViewModel
             }
         }
 
-        public TimeToRechargeViewModel()
+        public TimeToRechargeViewModel(ICoffeeMachineService coffeeMachineService, IOrderService orderService)
         {
-            _coffeeMachineService = new CoffeeMachineService();
-            _orderService = new OrderService();
+            _coffeeMachineService = coffeeMachineService;
+            _orderService = orderService;
             Init();
         }
 

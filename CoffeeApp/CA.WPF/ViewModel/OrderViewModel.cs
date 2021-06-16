@@ -95,10 +95,10 @@ namespace CA.WPF.ViewModel
             }
         }
 
-        public OrderViewModel()
+        public OrderViewModel(ICoffeeMachineService coffeeMachineService, IOrderService orderService)
         {
-            _coffeeMachineService = new CoffeeMachineService();
-            _orderService = new OrderService();
+            _coffeeMachineService = coffeeMachineService;
+            _orderService = orderService;
             Init();
         }
 

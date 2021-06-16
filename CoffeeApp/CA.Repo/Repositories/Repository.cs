@@ -11,7 +11,7 @@ namespace CA.Repo.Repositories
 {
     public class Repository<T, K> : IRepository<T, K> where T : class
     {
-
+        
         protected readonly EFDBContext _context;
         private DbSet<T> _dbSet;
 
@@ -26,24 +26,25 @@ namespace CA.Repo.Repositories
             return _dbSet.AsNoTracking();
         }
 
-        public T GetById(K coffeeMachineId)
+        public T GetById(K entityId)
         {
-            return _dbSet.Find(coffeeMachineId);
+            return _dbSet.Find(entityId);
         }
 
-        public void Update(T coffeeMachine)
+        public void Update(T entity)
         {
-            _context.Entry(coffeeMachine).State = EntityState.Modified;
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
-        public void Create(T coffeeMachine)
+        public void Create(T entity)
         {
-            _dbSet.Add(coffeeMachine);
+            _dbSet.Add(entity);
         }
 
-        public void Delete(T coffeeMachine)
+        public void Delete(T entity)
         {
-            _dbSet.Remove(coffeeMachine);
+            _dbSet.Remove(entity);
         }
     }
 }

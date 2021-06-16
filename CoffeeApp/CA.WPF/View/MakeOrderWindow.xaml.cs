@@ -8,7 +8,6 @@ namespace CA.WPF.View
         public MakeOrderWindow()
         {
             InitializeComponent();
-            DataContext = new OrderViewModel();
         }
     }
 }

@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using CA.Repo.Interfaces;
 using CA.Service.Mappers;
 
 namespace CA.Service.Services
 {
     public class OrderService : IOrderService
     {
-        private UnitOfWork _unitOfWork;
-        public OrderService()
+        private readonly IUnitOfWork _unitOfWork;
+        public OrderService(IUnitOfWork unitOfWork)
         {
-            this._unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
         }
 
         public bool IsCorrectOrder(OrderView order) 

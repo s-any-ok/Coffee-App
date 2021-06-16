@@ -8,7 +8,6 @@ namespace CA.WPF.View
         public TimeToRechargeWindow()
         {
             InitializeComponent();
-            DataContext = new TimeToRechargeViewModel();
         }
     }
 }
