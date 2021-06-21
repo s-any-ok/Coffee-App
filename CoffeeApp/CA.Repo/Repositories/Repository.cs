@@ -6,10 +6,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CA.Data.Entityes.Base;
 
 namespace CA.Repo.Repositories
 {
-    public class Repository<T, K> : IRepository<T, K> where T : class
+    public class Repository<T, K> : IRepository<T, K> where T : BaseEntity<K>
     {
         
         protected readonly EFDBContext _context;

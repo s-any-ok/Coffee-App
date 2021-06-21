@@ -79,12 +79,10 @@
     <Compile Include="Interfaces\ICoffeeMachineRepository.cs" />
     <Compile Include="Interfaces\IDrinkIngredientsRepository.cs" />
     <Compile Include="Interfaces\IDrinkRepository.cs" />
-    <Compile Include="Interfaces\IIngredientTypesRepository.cs" />
     <Compile Include="Interfaces\IOrdersRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\DrinkIngredientsRepository.cs" />
-    <Compile Include="Repositories\IngredientTypeRepository.cs" />
     <Compile Include="Repositories\OrdersRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="UnitOfWork.cs" />

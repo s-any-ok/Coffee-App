@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CA.Data.Entityes.Base;
 
 namespace CA.Data.Entityes
 {
-    public class Drink
+    public class Drink : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public string DrinkName { get; set; }
 
         public List<DrinkIngredient> DrinkIngredients { get; set; }

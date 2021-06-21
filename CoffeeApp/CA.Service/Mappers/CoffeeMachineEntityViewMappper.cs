@@ -1,5 +1,6 @@
 ﻿using CA.Data.Entityes;
 using CA.Service.Models;
+using CA.Service.Views;
 
 namespace CA.Service.Mappers
 {

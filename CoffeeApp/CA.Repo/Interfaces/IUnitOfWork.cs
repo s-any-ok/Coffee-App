@@ -16,7 +16,6 @@ namespace CA.Repo.Interfaces
         ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
         IOrdersRepository Orders { get; }
         IDrinkIngredientsRepository DrinkIngredients { get; }
-        IIngredientTypesRepository IngredientTypes { get; }
         void Save();
     }
 }

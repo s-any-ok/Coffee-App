@@ -1,14 +1,14 @@
-﻿using CA.Repo;
+﻿using CA.Data;
 using CA.Repo.Implementations;
 using CA.Repo.Interfaces;
 using CA.Repo.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CA.Data
+namespace CA.Repo
 {
-    public static class DALDependencyInstaller
+    public static class DalDependencyInstaller
     {
-        public static IServiceCollection RegisterDALDependencies(this IServiceCollection services)
+        public static IServiceCollection RegisterDalDependencies(this IServiceCollection services)
         {
             services.AddScoped<EFDBContext, EFDBContext>();
 
@@ -16,7 +16,6 @@ namespace CA.Data
             services.AddScoped<ICoffeeMachineRepository, CoffeeMachinesRepository>();
             services.AddScoped<IDrinkIngredientsRepository, DrinkIngredientsRepository>();
             services.AddScoped<IDrinkRepository, DrinksRepository>();
-            services.AddScoped<IIngredientTypesRepository, IngredientTypesRepository>();
             services.AddScoped<IDrinkRepository, DrinksRepository>();
             services.AddScoped<IOrdersRepository, OrdersRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();

@@ -1,4 +1,5 @@
 ﻿using CA.Data;
+using CA.Repo;
 using CA.Service;
 using CoffeeApp.Console.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +20,7 @@ namespace CoffeeApp.Console
          
         private void ConfigureServices(IServiceCollection services)
         {
-            services.RegisterDALDependencies();
+            services.RegisterDalDependencies();
             services.RegisterBLLDependencies();
             services.RegisterCMDDependencies();
         }

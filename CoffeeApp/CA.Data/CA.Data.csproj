@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\EFDBContext.cs" />
+    <Compile Include="Entityes\Base\BaseEntity.cs" />
     <Compile Include="Entityes\CoffeeMachine.cs" />
     <Compile Include="Entityes\CoffeeMachineIngredient.cs" />
     <Compile Include="Entityes\Drink.cs" />

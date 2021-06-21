@@ -19,11 +19,10 @@ namespace CA.Repo
         public ICoffeeMachineIngredientsRepository CoffeeMachineIngredients { get; }
         public IDrinkIngredientsRepository DrinkIngredients { get; }
         public IOrdersRepository Orders { get; }
-        public IIngredientTypesRepository IngredientTypes { get; }
-        
+
         public UnitOfWork(EFDBContext context, ICoffeeMachineRepository coffeeMachineRepository,
             IDrinkRepository drinkRepository, ICoffeeMachineIngredientsRepository coffeeMachineIngredientsRepository,
-            IDrinkIngredientsRepository drinkIngredientsRepository, IOrdersRepository orderRepository, IIngredientTypesRepository ingredientTypeRepository)
+            IDrinkIngredientsRepository drinkIngredientsRepository, IOrdersRepository orderRepository)
         {
             _context = context;
             CoffeeMachines = coffeeMachineRepository;
@@ -31,7 +30,6 @@ namespace CA.Repo
             CoffeeMachineIngredients = coffeeMachineIngredientsRepository;
             Orders= orderRepository;
             DrinkIngredients = drinkIngredientsRepository;
-            IngredientTypes = ingredientTypeRepository;
         }
 
         public void Save()

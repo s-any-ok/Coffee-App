@@ -1,15 +1,11 @@
-﻿using CA.Repo.Interfaces;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using CA.Data;
 using CA.Data.Entityes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using CA.Repo.Repositories;
+using CA.Repo.Interfaces;
 
-namespace CA.Repo.Implementations
+namespace CA.Repo.Repositories
 {
     public class DrinksRepository : Repository<Drink, int>, IDrinkRepository
     {

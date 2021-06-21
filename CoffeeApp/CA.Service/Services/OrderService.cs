@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CA.Repo.Interfaces;
 using CA.Service.Mappers;
+using CA.Service.Views;
 
 namespace CA.Service.Services
 {

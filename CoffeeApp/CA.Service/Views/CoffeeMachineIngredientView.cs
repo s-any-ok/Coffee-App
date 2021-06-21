@@ -1,7 +1,7 @@
-﻿using CA.Data.Entityes;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using CA.Service.Models;
 
-namespace CA.Service.Models
+namespace CA.Service.Views
 {
     public class CoffeeMachineIngredientView
     {

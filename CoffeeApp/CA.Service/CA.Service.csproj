@@ -84,8 +84,8 @@
     <Compile Include="Mappers\IngredientTypeEntityViewMappper.cs" />
     <Compile Include="Mappers\OrderEntityViewMappper .cs" />
     <Compile Include="Mappers\DrinkEntityViewMappper.cs" />
+    <Compile Include="Models\IngredientTypeView.cs" />
     <Compile Include="Views\CoffeeMachineView.cs" />
-    <Compile Include="Views\IngredientTypeView.cs" />
     <Compile Include="Views\OrderView.cs" />
     <Compile Include="Views\DrinkIngredientView.cs" />
     <Compile Include="Views\CoffeeMachineIngredientView.cs" />

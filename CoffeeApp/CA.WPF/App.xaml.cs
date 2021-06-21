@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using CA.Data;
+using CA.Repo;
 using CA.Service;
 using CA.WPF.View;
 using CA.WPF.ViewModel;
@@ -23,7 +24,7 @@ namespace CA.WPF
 
         private void ConfigureServices(IServiceCollection services)
         {
-            services.RegisterDALDependencies();
+            services.RegisterDalDependencies();
             services.RegisterBLLDependencies();
             
             services.AddSingleton<MainViewModel>();

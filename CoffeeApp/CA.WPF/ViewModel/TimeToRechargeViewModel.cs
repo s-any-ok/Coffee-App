@@ -6,6 +6,7 @@ using CA.WPF.Model;
 using System;
 using System.Collections.ObjectModel;
 using CA.Repo;
+using CA.Service.Views;
 
 namespace CA.WPF.ViewModel
 {

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CA.Data.Entityes.Base;
 
 namespace CA.Data.Entityes
 {
-    public class Order
+    public class Order : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public DateTime OrderDate { get; set; }
 
         public int CoffeeMachineId { get; set; }

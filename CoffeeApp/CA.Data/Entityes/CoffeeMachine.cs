@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CA.Data.Entityes.Base;
 
 namespace CA.Data.Entityes
 {
-    public class CoffeeMachine
+    public class CoffeeMachine : BaseEntity<int>
     {
-        public int Id { get; set; }
-
         public string CoffeeMachineName { get; set; }
 
         public string Producer { get; set; }
